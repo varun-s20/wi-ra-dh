@@ -123,6 +123,15 @@
     var index = 0, timer = null, paused = reduceMotion;
     hero.style.setProperty("--dur", interval + "ms");
     var restartBar = function () { bar.classList.remove("is-running"); void bar.offsetWidth; if (!paused) bar.classList.add("is-running"); };
+    /* Slides after the first load once the page has finished loading */
+    var hydrate = function () {
+      $$("img[data-src]", hero).forEach(function (img) {
+        if (img.getAttribute("data-srcset")) img.srcset = img.getAttribute("data-srcset");
+        img.src = img.getAttribute("data-src");
+        img.removeAttribute("data-src"); img.removeAttribute("data-srcset");
+      });
+    };
+    if (document.readyState === "complete") hydrate(); else window.addEventListener("load", hydrate);
     var show = function (i) {
       index = (i + count) % count;
       sets.forEach(function (set) { set.forEach(function (s, n) { s.classList.toggle("is-active", n === index); }); });
@@ -141,44 +150,36 @@
     document.addEventListener("visibilitychange", function () { if (document.hidden) clearTimeout(timer); else if (!paused) { restartBar(); schedule(); } });
     setPaused(paused);
 
-    /* The signal lens drifts over the headline, or follows the pointer */
+    /* The signal lens rests over the headline and follows a mouse pointer.
+       It never wanders on its own, and the frame loop sleeps once settled. */
     var title = $(".hero__center .hero__title", hero);
-    var lx = 0, ly = 0, tx = 0, ty = 0, lastPointer = 0, running = false, visible = true, box = { x: 0, y: 0, w: 0, h: 0 };
+    var lx = 0, ly = 0, tx = 0, ty = 0, rest = { x: 0, y: 0 }, running = false;
     var measure = function () {
       var hr = hero.getBoundingClientRect(), r = title.getBoundingClientRect();
-      box = { x: r.left - hr.left, y: r.top - hr.top, w: r.width, h: r.height };
+      rest = { x: r.left - hr.left + r.width * 0.72, y: r.top - hr.top + r.height * 0.5 };
     };
-    var idleTarget = function (t) { return { x: box.x + box.w * (0.5 + 0.36 * Math.sin(t / 5200)), y: box.y + box.h * (0.5 + 0.22 * Math.sin(t / 2700 + 1.2)) }; };
     var place = function () { hero.style.setProperty("--lx", lx.toFixed(1) + "px"); hero.style.setProperty("--ly", ly.toFixed(1) + "px"); };
-    var frame = function (t) {
-      if (!visible) { running = false; return; }
-      if (t - lastPointer > 2600) { var p = idleTarget(t); tx = p.x; ty = p.y; }
-      lx += (tx - lx) * 0.075;
-      ly += (ty - ly) * 0.075;
+    var frame = function () {
+      lx += (tx - lx) * 0.14;
+      ly += (ty - ly) * 0.14;
       place();
-      requestAnimationFrame(frame);
+      if (Math.abs(tx - lx) + Math.abs(ty - ly) > 0.4) requestAnimationFrame(frame);
+      else { lx = tx; ly = ty; place(); running = false; }
     };
-    var start = function () { if (!running && !reduceMotion) { running = true; requestAnimationFrame(frame); } };
-    var init = function () {
-      measure();
-      var p = idleTarget(0);
-      lx = tx = reduceMotion ? box.x + box.w * 0.7 : p.x;
-      ly = ty = reduceMotion ? box.y + box.h * 0.5 : p.y;
-      place();
-      start();
+    var aim = function (x, y) {
+      tx = x; ty = y;
+      if (reduceMotion) { lx = tx; ly = ty; place(); return; }
+      if (!running) { running = true; requestAnimationFrame(frame); }
     };
+    var init = function () { measure(); lx = tx = rest.x; ly = ty = rest.y; place(); };
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(init); else init();
-    window.addEventListener("resize", measure);
+    window.addEventListener("resize", function () { measure(); aim(rest.x, rest.y); });
     hero.addEventListener("pointermove", function (e) {
-      if (!finePointer.matches || reduceMotion) return;
+      if (e.pointerType !== "mouse" || !finePointer.matches) return;
       var hr = hero.getBoundingClientRect();
-      tx = e.clientX - hr.left;
-      ty = e.clientY - hr.top;
-      lastPointer = performance.now();
+      aim(e.clientX - hr.left, e.clientY - hr.top);
     });
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; if (visible) start(); }).observe(hero);
-    }
+    hero.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") aim(rest.x, rest.y); });
   }
 
   /* Map: tooltip for each repeater mark ----------------------------------- */
