@@ -1,0 +1,109 @@
+TITLE: An Open Letter to the Wisconsin Amateur Radio Community – Wisconsin Repeater Alliance
+<h1> An Open Letter to the Wisconsin Amateur Radio Community
+<li> September 11, 2026
+<li> News
+<text> Facebook
+<text> LinkedIn
+<text> X
+[img] /wp-content/uploads/2026/08/WI-RA-Logo.webp alt="Wisconsin Repeater Alliance logo"
+<h4> An Open Letter to the Wisconsin Amateur Radio Community
+<p> Over the past several weeks, I have seen a number of questions, concerns, and rumors circulating regarding the dissolution of the Wisconsin Association of Repeaters (WAR) and the formation of the Wisconsin Repeater Alliance (WRA). Rather than continue those discussions through scattered social media comments, I believe the amateur radio community deserves a direct and transparent explanation.
+<p> First and foremost, repeater coordination in Wisconsin is not disappearing.
+<p> In fact, the entire reason WRA was formed was to ensure that repeater coordination continues well into the future under a stronger, more sustainable organizational structure.
+<h5> How We Got Here
+<p> When I became involved with WAR, my original role was straightforward: develop a modern replacement for the aging CTK coordination platform and help update the organization’s technology infrastructure.
+<p> As I became more involved, it became clear that the challenges facing WAR extended far beyond software.
+<p> Over the course of many months, I reviewed organizational records, operational procedures, technology systems, governance practices, and the overall health of the organization. What became apparent was that WAR faced significant challenges related to organizational continuity, record retention, governance, leadership succession, operational sustainability, and technology modernization.
+<p> Like many volunteer organizations, WAR depended heavily on a small number of dedicated individuals over many years. Unfortunately, as those individuals stepped back, much of the institutional knowledge left with them. Documentation was limited, systems were aging, and there was no clear succession plan to ensure long-term continuity.
+<p> These issues were not created overnight, nor were they the fault of any single individual. Rather, they were the result of many years of gradual organizational decline that eventually reached a point where significant action was necessary.
+<h5> Why Dissolution Was Chosen
+<p> This was not a decision made lightly.
+<p> After extensive review and consultation with legal counsel experienced in nonprofit governance, it became clear that simply updating a website or replacing a software platform would not solve the underlying organizational challenges.
+<p> The determination was made that the most responsible path forward was to create a new organization designed from the ground up with modern governance practices, documented procedures, financial controls, clear succession planning, and modern technical infrastructure.
+<p> The goal was never to eliminate WAR’s mission.
+<p> The goal was to preserve that mission before it became impossible to do so.
+<h5> What Happened to WAR’s Assets?
+<p> One rumor I have seen repeated is that records, data, or organizational history were somehow discarded or lost.
+<p> That is simply not true.
+<p> Historical records, coordination data, digital assets, and documentation have been preserved and retained as part of the transition process. The objective throughout this process has been safeguarding decades of coordination history, not erasing it.
+<p> The website’s removal was part of the legal dissolution process and was done under the guidance of legal counsel. It was not an attempt to hide information or rewrite history.
+<h5> Who Is WRA?
+<p> The Wisconsin Repeater Alliance is not an outside organization taking over repeater coordination.
+<p> It is being built by Wisconsin amateurs who were willing to step forward and invest the time, effort, and resources necessary to continue serving the amateur radio community.
+<p> Our initial leadership team consists entirely of volunteers.
+<p> I will serve as the organization’s first President. Kevin, N9OIG, has agreed to serve as Vice President. We have also engaged an independent accountant to serve as Treasurer during the startup phase to help establish strong financial oversight, accountability, and fiduciary controls from the beginning. Chris Keezer KC9NVV, a long time board member of WAR has agreed to serve as a historical advisor.
+<p> We are actively seeking additional volunteers, advisors, and future board members who want to help shape the organization.
+<p> This is not a closed group.
+<p> In fact, one of our primary goals is to broaden participation and ensure future leadership opportunities exist for the next generation of amateur radio operators.
+<h5> Organizational Status and Governance
+<p> The Wisconsin Repeater Alliance, Inc. is a legally incorporated Wisconsin nonprofit corporation, and our application for federal 501(c)(3) charitable status has been filed with the Internal Revenue Service.
+<p> While the corporation has been formed and organizational infrastructure is in place, WRA does not intend to begin formal operations until the 501(c)(3) application process has been completed and published. We believe it is important to establish the organization on a solid legal and regulatory foundation before accepting memberships, donations, or assuming coordination responsibilities.
+<p> One of the primary objectives during the formation of WRA has been building a strong governance framework designed to ensure long-term stability, accountability, transparency, and organizational continuity.
+<p> To achieve that goal, WRA has developed a comprehensive set of modern governing documents, including bylaws, policies, procedures, financial controls, conflict-of-interest standards, record retention requirements, succession planning provisions, and operational guidelines. These documents have been reviewed as part of the organization’s formation process and are intended to provide clear direction for current and future leadership.
+<p> Unlike many volunteer organizations that evolve informally over time, WRA is being intentionally structured from the beginning with documented processes, defined responsibilities, financial oversight, and operational accountability. The objective is to eliminate uncertainty, preserve institutional knowledge, and ensure future leaders inherit a well-organized and sustainable organization.
+<p> Although WRA is operated entirely by volunteers, we believe nonprofit organizations should be managed with the same level of professionalism, fiscal responsibility, transparency, and accountability expected of a well-run business. Sound governance, strong internal controls, accurate record keeping, and clear procedures are not optional; they are essential to protecting the organization, its assets, and the amateur radio community it serves.
+<p> Our goal is simple: build an organization that can serve Wisconsin’s amateur radio community not just for the next few years, but for the next several decades.
+<h5> What Is Being Built?
+<p> Over the last eight months, significant time, money and effort has been invested in developing a completely new coordination platform known as ARCS.
+<p> ARCS is designed to replace outdated systems with a secure, cloud-based platform that includes:
+<li> Modern repeater coordination workflows
+<li> Digital application processing
+<li> Automated engineering calculations
+<li> Mapping and directory services
+<li> Improved record retention
+<li> Enhanced transparency
+<li> Long-term maintainability
+<li> Better security and backup procedures
+<li> Public reporting and communication tools
+<p> The platform is being built using enterprise-level technologies and infrastructure with long-term sustainability in mind.
+<h5> Investing in the Future
+<p> This effort has required a substantial personal commitment.
+<p> To date, I have personally funded the legal, administrative, hosting, development, and infrastructure costs associated with building the new organization and technology platform. Combined with countless volunteer hours, this investment reflects my commitment to ensuring repeater coordination in Wisconsin remains available for future generations.
+<p> No one involved is getting rich from this project.
+<p> The individuals involved are volunteers donating their time, expertise, and resources because they care about amateur radio and want to see repeater coordination remain viable for years to come.
+<h5> Transparency Moving Forward
+<p> One criticism I believe has merit is that communication could have been better.
+<p> Balancing full-time careers, family obligations, nonprofit responsibilities, legal requirements, and the development of an entirely new coordination platform has been challenging. In hindsight, earlier and more frequent communication would likely have reduced confusion and speculation.
+<p> For that, I take responsibility.
+<p> As WRA moves forward, transparency will be a core principle of the organization. We intend to publish governing documents, policies, procedures, financial reporting, and organizational information so stakeholders understand how decisions are made and how the organization operates.
+<h5> Looking Ahead
+<p> Our goal is simple.
+<p> We want to build a professional, transparent, sustainable organization that serves Wisconsin’s amateur radio community for decades to come.
+<p> We are not interested in reliving old disagreements, creating divisions, or engaging in social media arguments.
+<p> We are interested in preserving repeater coordination, protecting coordination records, supporting repeater owners, improving services, and ensuring Wisconsin has an organization capable of meeting the needs of amateur radio operators well into the future.
+<p> The Wisconsin Repeater Alliance is currently progressing through the 501(c)(3) application process and organizational build-out. Until that process is complete, WRA will remain focused on establishing the legal, financial, and governance foundation necessary for long-term success. Our target is to begin full operations on January 1, 2027.
+<p> We welcome constructive feedback, volunteers willing to help, and anyone who shares those goals.
+<p> At the end of the day, this effort is not about any one individual. It is about preserving an important service, protecting decades of coordination data and institutional knowledge, and building a foundation that future amateur radio operators can inherit, improve, and continue.
+<p> Respectfully,
+<p> Corey Becker, KD9HCW President Wisconsin Repeater Alliance, Inc.
+<h2> Read Other Blogs
+[img] /wp-content/uploads/2026/09/501c3.png alt=""
+<text> News
+<h3> Wisconsin Repeater Alliance Receives Federal 501(c)(3) Public Charity Status
+<p> September 24, 2026 The Wisconsin Repeater Alliance is proud to announce that we have officially been recognized by the Internal Revenue Service (IRS) as a
+[link] Read More » -> https://wi-ra.org/wisconsin-repeater-alliance-receives-federal-501c3-public-charity-status/
+<text> 09/24/2026
+[img] /wp-content/uploads/2026/09/ARCS-Logo.png alt=""
+<text> News
+<h3> ARCS, Amateur Radio Coordination System
+<p> ARCS Development Update After months of development, testing, and refinement, ARCS is no longer just an idea. It’s a working, cloud-based coordination platform built specifically
+[link] Read More » -> https://wi-ra.org/arcs-amateur-radio-coordination-system/
+<text> 09/12/2026
+[img] /wp-content/uploads/2026/08/WI-RA-Logo.webp alt="Wisconsin Repeater Alliance logo"
+<text> News
+<h3> An Open Letter to the Wisconsin Amateur Radio Community
+<p> An Open Letter to the Wisconsin Amateur Radio Community Over the past several weeks, I have seen a number of questions, concerns, and rumors circulating
+[link] Read More » -> https://wi-ra.org/an-open-letter-to-the-wisconsin-amateur-radio-community/
+<text> 09/11/2026
+[img] /wp-content/uploads/2026/08/ianbreals_The_Wisconsin_Repeater_Alliance_uses_ARCS_as_its_co_2f170bc9-a611-4abc-a3d5-aa2963f1e9f0_0.png alt=""
+<text> News
+<h3> Wisconsin Association of Repeaters Announces Organizational Transition and Future of Repeater Coordination in Wisconsin
+<p> The Wisconsin Association of Repeaters (WAR) announces that it has begun the formal process of winding up its affairs and transitioning repeater coordination responsibilities to Wisconsin
+[link] Read More » -> https://wi-ra.org/lorem-ipsum-dolor-sit-amet-consectetur-2/
+<text> 08/26/2026
+[img] /wp-content/uploads/2026/08/ChatGPT-Image-Aug-26-2026-09_37_56-PM.png alt=""
+<text> News
+<h3> Welcome to the new Wisconsin Repeater Alliance website
+<p> The Wisconsin Repeater Alliance is pleased to launch its new website. Here you can learn about frequency coordination, apply for repeater coordination, become a member,
+[link] Read More » -> https://wi-ra.org/news-welcome-to-wra/
+<text> 08/26/2026

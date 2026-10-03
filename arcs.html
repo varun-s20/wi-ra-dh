@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amateur Radio Coordination System (ARCS) – Wisconsin Repeater Alliance</title>
+  <meta name="description" content="ARCS is the coordination platform developed and operated by the Wisconsin Repeater Alliance: propagation modeling, interference studies, database management, application processing and coordination workflows.">
+  <link rel="canonical" href="https://wi-ra.org/arcs/">
+  <meta name="theme-color" content="#022259">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Wisconsin Repeater Alliance">
+  <meta property="og:title" content="Amateur Radio Coordination System (ARCS) – Wisconsin Repeater Alliance">
+  <meta property="og:description" content="ARCS is the coordination platform developed and operated by the Wisconsin Repeater Alliance: propagation modeling, interference studies, database management, application processing and coordination workflows.">
+  <meta property="og:url" content="https://wi-ra.org/arcs/">
+  <meta property="og:image" content="https://wi-ra.org/assets/img/og-wra.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+  <link rel="preload" as="image" href="assets/img/arcs/arcs-platform-home-720.webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/wra.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="js/wra.js" defer></script>
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wi-ra.org/"}, {"@type": "ListItem", "position": 2, "name": "ARCS", "item": "https://wi-ra.org/arcs/"}]}]}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M6.5 17.5 17 7M8.5 6.5H17.5V15.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 10 10"><path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor"/></symbol>
+    <symbol id="i-play" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <!-- ================= HEADER =================
+       One navigation structure, mirrored in the mobile drawer and the footer:
+       Home (logo), About WRA, Coordination, ARCS, Membership, Resources, News, Contact. -->
+  <header class="hdr">
+    <div class="hdr__utility">
+      <div class="wrap hdr__utility-inner">
+        <p>Wisconsin nonprofit corporation <span aria-hidden="true">&middot;</span> <span class="nowrap">501(c)(3)</span> public charity</p>
+        <ul role="list">
+          <li><a href="mailto:info@wi-ra.org">Info@wi-ra.org</a></li>
+          <li><a href="https://arcsonline.org/repeaters/" target="_blank" rel="noopener">Repeater directory<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a class="hdr__arcs" href="https://arcsonline.org/" target="_blank" rel="noopener">Sign in to ARCS<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap hdr__bar">
+      <a class="brand" href="index.html">
+        <img class="brand__seal" src="assets/img/brand/wra-seal-160.webp" width="46" height="46" alt="">
+        <span class="brand__text"><span class="brand__name">Wisconsin Repeater Alliance</span><span class="brand__tag">Repeater frequency coordination</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list" role="list">
+          <li class="nav__item"><a class="nav__link" data-nav="about" href="about.html">About WRA</a></li>
+          <li class="nav__item">
+            <button class="nav__link nav__toggle" type="button" data-nav="coordination" aria-expanded="false" aria-controls="nav-coordination">Coordination<svg class="nav__chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <div class="nav__panel" id="nav-coordination">
+              <a href="coordination.html"><strong>What is frequency coordination?</strong><span>How Wisconsin shares a limited spectrum resource fairly.</span></a>
+              <a href="coordination-process.html"><strong>Repeater coordination</strong><span>Apply, modify, renew or report interference.</span></a>
+              <a href="coordination-process.html#checklist"><strong>Pre-application checklist</strong><span>Everything to gather before you apply.</span></a>
+            </div>
+          </li>
+          <li class="nav__item"><a class="nav__link" data-nav="arcs" data-current href="arcs.html" aria-current="page">ARCS</a></li>
+          <li class="nav__item">
+            <button class="nav__link nav__toggle" type="button" data-nav="membership" aria-expanded="false" aria-controls="nav-membership">Membership<svg class="nav__chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <div class="nav__panel" id="nav-membership">
+              <a href="membership.html"><strong>Join or renew</strong><span>Support Wisconsin's repeater infrastructure for $20 a year.</span></a>
+              <a href="membership.html#dues"><strong>Paying your dues</strong><span>Secure online payment through Zeffy.</span></a>
+            </div>
+          </li>
+          <li class="nav__item">
+            <button class="nav__link nav__toggle" type="button" data-nav="resources" aria-expanded="false" aria-controls="nav-resources">Resources<svg class="nav__chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <div class="nav__panel" id="nav-resources">
+              <a href="resources.html#faq"><strong>Frequently asked questions</strong><span>Clear answers about coordination, membership and WRA.</span></a>
+              <a href="resources.html#library"><strong>Documents and forms</strong><span>Bylaws, policies, band plans and the checklist.</span></a>
+              <a href="resources.html#volunteer"><strong>Volunteer</strong><span>Whatever your background, there's a role for you.</span></a>
+            </div>
+          </li>
+          <li class="nav__item"><a class="nav__link" data-nav="news" href="news.html">News</a></li>
+          <li class="nav__item"><a class="nav__link" data-nav="contact" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--sm hdr__cta" href="membership.html">Become a Member</a>
+
+      <button class="hdr__menu" type="button" aria-expanded="false" aria-controls="drawer">
+        <span class="hdr__menu-label">Menu</span><span class="hdr__bars" aria-hidden="true"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE DRAWER (same structure) ================= -->
+  <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="drawer__panel">
+      <nav aria-label="Site menu">
+        <ul class="drawer__list" role="list">
+          <li><a class="drawer__link" href="index.html">Home</a></li>
+          <li><a class="drawer__link" href="about.html">About WRA</a></li>
+          <li>
+            <button class="drawer__link drawer__toggle" type="button" aria-expanded="false" aria-controls="dr-coordination">Coordination<svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <ul class="drawer__sub" id="dr-coordination" role="list" hidden>
+              <li><a href="coordination.html">What is frequency coordination?</a></li>
+              <li><a href="coordination-process.html">Repeater coordination</a></li>
+              <li><a href="coordination-process.html#checklist">Pre-application checklist</a></li>
+            </ul>
+          </li>
+          <li><a class="drawer__link" href="arcs.html" aria-current="page">ARCS</a></li>
+          <li>
+            <button class="drawer__link drawer__toggle" type="button" aria-expanded="false" aria-controls="dr-membership">Membership<svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <ul class="drawer__sub" id="dr-membership" role="list" hidden>
+              <li><a href="membership.html">Join or renew</a></li>
+              <li><a href="membership.html#dues">Paying your dues</a></li>
+            </ul>
+          </li>
+          <li>
+            <button class="drawer__link drawer__toggle" type="button" aria-expanded="false" aria-controls="dr-resources">Resources<svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <ul class="drawer__sub" id="dr-resources" role="list" hidden>
+              <li><a href="resources.html#faq">Frequently asked questions</a></li>
+              <li><a href="resources.html#library">Documents and forms</a></li>
+              <li><a href="resources.html#volunteer">Volunteer</a></li>
+            </ul>
+          </li>
+          <li><a class="drawer__link" href="news.html">News</a></li>
+          <li><a class="drawer__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="drawer__actions">
+        <a class="btn" href="membership.html">Become a Member</a>
+        <a class="btn btn--ghost btn--ext" href="https://arcsonline.org/" target="_blank" rel="noopener">Sign in to ARCS<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <p class="drawer__meta"><a href="mailto:info@wi-ra.org">Info@wi-ra.org</a> &middot; <span class="nowrap">501(c)(3)</span> public charity</p>
+      </div>
+    </div>
+  </div>
+<main id="main">
+    <section class="phead phead--screen" aria-labelledby="page-title">
+      <div class="phead__rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="wrap phead__inner">
+        <div>
+          <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">ARCS</li></ol></nav>
+          <h1 class="phead__title" id="page-title">Amateur Radio Coordination System (ARCS)</h1>
+          <p class="phead__lead">Modern tools for modern frequency coordination, built specifically for amateur radio.</p>
+          <div class="btn-row">
+            <a class="btn btn--ext" href="https://arcsonline.org/" target="_blank" rel="noopener">Sign in to ARCS<span class="visually-hidden">(opens in a new tab)</span></a>
+            <a class="btn btn--line btn--ext" href="https://arcsonline.org/repeaters/" target="_blank" rel="noopener">Search the repeater directory<span class="visually-hidden">(opens in a new tab)</span></a>
+          </div>
+          <!-- EDITABLE NOTICE: update the text and date when ARCS status changes -->
+          <div class="notice" role="note">
+            <p class="notice__title">Platform status</p>
+            <p class="notice__text">ARCS is up and running at arcsonline.org. New user registration is turned off for now.</p>
+            <p class="notice__meta">Updated September 29, 2026</p>
+          </div>
+        </div>
+        <div class="screen" aria-hidden="false">
+          <div class="screen__bar" aria-hidden="true"><span class="screen__dots"><i></i><i></i><i></i></span><span class="screen__url">arcsonline.org</span></div>
+          <img src="assets/img/arcs/arcs-platform-home-720.webp" srcset="assets/img/arcs/arcs-platform-home-720.webp 720w, assets/img/arcs/arcs-platform-home.webp 1162w" sizes="(max-width: 960px) 100vw, 40vw" width="1162" height="1210" alt="The ARCS home page: Spectrum Management for Amateur Radio, with Repeater Directory, Interactive Map, Frequency Coordination and Conflict Analysis, above a map of Wisconsin repeater locations">
+        </div>
+      </div>
+    </section>
+
+    <nav class="toc wrap" aria-label="On this page">
+      <ul class="toc__list" role="list">
+        <li><a href="#what"><small>01</small>What ARCS is</a></li>
+        <li><a href="#does"><small>02</small>What it does</a></li>
+        <li><a href="#screens"><small>03</small>Inside ARCS</a></li>
+        <li><a href="#users"><small>04</small>Who uses it</a></li>
+        <li><a href="#principle"><small>05</small>Coordinators first</a></li>
+        <li><a href="#platform"><small>06</small>The platform</a></li>
+      </ul>
+    </nav>
+
+    <section class="sec sec--first" id="what" aria-labelledby="what-h">
+      <div class="wrap grid split">
+        <div class="split__head" data-reveal>
+          <h2 class="eyebrow" id="what-h">What ARCS is</h2>
+          <p class="statement">WRA is the organization. ARCS is the platform it built and operates.</p>
+        </div>
+        <div class="split__body" data-reveal style="--d:.08s">
+          <p class="lead">The Amateur Radio Coordination System (ARCS) is a comprehensive coordination platform developed specifically for amateur radio frequency coordination organizations, repeater owners and the amateur radio community.</p>
+          <p class="body-copy">ARCS was created to provide modern tools that improve coordination efficiency, preserve valuable records and support responsible spectrum management. For many years, frequency coordinators have relied on spreadsheets, legacy software, paper records and manual processes. While these systems served the community well, many organizations now face growing administrative demands, ageing technology and increasing challenges around record preservation and technical analysis. ARCS was developed to meet those challenges.</p>
+          <div class="duo">
+            <div class="sheet">
+              <div class="sheet__label"><img src="assets/img/brand/wra-seal-160.webp" width="44" height="44" alt=""><p class="meta">The organization</p></div>
+              <p class="body-copy">The Wisconsin Repeater Alliance (WRA) is responsible for frequency coordination, spectrum management, policies, governance and oversight.</p>
+            </div>
+            <div class="sheet">
+              <div class="sheet__label"><img src="assets/img/brand/arcs-logo-480.webp" width="44" height="44" alt=""><p class="meta">The platform</p></div>
+              <p class="body-copy">ARCS is the technology system developed and operated by WRA to perform the engineering and coordination functions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec sec--paper" id="does" aria-labelledby="does-h">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <h2 class="eyebrow" id="does-h">What ARCS does</h2>
+          <p class="statement">Engineering-based analysis, explained in plain language</p>
+          <p class="body-copy">ARCS provides automated frequency coordination through engineering-based analysis. You don't need to be an engineer to apply; this is what the platform does with the information you supply.</p>
+        </div>
+        <ul class="cells" role="list" data-reveal>
+          <li class="cell"><span class="cell__idx">01</span><span class="cell__title">Propagation modeling</span><span class="cell__text">Estimates the area a repeater will cover from its site, the terrain, antenna height and power, so its coverage can be compared with neighboring systems. ARCS runs Longley-Rice analysis in one click.</span></li>
+          <li class="cell"><span class="cell__idx">02</span><span class="cell__title">Interference studies</span><span class="cell__text">Checks a proposed frequency pair against existing coordinated systems for co-channel and adjacent-channel conflicts before a coordinator reviews it.</span></li>
+          <li class="cell"><span class="cell__idx">03</span><span class="cell__title">Database management</span><span class="cell__text">Keeps Wisconsin's coordination records accurate, preserved and searchable, including the public repeater directory and historical coordination tracking.</span></li>
+          <li class="cell"><span class="cell__idx">04</span><span class="cell__title">Application processing</span><span class="cell__text">Takes applications online, with integrated FCC lookups and license monitoring, and automatic ERP calculations.</span></li>
+          <li class="cell"><span class="cell__idx">05</span><span class="cell__title">Coordination workflows</span><span class="cell__text">Moves each application through review in a consistent, documented sequence, with documents and correspondence kept with the record.</span></li>
+          <li class="cell"><span class="cell__idx">06</span><span class="cell__title">Mapping and coverage</span><span class="cell__text">GIS mapping and coverage visualization, with an interactive map of coordinated repeaters.</span></li>
+        </ul>
+        <div class="grid" style="margin-top:3rem">
+          <div class="col-7" data-reveal>
+            <p class="meta">All in a single platform</p>
+            <ul class="ticks" role="list" style="margin-top:1rem">
+              <li>Online repeater application processing</li>
+              <li>Automated record management</li>
+              <li>Conflict detection and analysis</li>
+              <li>GIS mapping and coverage visualization</li>
+              <li>Engineering and technical reporting</li>
+              <li>Digital coordination workflows</li>
+              <li>Document and correspondence management</li>
+              <li>Historical coordination tracking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="screens" aria-labelledby="screens-h">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <h2 class="eyebrow" id="screens-h">Inside ARCS</h2>
+          <p class="statement">The real platform, not a mock-up</p>
+        </div>
+        <div class="icols" role="list">
+          <figure role="listitem" data-reveal>
+            <div class="screen"><div class="screen__bar" aria-hidden="true"><span class="screen__dots"><i></i><i></i><i></i></span><span class="screen__url">Repeater directory</span></div><img src="assets/img/arcs/arcs-repeater-directory-720.webp" width="720" height="742" loading="lazy" alt="ARCS Repeater Directory: search by callsign, frequency, location, band, mode and network, with advanced filters and a results table"></div>
+            <figcaption><span class="icol__idx" style="margin-top:1.25rem">1 of 3</span><span class="icol__title">Repeater directory</span><span class="icol__text">Search coordinated systems by callsign, frequency, location, band, mode and network.</span></figcaption>
+          </figure>
+          <figure role="listitem" data-reveal style="--d:.08s">
+            <div class="screen"><div class="screen__bar" aria-hidden="true"><span class="screen__dots"><i></i><i></i><i></i></span><span class="screen__url">Apply for coordination</span></div><img src="assets/img/arcs/arcs-application-form-720.webp" width="720" height="751" loading="lazy" alt="ARCS Apply for Frequency Coordination form: application information, station identification and an application guide"></div>
+            <figcaption><span class="icol__idx" style="margin-top:1.25rem">2 of 3</span><span class="icol__title">Application</span><span class="icol__text">Station identification, holder and trustee details, with an application guide alongside.</span></figcaption>
+          </figure>
+          <figure role="listitem" data-reveal style="--d:.16s">
+            <div class="screen"><div class="screen__bar" aria-hidden="true"><span class="screen__dots"><i></i><i></i><i></i></span><span class="screen__url">Site and antenna</span></div><img src="assets/img/arcs/arcs-site-antenna-form-720.webp" width="720" height="600" loading="lazy" alt="ARCS transmitter location form with a site map, followed by transmitter site and antenna fields such as elevation, HAAT, power, ERP and antenna pattern"></div>
+            <figcaption><span class="icol__idx" style="margin-top:1.25rem">3 of 3</span><span class="icol__title">Site and antenna</span><span class="icol__text">Transmitter location on a map, with elevation, power, ERP and antenna pattern.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec sec--navy dark" id="users" aria-labelledby="users-h">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <h2 class="eyebrow" id="users-h">Who uses ARCS</h2>
+          <p class="statement">Built for everyone in the coordination process</p>
+        </div>
+        <ul class="cells cells--4" role="list" data-reveal>
+          <li class="cell"><span class="cell__idx">Applicants</span><span class="cell__title">Repeater owners and clubs</span><span class="cell__text">Apply for coordination, manage their own records and renew online.</span></li>
+          <li class="cell"><span class="cell__idx">Coordinators</span><span class="cell__title">WRA-authorized reviewers</span><span class="cell__text">Review applications with engineering tools, under WRA policy.</span></li>
+          <li class="cell"><span class="cell__idx">Oversight</span><span class="cell__title">The Board of Directors</span><span class="cell__text">Sets the coordination policy ARCS is used to apply, with reporting from accurate records.</span></li>
+          <li class="cell"><span class="cell__idx">Public</span><span class="cell__title">Operators and the community</span><span class="cell__text">Search the public repeater directory and interactive map.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec" id="principle" aria-labelledby="principle-h">
+      <div class="wrap grid split">
+        <div class="split__head" data-reveal>
+          <h2 class="eyebrow" id="principle-h">Coordinators first</h2>
+          <p class="statement">Technology that supports coordinators, not replaces them</p>
+        </div>
+        <div class="split__body" data-reveal style="--d:.08s">
+          <p class="body-copy">A guiding principle behind ARCS is that technology should support coordinators, not replace them. Organizations using ARCS keep their own policies, procedures, review processes and decision-making authority over frequency assignments in their service areas.</p>
+          <div class="pull"><p>For the Wisconsin Repeater Alliance, coordination decisions remain under the authority of the organization and its governing structure.</p></div>
+          <p class="body-copy">The Wisconsin Repeater Alliance uses ARCS as its coordination platform to manage repeater coordination activities and spectrum records. By reducing administrative workload, the platform lets volunteers and coordinators focus more on technical review, spectrum stewardship and supporting Wisconsin's amateur radio community.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec sec--paper" id="platform" aria-labelledby="platform-h">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <h2 class="eyebrow" id="platform-h">The platform</h2>
+          <p class="statement">Built specifically for amateur radio, built to last</p>
+          <p class="body-copy">ARCS was designed exclusively for amateur radio frequency coordination and supports the needs of frequency coordination bodies, repeater owners, amateur radio clubs, emergency communications organizations, technical review committees and individual operators.</p>
+        </div>
+        <ul class="icols" role="list" data-reveal>
+          <li><span class="icol__idx">Infrastructure</span><span class="icol__title">Microsoft Azure</span><span class="icol__text">Built for speed, reliability and scalability on enterprise-grade infrastructure.</span></li>
+          <li><span class="icol__idx">Security</span><span class="icol__title">Two-factor authentication</span><span class="icol__text">Required for every account, with automated backups of coordination records.</span></li>
+          <li><span class="icol__idx">Records</span><span class="icol__title">Multi-state migration</span><span class="icol__text">Data migration already completed, preserving historical coordination records.</span></li>
+        </ul>
+        <div class="grid" style="margin-top:3.5rem">
+          <div class="col-8" data-reveal>
+            <h3 class="sheet__title">Looking ahead</h3>
+            <p class="body-copy" style="margin-top:1rem">The core system is already functioning, and development is shifting toward advanced spectrum management, reporting, analytics and additional automation. The goal is simple: a sustainable, modern framework that supports amateur radio repeater coordination for generations to come.</p>
+            <a class="alink" href="news-arcs-development-update.html" style="margin-top:1.5rem">Read the ARCS development update</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="endcap" aria-labelledby="end-h">
+      <div class="wrap endcap__inner">
+        <div data-reveal>
+          <h2 class="statement" id="end-h">Supporting coordinators. Strengthening amateur radio.</h2>
+          <p class="body-copy">Sign in to the ARCS platform, or learn how coordination works in Wisconsin.</p>
+        </div>
+        <div class="btn-row" data-reveal style="--d:.1s">
+          <a class="btn btn--ext" href="https://arcsonline.org/" target="_blank" rel="noopener">Sign in to ARCS<span class="visually-hidden">(opens in a new tab)</span></a>
+          <a class="btn btn--line" href="coordination-process.html">Repeater Coordination</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER (mirrors the header navigation) ================= -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__head">
+        <a class="brand brand--footer" href="index.html">
+          <img class="brand__seal" src="assets/img/brand/wra-seal-160.webp" width="56" height="56" loading="lazy" alt="">
+          <span class="brand__text"><span class="brand__name">Wisconsin Repeater Alliance, Inc.</span><span class="brand__tag">Repeater frequency coordination</span></span>
+        </a>
+        <p class="footer__statement">A Wisconsin nonprofit corporation and federally recognized <span class="nowrap">501(c)(3)</span> public charity, governed by a nine-member Board of Directors.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div>
+          <h2><a href="about.html">About WRA</a></h2>
+          <ul role="list">
+            <li><a href="about.html#who">Who we are</a></li>
+            <li><a href="about.html#governance">Governance</a></li>
+            <li><a href="about.html#board">Board of Directors</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2><a href="coordination.html">Coordination</a></h2>
+          <ul role="list">
+            <li><a href="coordination.html">What is frequency coordination?</a></li>
+            <li><a href="coordination-process.html">Repeater coordination</a></li>
+            <li><a href="coordination-process.html#checklist">Pre-application checklist</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2><a href="arcs.html">ARCS</a></h2>
+          <ul role="list">
+            <li><a href="arcs.html">About ARCS</a></li>
+            <li><a href="https://arcsonline.org/" target="_blank" rel="noopener">Sign in to ARCS<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a href="https://arcsonline.org/repeaters/" target="_blank" rel="noopener">Repeater directory<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h2><a href="membership.html">Membership</a></h2>
+          <ul role="list">
+            <li><a href="membership.html">Join or renew</a></li>
+            <li><a href="membership.html#dues">Paying your dues</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2><a href="resources.html">Resources</a></h2>
+          <ul role="list">
+            <li><a href="resources.html#faq">FAQ</a></li>
+            <li><a href="resources.html#library">Documents and forms</a></li>
+            <li><a href="resources.html#volunteer">Volunteer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>News and contact</h2>
+          <ul role="list">
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mailto:info@wi-ra.org">Info@wi-ra.org</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="footer__legal">
+        <dl class="footer__facts">
+          <div><dt>EIN</dt><dd>42-4481796</dd></div>
+          <div><dt>Status</dt><dd><span class="nowrap">501(c)(3)</span> public charity, Section <span class="nowrap">509(a)(2)</span></dd></div>
+          <!-- EDITABLE: replace the tag below with the WRA mailing address -->
+          <div><dt>Mailing address</dt><dd><span class="tbc">To be supplied</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 Wisconsin Repeater Alliance, Inc. All rights reserved.</p>
+        <ul role="list">
+          <li><a href="resources.html#library">Bylaws and policies</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

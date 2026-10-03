@@ -1,0 +1,27 @@
+TITLE: Contact Us – Wisconsin Repeater Alliance
+<h1> Contact the Wisconsin Repeater Alliance
+<h2> Questions about coordination, membership or volunteering? Send us a message and a member of the team will get back to you.
+<h2> Who should contact us
+<text> Our contact channels are open to repeater owners, amateur radio operators, amateur radio clubs, WRA members and other Wisconsin stakeholders. If your inquiry relates to a specific repeater, including your callsign and site location helps us respond more quickly.
+<h2> Prefer to read first?
+<text> Many common questions are answered on our
+<text> , and you can learn more about the coordination process on the
+<text> and
+<text> pages.
+[link] FAQ page -> https://wi-ra.org/faq/
+[link] Repeater Coordination -> https://wi-ra.org/repeater-coordination/
+[link] What Is Frequency Coordination? -> https://wi-ra.org/frequency-coordination/
+<h2> Get in touch
+<text> The Wisconsin Repeater Alliance welcomes inquiries from repeater owners, amateur radio operators, clubs, members and other Wisconsin stakeholders. Whether you’re asking about a new coordination, an existing system, membership or how to get involved, use the form below and we’ll respond as soon as we can.
+[form] 
+[input] type=hidden name=post_id
+[input] type=hidden name=form_id
+[input] type=hidden name=referer_title
+[input] type=hidden name=queried_id
+[input] type=text name=form_fields[name] id=form-field-name
+[input] type=text name=form_fields[field_6617b64] id=form-field-field_6617b64
+[input] type=email name=form_fields[email] id=form-field-email
+[select] name=form_fields[field_ebe561f] id=form-field-field_ebe561f
+[textarea] name=form_fields[message] id=form-field-message
+[input] type=checkbox id=form-field-field_15d7fb9-0 name=form_fields[field_15d7fb9]
+<text> Submit

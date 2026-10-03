@@ -1,0 +1,46 @@
+TITLE: ARCS, Amateur Radio Coordination System – Wisconsin Repeater Alliance
+<h1> ARCS, Amateur Radio Coordination System
+<li> September 12, 2026
+<li> News
+<text> Facebook
+<text> LinkedIn
+<text> X
+[img] /wp-content/uploads/2026/09/ARCS-Logo.png alt=""
+<p> ARCS Development Update
+<p> After months of development, testing, and refinement, ARCS is no longer just an idea. It’s a working, cloud-based coordination platform built specifically for the amateur radio community.
+<p> • Automated coordination workflows • Integrated FCC lookups and license monitoring • One-click Longley-Rice interference analysis • Automatic ERP calculations • Self-service renewals and record ownership management • Interactive mapping and repeater directory • Multi-state data migration already completed
+<p> Designed for speed, reliability, and scalability, ARCS is being built on Microsoft Azure with enterprise-grade infrastructure, automated backups, and two-factor authentication for every account.
+<p> What excites me most is not simply replacing legacy processes, but bringing modern spectrum management, automation, and data-driven coordination tools to amateur radio.
+<p> The core system is already functioning, and development is now shifting toward advanced spectrum management, reporting, analytics, and additional automation.
+<p> More ARCS info with screen shots
+<h2> Read Other Blogs
+[img] /wp-content/uploads/2026/09/501c3.png alt=""
+<text> News
+<h3> Wisconsin Repeater Alliance Receives Federal 501(c)(3) Public Charity Status
+<p> September 24, 2026 The Wisconsin Repeater Alliance is proud to announce that we have officially been recognized by the Internal Revenue Service (IRS) as a
+[link] Read More » -> https://wi-ra.org/wisconsin-repeater-alliance-receives-federal-501c3-public-charity-status/
+<text> 09/24/2026
+[img] /wp-content/uploads/2026/09/ARCS-Logo.png alt=""
+<text> News
+<h3> ARCS, Amateur Radio Coordination System
+<p> ARCS Development Update After months of development, testing, and refinement, ARCS is no longer just an idea. It’s a working, cloud-based coordination platform built specifically
+[link] Read More » -> https://wi-ra.org/arcs-amateur-radio-coordination-system/
+<text> 09/12/2026
+[img] /wp-content/uploads/2026/08/WI-RA-Logo.webp alt="Wisconsin Repeater Alliance logo"
+<text> News
+<h3> An Open Letter to the Wisconsin Amateur Radio Community
+<p> An Open Letter to the Wisconsin Amateur Radio Community Over the past several weeks, I have seen a number of questions, concerns, and rumors circulating
+[link] Read More » -> https://wi-ra.org/an-open-letter-to-the-wisconsin-amateur-radio-community/
+<text> 09/11/2026
+[img] /wp-content/uploads/2026/08/ianbreals_The_Wisconsin_Repeater_Alliance_uses_ARCS_as_its_co_2f170bc9-a611-4abc-a3d5-aa2963f1e9f0_0.png alt=""
+<text> News
+<h3> Wisconsin Association of Repeaters Announces Organizational Transition and Future of Repeater Coordination in Wisconsin
+<p> The Wisconsin Association of Repeaters (WAR) announces that it has begun the formal process of winding up its affairs and transitioning repeater coordination responsibilities to Wisconsin
+[link] Read More » -> https://wi-ra.org/lorem-ipsum-dolor-sit-amet-consectetur-2/
+<text> 08/26/2026
+[img] /wp-content/uploads/2026/08/ChatGPT-Image-Aug-26-2026-09_37_56-PM.png alt=""
+<text> News
+<h3> Welcome to the new Wisconsin Repeater Alliance website
+<p> The Wisconsin Repeater Alliance is pleased to launch its new website. Here you can learn about frequency coordination, apply for repeater coordination, become a member,
+[link] Read More » -> https://wi-ra.org/news-welcome-to-wra/
+<text> 08/26/2026

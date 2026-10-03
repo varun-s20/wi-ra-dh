@@ -1,0 +1,49 @@
+TITLE: FAQ – Wisconsin Repeater Alliance
+<h1> Frequently Asked Questions
+<h2> Clear answers about coordination, membership and how the Wisconsin Repeater Alliance works.
+[link] Still have a question? -> https://wi-ra.org/contact/
+<text> Still have a question?
+<summary> What is the Wisconsin Repeater Alliance?
+<text> The Wisconsin Repeater Alliance, Inc. (WRA) is a Wisconsin nonprofit corporation dedicated to the coordination and stewardship of amateur radio repeater spectrum throughout the state. The Alliance is governed by a nine-member Board of Directors made up of Wisconsin amateur radio operators and community volunteers committed to fair, technically sound and transparent spectrum management. As a federally recognized 501(c)(3) nonprofit, WRA operates exclusively in support of the amateur radio community and the public benefit.
+<summary> Why is frequency coordination important?
+<text> Amateur radio repeater frequencies are a limited shared resource, and frequency coordination helps ensure repeater systems operate efficiently with minimal interference. Through technical review and engineering analysis, coordination promotes reliable repeater operation, reduced interference, efficient spectrum use, fair access to available frequencies and long-term protection of repeater investments. The goal is to help all repeater owners successfully share Wisconsin’s amateur radio spectrum.
+<summary> Who makes coordination decisions?
+<text> Coordination reviews are performed by individuals authorized by the Wisconsin Repeater Alliance and operating under policies established by the Board of Directors. Decisions are based on established technical standards, engineering analysis and documented policy rather than individual preference. Because WRA is governed by a Board of Directors, oversight and accountability are built into the organization’s structure.
+<summary> Is WRA affiliated with the FCC?
+<text> No. The Wisconsin Repeater Alliance is an independent nonprofit amateur radio organization and is not part of the Federal Communications Commission. However, amateur repeater coordination is recognized by the FCC under Part 97 rules, and coordinated systems may receive certain protections not afforded to uncoordinated systems.
+<summary> Why is WRA organized as a nonprofit?
+<text> WRA was established as a Wisconsin nonprofit corporation and operates as a 501(c)(3) charitable organization to ensure that repeater coordination remains focused on service to the amateur radio community rather than private interests. This structure provides public accountability, organizational continuity, transparent governance, long-term stability, and the protection and preservation of coordination records. The Alliance exists to serve Wisconsin amateur radio operators and repeater owners for generations to come.
+<summary> How do I apply for a new repeater coordination?
+<text> Applications may be submitted to the Wisconsin Repeater Alliance. Applicants are generally asked to provide their callsign, site location, antenna information, proposed frequency pair, operating mode, power levels, coverage objectives and contact information. Once submitted, the application enters the review process and may require additional technical information. See our
+<text> page for details.
+[link] Repeater Coordination -> https://wi-ra.org/repeater-coordination/
+<summary> Can I request a specific frequency pair?
+<text> Yes. Applicants are welcome to request a particular frequency pair, though assignments depend on availability, engineering considerations and compatibility with existing coordinated systems. In some cases WRA may recommend alternative frequencies that better support spectrum efficiency and interference prevention.
+<summary> How long does the coordination process take?
+<text> Coordination times vary with the complexity of the request and the availability of spectrum. Simple applications may be processed quickly, while requests involving heavily occupied bands, large coverage areas or potential interference may require additional engineering review. WRA aims to provide timely, thorough evaluations for every applicant.
+<summary> What if I need to change my repeater?
+<text> Significant modifications should be submitted for review before implementation — including site relocation, antenna height changes, power increases, frequency changes, coverage expansion, changes in operating mode, or the addition of linked systems. Updating coordination records maintains accurate data and protects both your system and neighboring systems.
+<summary> Does coordination need to be renewed?
+<text> The Alliance may periodically review coordination records to keep information current and accurate. Repeater owners may be asked to verify contact information, equipment status, operational status and technical parameters. Maintaining accurate records benefits both repeater owners and the wider community.
+<summary> What happens if my repeater goes off the air?
+<text> If a coordinated repeater will be inactive for an extended period, owners are encouraged to notify WRA. Accurate records support responsible spectrum management and allow the Alliance to keep the coordination database up to date.
+<summary> Does WRA coordinate digital repeaters?
+<text> Yes. The Wisconsin Repeater Alliance supports modern amateur radio technologies and coordinates both analog and digital repeater systems, subject to available spectrum resources and technical compatibility.
+<summary> What if another repeater is causing interference?
+<text> WRA can assist by reviewing coordination records and technical information related to reported interference. The Alliance encourages cooperation among repeater owners and seeks practical, technically sound solutions. Many concerns can be resolved through communication, engineering review and voluntary corrective action.
+<summary> Can clubs own coordinated repeaters?
+<text> Absolutely. Many of Wisconsin’s repeater systems are owned and operated by amateur radio clubs, technical organizations, emergency communications groups and other nonprofits. WRA actively supports club-owned systems and recognizes their important role in serving local communities and advancing amateur radio.
+<summary> Will my personal information be made public?
+<text> No. The Wisconsin Repeater Alliance is committed to protecting sensitive personal information. While certain system information may appear in public repeater directories, personal contact information and administrative records are handled in accordance with Alliance policies and applicable privacy requirements.
+<summary> How is WRA funded?
+<text> As a nonprofit, the Wisconsin Repeater Alliance relies on membership dues, coordination-related support, donations, sponsorships and other lawful sources of support. All revenue supports the Alliance’s mission of coordination, spectrum management, record keeping, education and community service.
+<summary> How can I support the Wisconsin Repeater Alliance?
+<text> Repeater owners, clubs, businesses and individual operators can support the Alliance through membership, volunteer service, technical expertise, donations, sponsorships and participation in committees and programs. Strong community involvement helps ensure the long-term success of amateur radio repeater coordination in Wisconsin.
+<text> or
+<text> .
+[link] Become a member -> https://wi-ra.org/membership/
+[link] volunteer with us -> https://wi-ra.org/volunteer/
+<h2> Didn't find your answer?
+<text> Get in touch and we’ll be glad to help.
+[link] Contact WRA -> https://wi-ra.org/contact/
+<text> Contact WRA

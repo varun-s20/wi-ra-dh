@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wi-ra.org/sitemap.xml

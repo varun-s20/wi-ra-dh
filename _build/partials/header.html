@@ -1,0 +1,114 @@
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M6.5 17.5 17 7M8.5 6.5H17.5V15.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 10 10"><path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor"/></symbol>
+    <symbol id="i-play" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2"/></symbol>
+  </svg>
+
+  <!-- ================= HEADER =================
+       One navigation structure, mirrored in the mobile drawer and the footer:
+       Home (logo), About WRA, Coordination, ARCS, Membership, Resources, News, Contact. -->
+  <header class="hdr">
+    <div class="hdr__utility">
+      <div class="wrap hdr__utility-inner">
+        <p>Wisconsin nonprofit corporation <span aria-hidden="true">&middot;</span> <span class="nowrap">501(c)(3)</span> public charity</p>
+        <ul role="list">
+          <li><a href="mailto:info@wi-ra.org">Info@wi-ra.org</a></li>
+          <li><a href="https://arcsonline.org/repeaters/" target="_blank" rel="noopener">Repeater directory<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a class="hdr__arcs" href="https://arcsonline.org/" target="_blank" rel="noopener">Sign in to ARCS<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap hdr__bar">
+      <a class="brand" href="index.html">
+        <img class="brand__seal" src="assets/img/brand/wra-seal-160.webp" width="46" height="46" alt="">
+        <span class="brand__text"><span class="brand__name">Wisconsin Repeater Alliance</span><span class="brand__tag">Repeater frequency coordination</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list" role="list">
+          <li class="nav__item"><a class="nav__link" data-nav="about" href="about.html">About WRA</a></li>
+          <li class="nav__item">
+            <button class="nav__link nav__toggle" type="button" data-nav="coordination" aria-expanded="false" aria-controls="nav-coordination">Coordination<svg class="nav__chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <div class="nav__panel" id="nav-coordination">
+              <a href="coordination.html"><strong>What is frequency coordination?</strong><span>How Wisconsin shares a limited spectrum resource fairly.</span></a>
+              <a href="coordination-process.html"><strong>Repeater coordination</strong><span>Apply, modify, renew or report interference.</span></a>
+              <a href="coordination-process.html#checklist"><strong>Pre-application checklist</strong><span>Everything to gather before you apply.</span></a>
+            </div>
+          </li>
+          <li class="nav__item"><a class="nav__link" data-nav="arcs" href="arcs.html">ARCS</a></li>
+          <li class="nav__item">
+            <button class="nav__link nav__toggle" type="button" data-nav="membership" aria-expanded="false" aria-controls="nav-membership">Membership<svg class="nav__chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <div class="nav__panel" id="nav-membership">
+              <a href="membership.html"><strong>Join or renew</strong><span>Support Wisconsin's repeater infrastructure for $20 a year.</span></a>
+              <a href="membership.html#dues"><strong>Paying your dues</strong><span>Secure online payment through Zeffy.</span></a>
+            </div>
+          </li>
+          <li class="nav__item">
+            <button class="nav__link nav__toggle" type="button" data-nav="resources" aria-expanded="false" aria-controls="nav-resources">Resources<svg class="nav__chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <div class="nav__panel" id="nav-resources">
+              <a href="resources.html#faq"><strong>Frequently asked questions</strong><span>Clear answers about coordination, membership and WRA.</span></a>
+              <a href="resources.html#library"><strong>Documents and forms</strong><span>Bylaws, policies, band plans and the checklist.</span></a>
+              <a href="resources.html#volunteer"><strong>Volunteer</strong><span>Whatever your background, there's a role for you.</span></a>
+            </div>
+          </li>
+          <li class="nav__item"><a class="nav__link" data-nav="news" href="news.html">News</a></li>
+          <li class="nav__item"><a class="nav__link" data-nav="contact" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--sm hdr__cta" href="membership.html">Become a Member</a>
+
+      <button class="hdr__menu" type="button" aria-expanded="false" aria-controls="drawer">
+        <span class="hdr__menu-label">Menu</span><span class="hdr__bars" aria-hidden="true"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE DRAWER (same structure) ================= -->
+  <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="drawer__panel">
+      <nav aria-label="Site menu">
+        <ul class="drawer__list" role="list">
+          <li><a class="drawer__link" href="index.html">Home</a></li>
+          <li><a class="drawer__link" href="about.html">About WRA</a></li>
+          <li>
+            <button class="drawer__link drawer__toggle" type="button" aria-expanded="false" aria-controls="dr-coordination">Coordination<svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <ul class="drawer__sub" id="dr-coordination" role="list" hidden>
+              <li><a href="coordination.html">What is frequency coordination?</a></li>
+              <li><a href="coordination-process.html">Repeater coordination</a></li>
+              <li><a href="coordination-process.html#checklist">Pre-application checklist</a></li>
+            </ul>
+          </li>
+          <li><a class="drawer__link" href="arcs.html">ARCS</a></li>
+          <li>
+            <button class="drawer__link drawer__toggle" type="button" aria-expanded="false" aria-controls="dr-membership">Membership<svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <ul class="drawer__sub" id="dr-membership" role="list" hidden>
+              <li><a href="membership.html">Join or renew</a></li>
+              <li><a href="membership.html#dues">Paying your dues</a></li>
+            </ul>
+          </li>
+          <li>
+            <button class="drawer__link drawer__toggle" type="button" aria-expanded="false" aria-controls="dr-resources">Resources<svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+            <ul class="drawer__sub" id="dr-resources" role="list" hidden>
+              <li><a href="resources.html#faq">Frequently asked questions</a></li>
+              <li><a href="resources.html#library">Documents and forms</a></li>
+              <li><a href="resources.html#volunteer">Volunteer</a></li>
+            </ul>
+          </li>
+          <li><a class="drawer__link" href="news.html">News</a></li>
+          <li><a class="drawer__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="drawer__actions">
+        <a class="btn" href="membership.html">Become a Member</a>
+        <a class="btn btn--ghost btn--ext" href="https://arcsonline.org/" target="_blank" rel="noopener">Sign in to ARCS<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <p class="drawer__meta"><a href="mailto:info@wi-ra.org">Info@wi-ra.org</a> &middot; <span class="nowrap">501(c)(3)</span> public charity</p>
+      </div>
+    </div>
+  </div>

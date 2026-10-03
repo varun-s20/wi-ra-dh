@@ -1,0 +1,37 @@
+TITLE: Amateur Radio Coordination System (ARCS) – Wisconsin Repeater Alliance
+<h1> Amateur Radio Coordination System (ARCS)
+<h2> Modern tools for modern frequency coordination — built specifically for amateur radio.
+[link] Visit the ARCS Platform -> https://arcsonline.org
+<text> Visit the ARCS Platform
+[link] Learn About Coordination -> https://wi-ra.org/frequency-coordination/
+<text> Learn About Coordination
+<h2> Modern tools for modern frequency coordination
+<text> The Amateur Radio Coordination System (ARCS) is a comprehensive coordination platform developed specifically for amateur radio frequency coordination organizations, repeater owners and the amateur radio community. ARCS was created to provide modern tools that improve coordination efficiency, preserve valuable records and support responsible spectrum management.
+<text> For many years, frequency coordinators have relied on spreadsheets, legacy software, paper records and manual processes. While these systems served the community well, many organizations now face growing administrative demands, ageing technology and increasing challenges around record preservation and technical analysis. ARCS was developed to meet those challenges.
+<h2> What ARCS provides
+<p> ARCS brings the tools needed to manage frequency coordination into a single platform, including:
+<li> Online repeater application processing
+<li> Automated record management
+<li> Conflict detection and analysis
+<li> GIS mapping and coverage visualization
+<li> Engineering and technical reporting
+<li> Digital coordination workflows
+<li> Document and correspondence management
+<li> Historical coordination tracking
+<text> These capabilities help coordination organizations work more efficiently while maintaining accurate, accessible records.
+<h2> Supporting Wisconsin repeater coordination
+<text> The Wisconsin Repeater Alliance uses ARCS as its coordination platform to manage repeater coordination activities and spectrum records. ARCS supports the Alliance’s commitment to fair and transparent coordination, accurate record keeping, technical and engineering-based review, long-term preservation of coordination records, and improved service to repeater owners and operators. By reducing administrative workload, the platform lets volunteers and coordinators focus more on technical review, spectrum stewardship and supporting Wisconsin’s amateur radio community.
+<h2> Technology that supports coordinators, not replaces them
+<text> A guiding principle behind ARCS is that technology should support coordinators, not replace them. Organizations using ARCS keep their own policies, procedures, review processes and decision-making authority over frequency assignments in their service areas. For the Wisconsin Repeater Alliance, this means coordination decisions remain under the authority of the organization and its governing structure, while benefiting from modern technology and improved data management.
+<h2> Built specifically for amateur radio
+<text> ARCS was designed exclusively for amateur radio frequency coordination and supports the needs of frequency coordination bodies, repeater owners, amateur radio clubs, emergency communications organizations, technical review committees and individual operators. Because it was built specifically for coordination activities, ARCS provides tools tailored to the unique requirements of amateur radio spectrum management rather than relying on general-purpose software.
+<h2> Why ARCS matters
+<text> Accurate coordination records, engineering analysis and efficient review processes are essential to protecting amateur radio spectrum and supporting reliable repeater operation. ARCS helps coordination organizations reduce administrative workload, improve consistency and accuracy, preserve valuable historical records, enhance technical review capabilities, support repeater growth and strengthen cooperation between coordination organizations.
+<h2> Looking ahead
+<text> ARCS represents a commitment to the future of amateur radio frequency coordination. By combining modern technology with sound engineering practice and the experience of volunteer coordinators, the platform helps reduce interference, improve coordination efficiency, preserve historical records, improve data accuracy, support repeater growth and strengthen cooperation within the amateur radio community. The goal is simple: a sustainable, modern framework that supports amateur radio repeater coordination for generations to come.
+<h2> Supporting coordinators. Strengthening amateur radio.
+<text> Explore the ARCS platform or learn how coordination works in Wisconsin.
+[link] Visit ARCS -> https://arcsonline.org/
+<text> Visit ARCS
+[link] Repeater Coordination -> https://wi-ra.org/repeater-coordination/
+<text> Repeater Coordination

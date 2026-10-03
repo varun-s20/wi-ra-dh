@@ -1,0 +1,48 @@
+TITLE: Repeater Coordination – Wisconsin Repeater Alliance
+<h1> Repeater Coordination in Wisconsin
+<h2> Apply for a new coordination, update an existing system, or resolve interference — reviewed fairly and consistently under WRA's established process.
+[link] Start a Coordination Request -> https://wi-ra.org/arcs/
+<text> Start a Coordination Request
+[link] What Is Frequency Coordination? -> https://wi-ra.org/frequency-coordination/
+<text> What Is Frequency Coordination?
+<h2> Coordinating repeater systems across Wisconsin
+<text> The Wisconsin Repeater Alliance provides frequency coordination for amateur radio repeater systems operating throughout Wisconsin. Coordination reviews are performed by individuals authorized by WRA and operating under policies established by the Board of Directors, so that decisions are based on technical standards, engineering analysis and documented policy rather than individual preference.
+<h2> How to apply for a new repeater coordination
+<li> Callsign
+<li> Site location
+<li> Antenna information
+<li> Proposed frequency pair
+<li> Operating mode
+<li> Power levels
+<li> Coverage objectives
+<li> Contact information
+<text> Once submitted, the application enters the review process and may require additional technical information.
+[link] Start a Coordination Request -> https://wi-ra.org/contact/
+<text> Start a Coordination Request
+<h2> Can I request a specific frequency pair?
+<text> Yes. Applicants are welcome to request a particular frequency pair. However, frequency assignments depend on availability, engineering considerations and compatibility with existing coordinated systems. In some cases WRA may recommend alternative frequencies that better support spectrum efficiency and interference prevention.
+<h2> How long does coordination take?
+<p> Coordination times vary depending on the complexity of the request and the availability of spectrum resources. Simple applications may be processed quickly, while applications involving heavily occupied bands, large coverage areas or potential interference concerns may require additional engineering review. WRA’s goal is to provide timely and thorough evaluations for every applicant.
+<h2> Updating or changing an existing repeater
+<li> Site relocation
+<li> Antenna height changes
+<li> Power increases
+<li> Frequency changes
+<li> Coverage expansion
+<li> Changes in operating mode
+<li> Addition of linked systems
+<text> Keeping coordination records up to date helps maintain accurate data and protects both your system and neighboring systems.
+<h2> Analog and digital systems
+<text> WRA supports modern amateur radio technologies and coordinates both analog and digital repeater systems, subject to available spectrum resources and technical compatibility.
+<h2> Reporting and resolving interference
+<text> If another repeater is causing interference, WRA can assist by reviewing coordination records and technical information related to the reported issue. The Alliance encourages cooperation among repeater owners and seeks practical, technically sound solutions. Many concerns can be resolved through communication, engineering review and voluntary corrective action.
+<h2> Keeping records current
+<text> WRA may periodically review coordination records to ensure information remains accurate. Repeater owners may be asked to verify contact information, equipment status, operational status and technical parameters. If a coordinated repeater will be off the air for an extended period, owners are encouraged to notify WRA so records stay up to date and spectrum is managed responsibly.
+<h2> Your privacy
+<text> WRA is committed to protecting sensitive personal information. While certain system information may appear in public repeater directories, personal contact information and administrative records are handled in accordance with Alliance policies and applicable privacy requirements.
+<h2> Have a question before you apply?
+<text> Our team is happy to help you understand the process and what you’ll need.
+[link] Contact WRA -> https://wi-ra.org/contact/
+<text> Contact WRA
+[link] Read the FAQ -> https://wi-ra.org/faq/
+<text> Read the FAQ

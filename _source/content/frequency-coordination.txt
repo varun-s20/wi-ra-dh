@@ -1,0 +1,40 @@
+TITLE: What Is Frequency Coordination? – Wisconsin Repeater Alliance
+<h1> What Is Frequency Coordination?
+<h2> How Wisconsin's amateur radio community shares a limited spectrum resource fairly and with minimal interference.
+[link] Apply for Coordination -> https://wi-ra.org/repeater-coordination/
+<text> Apply for Coordination
+[link] Read the FAQ -> https://wi-ra.org/faq/
+<text> Read the FAQ
+<h2> Managing a shared spectrum resource
+<text> Frequency coordination is the process of evaluating, assigning and managing repeater frequencies to minimize interference and promote efficient use of the amateur radio spectrum. Amateur radio repeater frequencies are a limited resource shared by thousands of operators, clubs and organizations across Wisconsin and the United States. Without coordination, multiple repeater systems could operate on the same or nearby frequencies in the same geographic area, resulting in interference, degraded performance and reduced usefulness for everyone. The goal of coordination is simple: to allow as many repeater systems as possible to operate successfully while minimizing harmful interference.
+<h2> Why is coordination necessary?
+<li> Existing coordinated systems
+<li> Geographic location
+<li> Elevation and terrain
+<li> Antenna height
+<li> Transmitter power
+<li> Operating mode
+<li> Coverage area
+<li> Potential co-channel interference
+<li> Potential adjacent-channel interference
+<text> A properly coordinated repeater improves spectrum efficiency while reducing the likelihood of conflicts between systems.
+<h2> What is a coordinated repeater ?
+<text> A coordinated repeater is one whose operating parameters have been reviewed and approved through an established frequency coordination process. Coordination generally includes assignment of a frequency pair, review of operating characteristics, evaluation of potential interference concerns, documentation of system information and inclusion in coordination records. A coordinated system becomes part of an organized spectrum-management plan designed to benefit the whole amateur radio community.
+<h2> What frequency coordination is not
+<text> Frequency coordination does not give ownership of a frequency. No amateur radio operator or organization owns a particular repeater frequency. Instead, coordination is a documented recommendation intended to promote efficient use of spectrum and reduce interference among systems operating in the same region. It is fundamentally about cooperation, planning and responsible spectrum stewardship.
+<h2> How coordination benefits repeater owners
+<text> Coordination gives repeater owners confidence that their systems have been evaluated in the context of other coordinated systems. Benefits include reduced interference risk, improved system reliability, better spectrum utilization, documented coordination records, technical review and guidance, and long-term spectrum planning. Coordination also helps protect the significant investment many owners make in equipment, infrastructure, sites and maintenance.
+<h2> How coordination benefits operators
+<text> Operators benefit whenever repeater systems can coexist without interfering with one another. Effective coordination helps provide more reliable repeater operation, improved coverage, better audio quality, expanded communication opportunities, more efficient spectrum use and stronger statewide repeater networks. The result is a healthier and more active amateur radio community.
+<h2> Supporting emergency communications
+<text> Wisconsin’s repeater infrastructure plays an important role in emergency communications, weather spotting, public service events and disaster response. Well-coordinated systems help ensure communication resources remain available when they are needed most. Coordination supports organizations and activities including ARES, RACES, SKYWARN, public service events and community emergency response efforts. Reliable communications begin with responsible spectrum management.
+<h2> The Wisconsin Repeater Alliance's role
+<text> The Wisconsin Repeater Alliance serves as a steward of Wisconsin’s amateur radio repeater spectrum. As a Wisconsin nonprofit corporation governed by a nine-member Board of Directors, the Alliance works to promote fair, transparent and technically sound coordination practices across the state. Our mission is not simply to assign frequencies, but to help maintain an organized, sustainable repeater environment that benefits repeater owners, clubs, emergency communications organizations and the amateur radio community as a whole.
+<h2> Frequency coordination is spectrum stewardship
+<text> Frequency coordination is more than a technical process — it is a commitment to preserving and protecting amateur radio spectrum for current and future generations. By working together and following established coordination practices, Wisconsin’s amateur radio community can continue to expand coverage, reduce interference, encourage innovation and strengthen the communications resources that serve operators across the state.
+<h2> Ready to coordinate your repeater?
+<text> Start your application or learn what information you’ll need to provide.
+[link] Repeater Coordination -> https://wi-ra.org/repeater-coordination/
+<text> Repeater Coordination
+[link] Contact WRA -> https://wi-ra.org/contact/
+<text> Contact WRA

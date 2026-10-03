@@ -1,0 +1,38 @@
+TITLE: Wisconsin Repeater Alliance – Coordinating Wisconsin's Amateur Radio Spectrum
+<h2> Amateur Radio repeater coordination
+<h2> The Wisconsin Repeater Alliance provides fair, transparent and engineering-based frequency coordination for repeater owners, radio clubs and amateur operators across Wisconsin.
+[link] Become a Member -> https://wi-ra.org/membership/
+<text> Become a Member
+[link] How Coordination Works -> https://wi-ra.org/frequency-coordination/
+<text> How Coordination Works
+<h2> Supporting repeater owners across Wisconsin
+<text> The Wisconsin Repeater Alliance, Inc. (WRA) is a nonprofit organization dedicated to the responsible coordination and management of amateur radio repeater systems throughout Wisconsin. Through sound engineering practices, collaboration and transparency, we help repeater owners, radio clubs and amateur operators make the best possible use of the amateur radio spectrum while minimizing interference and preserving reliable communications. Whether you are applying for a new repeater, updating an existing system, or searching for coordinated repeater information, WRA provides the resources and guidance the Wisconsin amateur radio community needs.
+<h2> What We Do
+<text> WRA reviews and recommends repeater frequencies so that as many systems as possible can operate successfully with minimal interference. Our coordination work includes new repeater applications, review of system modifications, frequency assignment recommendations, interference prevention and the maintenance of accurate coordination records for the state.
+<h2> Explore WRA
+<h3> What Is Frequency Coordination?
+<p> Understand how shared spectrum is managed and why coordination matters.
+[link] Learn More -> https://wi-ra.org/frequency-coordination/
+<text> Learn More
+<h3> Repeater Coordination.
+<p> Apply for a new system, update an existing one, or resolve interference.
+[link] Learn More -> https://wi-ra.org/repeater-coordination/
+<text> Learn More
+<h3> Amateur Radio Coordination System (ARCS).
+<p> The modern platform behind WRA's coordination work.
+[link] Learn More -> https://arcsonline.org
+<text> Learn More
+<h3> Membership.
+<p> Support Wisconsin's repeater infrastructure for just $20 a year.
+[link] Learn More -> https://wi-ra.org/membership/
+<text> Learn More
+<h2> Built on trust and accountability
+<p> WRA is a Wisconsin nonprofit corporation operating as a federally recognized 501(c)(3) charitable organization, governed by a nine-member Board of Directors. Coordination decisions are made under established policies and technical standards rather than individual preference, giving repeater owners confidence that every application receives fair and consistent consideration.
+<h2> Supporting public service and emergency communications
+<text> Wisconsin’s repeater infrastructure plays a critical role during severe weather, public service events and emergency response. Coordinated systems provide dependable communications for ARES, RACES and SKYWARN networks and for community emergency efforts across the state. WRA supports the continued development of reliable repeater networks that strengthen communications capabilities throughout Wisconsin.
+<h2> Join the effort to protect Wisconsin's amateur radio spectrum
+<text> Members help fund the tools, records and coordination services that keep Wisconsin’s repeater network reliable for everyone.
+[link] Become a Member -> https://wi-ra.org/membership/
+<text> Become a Member
+[link] Volunteer With Us -> https://wi-ra.org/volunteer/
+<text> Volunteer With Us

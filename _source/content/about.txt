@@ -1,0 +1,46 @@
+TITLE: About WRA – Wisconsin Repeater Alliance
+<h1> About the Wisconsin Repeater Alliance
+<h2> A nonprofit dedicated to fair, transparent and technically sound repeater coordination for Wisconsin's amateur radio community.
+[link] Become a Member -> https://wi-ra.org/membership/
+<text> Become a Member
+[link] Read Our Bylaws -> None
+<text> Read Our Bylaws
+<h2> Who We Are
+<text> The Wisconsin Repeater Alliance, Inc. is the frequency coordination body responsible for promoting efficient and interference-free operation of amateur radio repeater systems across Wisconsin. Our purpose is to provide fair, consistent and technically sound frequency coordination while supporting repeater owners, amateur radio clubs, emergency communication organizations and individual operators. For many years, volunteer coordinators have worked to keep Wisconsin’s repeater spectrum organized and accessible. WRA continues that tradition as a modern nonprofit, embracing up-to-date tools and engineering practices that improve coordination, record keeping and spectrum management. Through cooperation and technical expertise, we help maintain a robust repeater infrastructure that supports everyday communications, public service events, emergency communications and amateur radio experimentation throughout the state.
+<h2> Our Mission
+<text> The Wisconsin Repeater Alliance exists to promote the efficient and responsible use of amateur radio repeater spectrum throughout Wisconsin through engineering-based frequency coordination, technical guidance and collaboration with the amateur radio community. We are committed to minimizing interference, preserving spectrum resources, supporting repeater growth and ensuring reliable communications for current and future generations of amateur radio operators.
+<h2> Our Vision
+<text> To be Wisconsin’s trusted resource for amateur radio repeater coordination by providing fair, transparent and technically sound spectrum management, while fostering cooperation among repeater owners, clubs and amateur operators across the state.
+<h2> Our Mission
+<text> The Wisconsin Repeater Alliance exists to promote the efficient and responsible use of amateur radio repeater spectrum throughout Wisconsin through engineering-based frequency coordination, technical guidance and collaboration with the amateur radio community. We are committed to minimizing interference, preserving spectrum resources, supporting repeater growth and ensuring reliable communications for current and future generations of amateur radio operators.
+<h2> Our Vision
+<text> To be Wisconsin’s trusted resource for amateur radio repeater coordination by providing fair, transparent and technically sound spectrum management, while fostering cooperation among repeater owners, clubs and amateur operators across the state.
+<h2> What we do
+<li> Coordination of new repeater systems
+<li> Review of repeater modifications
+<li> Frequency assignment recommendations
+<li> Interference prevention and resolution
+<li> Technical review and engineering analysis
+<li> Maintenance of coordination records
+<li> Spectrum planning and management
+<li> Support for repeater owners and operators
+<p> Our goal is to ensure that amateur radio spectrum is used efficiently while providing the greatest possible benefit to the amateur radio community.
+<h2> How WRA is governed
+<p> WRA is a Wisconsin nonprofit corporation operating as a federally recognized 501(c)(3) charitable organization. The organization is governed by a nine-member Board of Directors elected in accordance with its bylaws. This structure means coordination decisions are made under established policies and Board oversight — not by any single individual — and it builds accountability and transparency into everything we do. Our bylaws are published so the community can see exactly how the organization is run.
+<h2> Our guiding principles
+<h3> Engineering first
+<p> Coordination decisions are based on accurate technical information and sound engineering practice.
+<h3> Fairness
+<p> Every applicant receives consistent and objective consideration.
+<h3> Transparency
+<p> Our coordination processes are clear and understandable.
+<h3> Collaboration
+<p> The amateur radio community is strongest when repeater owners, clubs and operators work together.
+<h3> Stewardship
+<p> Spectrum resources are preserved and managed responsibly for future generations.
+<h2> Be part of Wisconsin's repeater future
+<text> Membership and volunteers keep WRA independent, accountable and effective.
+[link] Become a Member -> https://wi-ra.org/membership/
+<text> Become a Member
+[link] Explore Volunteer Roles -> https://wi-ra.org/volunteer/
+<text> Explore Volunteer Roles

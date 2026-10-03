@@ -1,0 +1,45 @@
+TITLE: Volunteer Opportunities – Wisconsin Repeater Alliance
+<h1> Volunteer With the Wisconsin Repeater Alliance
+<h2> Help shape the future of amateur radio in Wisconsin. Whatever your background or experience level, there's a role for you.
+[link] Register Your Interest -> https://wi-ra.org/contact/
+<text> Register Your Interest
+[link] See the Roles -> #
+<text> See the Roles
+<h2> Help shape the future of amateur radio in Wisconsin
+<text> The Wisconsin Repeater Alliance is a volunteer-driven organization. Our success depends on the experience, dedication and enthusiasm of amateur radio operators willing to contribute their time and talents to repeater coordination and spectrum stewardship across the state. As a Wisconsin nonprofit governed by a nine-member Board of Directors, WRA welcomes volunteers from all backgrounds and experience levels — whether you’re a long-time repeater owner, an RF engineer, a club officer or a newly licensed amateur wanting to give back.
+<h2> Why volunteer ?
+<li> Preserve and protect Wisconsin's repeater spectrum
+<li> Improve coordination services for repeater owners
+<li> Support emergency communications infrastructure
+<li> Promote good engineering and operating practices
+<li> Assist fellow amateur radio operators
+<li> Strengthen the future of amateur radio in Wisconsin
+<h2> Volunteer opportunities
+<h2> Board and leadership opportunities
+<text> As a nonprofit, WRA is governed by a nine-member Board of Directors elected in accordance with the organization’s bylaws. Members in good standing may have opportunities to serve on committees, take part in leadership programs, run for Board positions as vacancies occur, and help guide the future of repeater coordination in Wisconsin. The Alliance is committed to cultivating future leaders who share a passion for amateur radio and public service.
+<h2> Professional skills are welcome
+<text> Not every volunteer role requires technical expertise. We are always looking for people with experience in accounting and finance, nonprofit administration, legal and regulatory matters, information technology, graphic design, writing and communications, fundraising and sponsorship development, and event planning. A successful organization needs a wide range of talents beyond engineering and repeater operations.
+<h2> Our volunteers make the difference
+<text> The Wisconsin Repeater Alliance believes effective spectrum stewardship is a community effort. Through volunteer service, collaboration and shared expertise, we can continue building and maintaining a reliable repeater infrastructure that serves amateur radio operators across Wisconsin for generations to come. Join us in protecting spectrum, supporting repeater owners and strengthening amateur radio throughout Wisconsin.
+<h2> How to get involved
+<text> Getting started is easy. Complete the volunteer interest form below and a member of our leadership team will help identify opportunities that match your interests and skills.
+[form] 
+[input] type=hidden name=post_id
+[input] type=hidden name=form_id
+[input] type=hidden name=referer_title
+[input] type=hidden name=queried_id
+[input] type=text name=form_fields[name] id=form-field-name
+[input] type=text name=form_fields[field_6617b64] id=form-field-field_6617b64
+[input] type=email name=form_fields[email] id=form-field-email
+[input] type=checkbox id=form-field-field_ebe561f-0 name=form_fields[field_ebe561f][]
+[input] type=checkbox id=form-field-field_ebe561f-1 name=form_fields[field_ebe561f][]
+[input] type=checkbox id=form-field-field_ebe561f-2 name=form_fields[field_ebe561f][]
+[input] type=checkbox id=form-field-field_ebe561f-3 name=form_fields[field_ebe561f][]
+[input] type=checkbox id=form-field-field_ebe561f-4 name=form_fields[field_ebe561f][]
+[input] type=checkbox id=form-field-field_ebe561f-5 name=form_fields[field_ebe561f][]
+[input] type=text name=form_fields[field_a0deb80] id=form-field-field_a0deb80
+[input] type=text name=form_fields[field_b9c836e] id=form-field-field_b9c836e
+[textarea] name=form_fields[message] id=form-field-message
+[input] type=checkbox id=form-field-field_15d7fb9-0 name=form_fields[field_15d7fb9]
+[input] type=text name=form_fields[field_b9c3530] id=form-field-field_b9c3530
+<text> Submit
