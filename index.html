@@ -22,12 +22,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400&display=swap">
-  <link rel="preload" as="image" href="assets/img/photos/tower-sky-1920.webp" imagesrcset="assets/img/photos/tower-sky-960.webp 960w, assets/img/photos/tower-sky-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/photos/rib-mountain-1920.webp" imagesrcset="assets/img/photos/rib-mountain-960.webp 960w, assets/img/photos/rib-mountain-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="css/wra.css">
   <script>document.documentElement.classList.add("js");</script>
   <script src="js/wra.js" defer></script>
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "NGO", "@id": "https://wi-ra.org/#org", "name": "Wisconsin Repeater Alliance, Inc.", "alternateName": ["WRA", "WI-RA"], "url": "https://wi-ra.org/", "logo": "https://wi-ra.org/assets/img/brand/wra-seal-640.webp", "email": "info@wi-ra.org", "nonprofitStatus": "Nonprofit501c3", "taxID": "42-4481796", "areaServed": {"@type": "State", "name": "Wisconsin"}, "description": "Fair, transparent and engineering-based frequency coordination for amateur radio repeater owners, radio clubs and operators across Wisconsin."}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "NGO", "@id": "https://wi-ra.org/#org", "name": "Wisconsin Repeater Alliance, Inc.", "alternateName": ["WRA", "WI-RA"], "url": "https://wi-ra.org/", "logo": "https://wi-ra.org/assets/img/brand/wra-logo-640.webp", "email": "info@wi-ra.org", "address": {"@type": "PostalAddress", "streetAddress": "1148 N. Sunnyslope Dr", "addressLocality": "Mount Pleasant", "addressRegion": "WI", "postalCode": "53406", "addressCountry": "US"}, "nonprofitStatus": "Nonprofit501c3", "taxID": "42-4481796", "areaServed": {"@type": "State", "name": "Wisconsin"}, "description": "Fair, transparent and engineering-based frequency coordination for amateur radio repeater owners, radio clubs and operators across Wisconsin."}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -57,8 +57,9 @@
 
     <div class="wrap hdr__bar">
       <a class="brand" href="index.html" aria-current="page">
-        <img class="brand__seal" src="assets/img/brand/wra-seal-160.webp" width="46" height="46" alt="">
-        <span class="brand__text"><span class="brand__name">Wisconsin Repeater Alliance</span><span class="brand__tag">Repeater frequency coordination</span></span>
+        <!-- WRA logo, stacked layout as supplied: light version over dark page heads, original colors once the header turns white -->
+        <img class="brand__logo brand__logo--light" src="assets/img/brand/wra-logo-nav-light-72.webp" srcset="assets/img/brand/wra-logo-nav-light-72.webp 1x, assets/img/brand/wra-logo-nav-light-144.webp 2x, assets/img/brand/wra-logo-nav-light-216.webp 3x" width="75" height="72" alt="Wisconsin Repeater Alliance: Coordinating Wisconsin Amateur Radio">
+        <img class="brand__logo brand__logo--dark" src="assets/img/brand/wra-logo-nav-72.webp" srcset="assets/img/brand/wra-logo-nav-72.webp 1x, assets/img/brand/wra-logo-nav-144.webp 2x, assets/img/brand/wra-logo-nav-216.webp 3x" width="75" height="72" alt="Wisconsin Repeater Alliance: Coordinating Wisconsin Amateur Radio">
       </a>
 
       <nav class="nav" aria-label="Primary">
@@ -84,7 +85,7 @@
             <button class="nav__link nav__toggle" type="button" data-nav="resources" aria-expanded="false" aria-controls="nav-resources">Resources<svg class="nav__chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
             <div class="nav__panel" id="nav-resources">
               <a href="resources.html#faq"><strong>Frequently asked questions</strong><span>Clear answers about coordination, membership and WRA.</span></a>
-              <a href="resources.html#library"><strong>Documents and forms</strong><span>Bylaws, policies, band plans and the checklist.</span></a>
+              <a href="resources.html#library"><strong>Documents and forms</strong><span>Bylaws, policies, the band plan and the checklist.</span></a>
               <a href="resources.html#volunteer"><strong>Volunteer</strong><span>Whatever your background, there's a role for you.</span></a>
             </div>
           </li>
@@ -148,14 +149,14 @@
     <!-- ================= HERO ================= -->
     <section class="hero" aria-labelledby="hero-title" data-interval="7000">
       <div class="hero__frame">
-        <figure class="hero__slide hero__slide--sky is-active" data-caption="Lattice tower against an open sky">
-          <img src="assets/img/photos/tower-sky-1920.webp" srcset="assets/img/photos/tower-sky-960.webp 960w, assets/img/photos/tower-sky-1920.webp 1920w" sizes="100vw" width="1920" height="1213" fetchpriority="high" alt="Red and white lattice communications tower carrying antennas against a blue sky">
+        <figure class="hero__slide hero__slide--rib is-active">
+          <img src="assets/img/photos/rib-mountain-1920.webp" srcset="assets/img/photos/rib-mountain-960.webp 960w, assets/img/photos/rib-mountain-1920.webp 1920w" sizes="100vw" width="1920" height="1280" fetchpriority="high" alt="Radio tower on Rib Mountain near Wausau, Wisconsin, rising above autumn trees">
         </figure>
-        <figure class="hero__slide hero__slide--forest" data-caption="Antenna array above the tree line">
-          <img data-src="assets/img/photos/tower-forest-1920.webp" data-srcset="assets/img/photos/tower-forest-960.webp 960w, assets/img/photos/tower-forest-1920.webp 1920w" sizes="100vw" width="1920" height="814" alt="Antenna tower rising above a forest canopy with rolling hills on the horizon">
+        <figure class="hero__slide hero__slide--lacrosse">
+          <img data-src="assets/img/photos/lacrosse-towers-1920.webp" data-srcset="assets/img/photos/lacrosse-towers-960.webp 960w, assets/img/photos/lacrosse-towers-1920.webp 1920w" sizes="100vw" width="1920" height="1440" alt="Two guyed radio towers on open marshland in La Crosse, Wisconsin">
         </figure>
-        <figure class="hero__slide hero__slide--array" data-caption="Dish and panel antennas">
-          <img data-src="assets/img/photos/tower-array-1335.webp" data-srcset="assets/img/photos/tower-array-760.webp 760w, assets/img/photos/tower-array-1335.webp 1335w" sizes="100vw" width="1335" height="2000" alt="Communication towers carrying dish and panel antennas against an open sky">
+        <figure class="hero__slide hero__slide--beam">
+          <img data-src="assets/img/photos/ham-beam-1600.webp" data-srcset="assets/img/photos/ham-beam-800.webp 800w, assets/img/photos/ham-beam-1600.webp 1600w" sizes="100vw" width="1600" height="1600" alt="Amateur radio beam antenna on a lattice tower against a blue sky">
         </figure>
       </div>
 
@@ -168,31 +169,8 @@
         </div>
       </div>
 
-      <!-- Signal lens: a blue-tinted duplicate clipped to a circle, headline in outline -->
-      <div class="hero__lens" aria-hidden="true" inert>
-        <div class="hero__frame">
-          <div class="hero__slide hero__slide--sky is-active"><img src="assets/img/photos/tower-sky-1920.webp" srcset="assets/img/photos/tower-sky-960.webp 960w, assets/img/photos/tower-sky-1920.webp 1920w" sizes="100vw" alt=""></div>
-          <div class="hero__slide hero__slide--forest"><img data-src="assets/img/photos/tower-forest-1920.webp" data-srcset="assets/img/photos/tower-forest-960.webp 960w, assets/img/photos/tower-forest-1920.webp 1920w" sizes="100vw" alt=""></div>
-          <div class="hero__slide hero__slide--array"><img data-src="assets/img/photos/tower-array-1335.webp" data-srcset="assets/img/photos/tower-array-760.webp 760w, assets/img/photos/tower-array-1335.webp 1335w" sizes="100vw" alt=""></div>
-        </div>
-        <div class="hero__center">
-          <p class="hero__heading"><span class="hero__kicker">Wisconsin Repeater Alliance, Inc.</span> <span class="hero__title">Amateur radio repeater coordination</span></p>
-          <p class="hero__lead">The Wisconsin Repeater Alliance provides fair, transparent and engineering-based frequency coordination for repeater owners, radio clubs and amateur operators across Wisconsin.</p>
-          <div class="hero__cta"><span class="btn">How Coordination Works</span><span class="btn btn--line">Become a Member</span></div>
-        </div>
-      </div>
-      <div class="hero__rings" aria-hidden="true"><i></i><i></i><i></i></div>
-
-      <div class="hero__foot">
-        <div class="hero__caption">
-          <div class="hero__count">
-            <button class="hero__pause" type="button" aria-label="Pause slideshow"><svg class="i-pause" aria-hidden="true"><use href="#i-pause"/></svg><svg class="i-play" aria-hidden="true"><use href="#i-play"/></svg></button>
-            <span><b class="hero__num">1</b> of 3</span>
-          </div>
-          <p class="hero__cap" aria-live="polite">Lattice tower against an open sky</p>
-          <div class="hero__progress" aria-hidden="true"><i></i></div>
-        </div>
-      </div>
+      <!-- Keyboard and screen-reader users can still stop the background images (WCAG 2.2.2); the button only appears on focus -->
+      <button class="hero__pause" type="button">Pause background images</button>
     </section>
 
     <!-- ================= QUICK ACCESS ================= -->
@@ -221,7 +199,7 @@
           <a class="qcell qcell--ext" href="https://arcsonline.org/" target="_blank" rel="noopener">
             <span class="qcell__idx">04</span>
             <span class="qcell__title">ARCS Login</span>
-            <span class="qcell__text">Sign in to ARCS, the platform behind WRA's coordination work.</span>
+            <span class="qcell__text">Sign in to ARCS, the platform WRA uses for coordination.</span>
             <span class="qcell__foot">arcsonline.org<span class="visually-hidden"> (opens in a new tab)</span></span>
           </a>
         </div>
@@ -233,7 +211,7 @@
       <div class="wrap grid who__grid">
         <figure class="who__media">
           <div class="frame" data-reveal="mask">
-            <img src="assets/img/photos/tower-dishes-1335.webp" srcset="assets/img/photos/tower-dishes-700.webp 700w, assets/img/photos/tower-dishes-1335.webp 1335w" sizes="(max-width: 900px) 100vw, 40vw" width="1335" height="2000" loading="lazy" alt="Lattice tower carrying microwave dishes and antennas against a pale sky">
+            <img src="assets/img/photos/ham-tower-aerial-1400.webp" srcset="assets/img/photos/ham-tower-aerial-700.webp 700w, assets/img/photos/ham-tower-aerial-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 40vw" width="1400" height="1050" loading="lazy" alt="Aerial view of a backyard amateur radio tower with beam and wire antennas in a residential neighborhood">
           </div>
         </figure>
         <div class="who__body" data-reveal style="--d:.1s">
@@ -245,88 +223,8 @@
           <div class="ruler">
             <div class="ruler__top"><span class="meta">Wisconsin nonprofit corporation</span><a class="alink" href="about.html">About WRA</a></div>
             <div class="ruler__bar" aria-hidden="true"></div>
-            <div class="ruler__foot"><span class="meta"><span class="nowrap">501(c)(3)</span> public charity</span><span class="meta">Nine-member board</span></div>
+            <div class="ruler__foot"><span class="meta"><span class="nowrap">501(c)(3)</span> public charity</span></div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= ONE PROCESS: WRA + ARCS ================= -->
-    <section class="band dark" aria-labelledby="process-title">
-      <div class="wrap">
-        <div class="grid band__head">
-          <div data-reveal>
-            <h2 class="eyebrow" id="process-title">What we do</h2>
-            <p class="statement">WRA coordinates Wisconsin's amateur spectrum. ARCS is how the work gets done.</p>
-            <p class="body-copy" style="margin-top:1.25rem">WRA reviews and recommends repeater frequencies so that as many systems as possible can operate successfully with minimal interference. Our coordination work includes new repeater applications, review of system modifications, frequency assignment recommendations, interference prevention and the maintenance of accurate coordination records for the state.</p>
-          </div>
-          <a class="alink" href="coordination-process.html" data-reveal>Repeater coordination</a>
-        </div>
-
-        <ol class="steps" role="list" data-reveal>
-          <li class="step"><span class="step__num">01</span><span class="step__title">Apply</span><span class="step__text">Repeater owners submit their system details through ARCS.</span><span class="owner owner--applicant">Applicant</span></li>
-          <li class="step"><span class="step__num">02</span><span class="step__title">Engineering analysis</span><span class="step__text">ARCS checks the proposal against existing coordinated systems with interference studies and propagation modeling.</span><span class="owner owner--arcs">ARCS</span></li>
-          <li class="step"><span class="step__num">03</span><span class="step__title">Review under published policy</span><span class="step__text">Coordinators authorized by WRA review the application under policies set by the Board of Directors.</span><span class="owner owner--wra">WRA</span></li>
-          <li class="step"><span class="step__num">04</span><span class="step__title">Decision and record</span><span class="step__text">The decision is documented and kept in Wisconsin's coordination records.</span><span class="owner owner--wra">WRA</span></li>
-        </ol>
-
-        <figure class="band__screen" data-reveal>
-          <div class="screen">
-            <div class="screen__bar" aria-hidden="true"><span class="screen__dots"><i></i><i></i><i></i></span><span class="screen__url">arcsonline.org</span></div>
-            <img src="assets/img/arcs/arcs-platform-top.webp" srcset="assets/img/arcs/arcs-platform-top-720.webp 720w, assets/img/arcs/arcs-platform-top.webp 1162w" sizes="(max-width: 1000px) 100vw, 62rem" width="1162" height="700" loading="lazy" alt="The ARCS home page: Spectrum Management for Amateur Radio, with Repeater Directory, Interactive Map, Frequency Coordination and Conflict Analysis tools">
-          </div>
-          <figcaption><span class="meta">The Amateur Radio Coordination System, developed and operated by WRA</span><a class="alink" href="arcs.html">About ARCS</a></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ================= GOVERNANCE ================= -->
-    <section class="trust" aria-labelledby="trust-title">
-      <div class="wrap grid trust__grid">
-        <div class="trust__body" data-reveal>
-          <h2 class="eyebrow" id="trust-title">Governance</h2>
-          <p class="statement">Built on trust and accountability</p>
-          <p class="body-copy">WRA is a Wisconsin nonprofit corporation operating as a federally recognized <span class="nowrap">501(c)(3)</span> charitable organization, governed by a nine-member Board of Directors. Coordination decisions are made under established policies and technical standards rather than individual preference, giving repeater owners confidence that every application receives fair and consistent consideration.</p>
-          <dl class="ledger ledger--2">
-            <div><dt>Organization</dt><dd>Wisconsin nonprofit corporation</dd></div>
-            <div><dt>Tax status</dt><dd><span class="nowrap">501(c)(3)</span> public charity</dd></div>
-            <div><dt>Governance</dt><dd>Nine-member Board of Directors</dd></div>
-            <div><dt>Decisions</dt><dd>Established policies and technical standards</dd></div>
-          </dl>
-          <div class="btn-row" style="align-items:center;gap:1rem 2rem">
-            <a class="btn" href="about.html#governance">How WRA is governed</a>
-            <a class="alink" href="news-501c3-public-charity-status.html"><span>Read the <span class="nowrap">501(c)(3)</span> announcement</span></a>
-          </div>
-        </div>
-        <figure class="trust__media">
-          <div class="frame" data-reveal="mask">
-            <img src="assets/img/photos/tower-climb-1200.webp" srcset="assets/img/photos/tower-climb-700.webp 700w, assets/img/photos/tower-climb-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 40vw" width="1200" height="800" loading="lazy" alt="Looking up inside a lattice tower as a technician climbs past mounted equipment">
-          </div>
-          <div class="trust__badge" data-reveal style="--d:.2s">
-            <img src="assets/img/brand/501c3-badge-480.webp" width="480" height="480" loading="lazy" alt="IRS recognized 501(c)(3) public charity seal. Federal tax-exempt organization, EIN 42-4481796, effective August 17, 2026.">
-            <p class="meta">IRS determination effective August 17, 2026</p>
-          </div>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ================= PUBLIC SERVICE ================= -->
-    <section class="service" aria-labelledby="service-title">
-      <div class="wrap grid service__grid">
-        <figure class="service__media">
-          <div class="frame" data-reveal="mask">
-            <img src="assets/img/photos/tower-technician-1200.webp" srcset="assets/img/photos/tower-technician-640.webp 640w, assets/img/photos/tower-technician-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 40vw" width="1200" height="800" loading="lazy" alt="Technician in a hard hat and safety vest working beside a communications mast">
-          </div>
-        </figure>
-        <div class="service__body" data-reveal style="--d:.1s">
-          <h2 class="eyebrow" id="service-title">Public service</h2>
-          <p class="statement">Supporting public service and emergency communications</p>
-          <p class="body-copy">Wisconsin's repeater infrastructure plays a critical role during severe weather, public service events and emergency response. Coordinated systems provide dependable communications for ARES, RACES and SKYWARN networks and for community emergency efforts across the state. WRA supports the continued development of reliable repeater networks that strengthen communications capabilities throughout Wisconsin.</p>
-          <ul class="icols" role="list">
-            <li><span class="icol__idx">1 of 3</span><span class="icol__title icol__title--x">ARES</span><span class="icol__text">Amateur Radio Emergency Service</span></li>
-            <li><span class="icol__idx">2 of 3</span><span class="icol__title icol__title--x">RACES</span><span class="icol__text">Radio Amateur Civil Emergency Service</span></li>
-            <li><span class="icol__idx">3 of 3</span><span class="icol__title icol__title--x">SKYWARN</span><span class="icol__text">National Weather Service storm spotters</span></li>
-          </ul>
         </div>
       </div>
     </section>
@@ -337,7 +235,7 @@
         <div class="map__text" data-reveal>
           <h2 class="eyebrow" id="map-heading">ARCS public directory</h2>
           <p class="statement">Coordinated repeater records across Wisconsin</p>
-          <p class="body-copy">Each mark is a repeater site listed in the public directory of the Amateur Radio Coordination System (ARCS), the platform behind WRA's coordination work.</p>
+          <p class="body-copy">Each mark is a repeater site listed in the public directory of the Amateur Radio Coordination System (ARCS), the platform WRA uses for its coordination work.</p>
           <dl class="stats">
             <div class="stat stat--v"><span class="stat__key" aria-hidden="true"></span><dt><b>2 meters</b>144–148 MHz</dt><dd>165</dd></div>
             <div class="stat stat--u"><span class="stat__key" aria-hidden="true"></span><dt><b>70 centimeters</b>420–450 MHz</dt><dd>183</dd></div>
@@ -391,7 +289,7 @@
               <h3><a href="news-501c3-public-charity-status.html">Wisconsin Repeater Alliance Receives Federal <span class="nowrap">501(c)(3)</span> Public Charity Status</a></h3>
               <p>The Wisconsin Repeater Alliance has officially been recognized by the Internal Revenue Service (IRS) as a <span class="nowrap">501(c)(3)</span> tax-exempt public charity.</p>
             </div>
-            <div class="post__media"><img src="assets/img/brand/501c3-badge-480.webp" width="480" height="480" loading="lazy" alt=""></div>
+            <div class="post__media"><img src="assets/img/brand/501c3-irs-480.webp" width="480" height="473" loading="lazy" alt="IRS approved 501(c)(3) certified nonprofit organization. Employer ID Number 42-4481796, public charity status 509(a)(2), effective date of exemption August 17, 2026, contributions deductible."></div>
           </article>
           <article class="post" data-reveal style="--d:.08s">
             <p class="post__idx">2 of 3</p>
@@ -409,7 +307,7 @@
               <h3><a href="news-open-letter.html">An Open Letter to the Wisconsin Amateur Radio Community</a></h3>
               <p>First and foremost, repeater coordination in Wisconsin is not disappearing. Corey Becker, KD9HCW, President, on why WRA was formed.</p>
             </div>
-            <div class="post__media"><img src="assets/img/brand/wra-seal-320.webp" width="320" height="320" loading="lazy" alt=""></div>
+            <div class="post__media"><img src="assets/img/brand/wra-logo-320.webp" width="320" height="306" loading="lazy" alt="Wisconsin Repeater Alliance logo"></div>
           </article>
         </div>
       </div>
@@ -421,10 +319,9 @@
     <div class="wrap">
       <div class="footer__head">
         <a class="brand brand--footer" href="index.html">
-          <img class="brand__seal" src="assets/img/brand/wra-seal-160.webp" width="56" height="56" loading="lazy" alt="">
-          <span class="brand__text"><span class="brand__name">Wisconsin Repeater Alliance, Inc.</span><span class="brand__tag">Repeater frequency coordination</span></span>
+          <img class="brand__logo" src="assets/img/brand/wra-logo-nav-72.webp" srcset="assets/img/brand/wra-logo-nav-72.webp 1x, assets/img/brand/wra-logo-nav-144.webp 2x, assets/img/brand/wra-logo-nav-216.webp 3x" width="75" height="72" loading="lazy" alt="Wisconsin Repeater Alliance: Coordinating Wisconsin Amateur Radio">
         </a>
-        <p class="footer__statement">A Wisconsin nonprofit corporation and federally recognized <span class="nowrap">501(c)(3)</span> public charity, governed by a nine-member Board of Directors.</p>
+        <p class="footer__statement">A Wisconsin nonprofit corporation and federally recognized <span class="nowrap">501(c)(3)</span> public charity.</p>
       </div>
 
       <nav class="footer__nav" aria-label="Footer">
@@ -433,7 +330,6 @@
           <ul role="list">
             <li><a href="about.html#who">Who we are</a></li>
             <li><a href="about.html#governance">Governance</a></li>
-            <li><a href="about.html#board">Board of Directors</a></li>
           </ul>
         </div>
         <div>
@@ -482,8 +378,7 @@
         <dl class="footer__facts">
           <div><dt>EIN</dt><dd>42-4481796</dd></div>
           <div><dt>Status</dt><dd><span class="nowrap">501(c)(3)</span> public charity, Section <span class="nowrap">509(a)(2)</span></dd></div>
-          <!-- EDITABLE: replace the tag below with the WRA mailing address -->
-          <div><dt>Mailing address</dt><dd><span class="tbc">To be supplied</span></dd></div>
+          <div><dt>Mailing address</dt><dd>1148 N. Sunnyslope Dr, Mount Pleasant, WI 53406</dd></div>
         </dl>
       </div>
 

@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400&display=swap">
-  <link rel="preload" as="image" href="assets/img/photos/dish-mast-1280.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/photos/ham-operator-1280.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/wra.css">
   <script>document.documentElement.classList.add("js");</script>
   <script src="js/wra.js" defer></script>
@@ -57,8 +57,9 @@
 
     <div class="wrap hdr__bar">
       <a class="brand" href="index.html">
-        <img class="brand__seal" src="assets/img/brand/wra-seal-160.webp" width="46" height="46" alt="">
-        <span class="brand__text"><span class="brand__name">Wisconsin Repeater Alliance</span><span class="brand__tag">Repeater frequency coordination</span></span>
+        <!-- WRA logo, stacked layout as supplied: light version over dark page heads, original colors once the header turns white -->
+        <img class="brand__logo brand__logo--light" src="assets/img/brand/wra-logo-nav-light-72.webp" srcset="assets/img/brand/wra-logo-nav-light-72.webp 1x, assets/img/brand/wra-logo-nav-light-144.webp 2x, assets/img/brand/wra-logo-nav-light-216.webp 3x" width="75" height="72" alt="Wisconsin Repeater Alliance: Coordinating Wisconsin Amateur Radio">
+        <img class="brand__logo brand__logo--dark" src="assets/img/brand/wra-logo-nav-72.webp" srcset="assets/img/brand/wra-logo-nav-72.webp 1x, assets/img/brand/wra-logo-nav-144.webp 2x, assets/img/brand/wra-logo-nav-216.webp 3x" width="75" height="72" alt="Wisconsin Repeater Alliance: Coordinating Wisconsin Amateur Radio">
       </a>
 
       <nav class="nav" aria-label="Primary">
@@ -84,7 +85,7 @@
             <button class="nav__link nav__toggle" type="button" data-nav="resources" aria-expanded="false" aria-controls="nav-resources">Resources<svg class="nav__chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
             <div class="nav__panel" id="nav-resources">
               <a href="resources.html#faq"><strong>Frequently asked questions</strong><span>Clear answers about coordination, membership and WRA.</span></a>
-              <a href="resources.html#library"><strong>Documents and forms</strong><span>Bylaws, policies, band plans and the checklist.</span></a>
+              <a href="resources.html#library"><strong>Documents and forms</strong><span>Bylaws, policies, the band plan and the checklist.</span></a>
               <a href="resources.html#volunteer"><strong>Volunteer</strong><span>Whatever your background, there's a role for you.</span></a>
             </div>
           </li>
@@ -145,7 +146,7 @@
   </div>
 <main id="main">
     <section class="phead" aria-labelledby="page-title">
-      <div class="phead__media"><img src="assets/img/photos/dish-mast-1280.webp" width="1280" height="978" alt=""></div>
+      <div class="phead__media"><img src="assets/img/photos/ham-operator-1280.webp" width="1280" height="993" alt=""></div>
       <div class="phead__rings" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="wrap phead__inner">
         <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Membership</li></ol></nav>
@@ -200,7 +201,7 @@
         </div>
         <div class="split__body">
           <ul class="cells" role="list" data-reveal>
-            <li class="cell"><span class="cell__idx">01</span><span class="cell__title">Development and maintenance of the Amateur Radio Coordination System (ARCS)</span></li>
+            <li class="cell"><span class="cell__idx">01</span><span class="cell__title">Operation and maintenance of the Amateur Radio Coordination System (ARCS)</span></li>
             <li class="cell"><span class="cell__idx">02</span><span class="cell__title">Website hosting and digital services</span></li>
             <li class="cell"><span class="cell__idx">03</span><span class="cell__title">Online repeater coordination tools</span></li>
             <li class="cell"><span class="cell__idx">04</span><span class="cell__title">Repeater database management</span></li>
@@ -223,7 +224,7 @@
         <ul class="icols" role="list" data-reveal>
           <li><span class="icol__idx">1 of 6</span><span class="icol__title">Fair and transparent spectrum coordination</span></li>
           <li><span class="icol__idx">2 of 6</span><span class="icol__title">Preservation of Wisconsin repeater records</span></li>
-          <li><span class="icol__idx">3 of 6</span><span class="icol__title">Continued development of the ARCS platform</span></li>
+          <li><span class="icol__idx">3 of 6</span><span class="icol__title">Continued operation and maintenance of the ARCS platform</span></li>
           <li><span class="icol__idx">4 of 6</span><span class="icol__title">Improved access to repeater information</span></li>
           <li><span class="icol__idx">5 of 6</span><span class="icol__title">Modern coordination tools and online services</span></li>
           <li><span class="icol__idx">6 of 6</span><span class="icol__title">Long-term organizational stability and growth</span></li>
@@ -249,7 +250,7 @@
             <span class="icol__idx">2 of 4</span><h3 class="icol__title">Why we use Zeffy</h3>
             <p class="icol__text">As a nonprofit, the Wisconsin Repeater Alliance works to ensure that membership dollars directly support our mission and operations. Zeffy is a fundraising and payment platform designed specifically for nonprofits. Unlike many payment processors, Zeffy does not charge platform fees, transaction fees or credit card processing fees to nonprofits. This means 100% of your $20 membership payment goes directly to the Wisconsin Repeater Alliance and supports:</p>
             <ul class="ticks ticks--one" role="list" style="margin-top:1rem">
-              <li>Development and maintenance of the Amateur Radio Coordination System (ARCS)</li>
+              <li>Operation and maintenance of the Amateur Radio Coordination System (ARCS)</li>
               <li>Website hosting and digital services</li>
               <li>Online coordination and membership tools</li>
               <li>Database management and record preservation</li>
@@ -312,10 +313,9 @@
     <div class="wrap">
       <div class="footer__head">
         <a class="brand brand--footer" href="index.html">
-          <img class="brand__seal" src="assets/img/brand/wra-seal-160.webp" width="56" height="56" loading="lazy" alt="">
-          <span class="brand__text"><span class="brand__name">Wisconsin Repeater Alliance, Inc.</span><span class="brand__tag">Repeater frequency coordination</span></span>
+          <img class="brand__logo" src="assets/img/brand/wra-logo-nav-72.webp" srcset="assets/img/brand/wra-logo-nav-72.webp 1x, assets/img/brand/wra-logo-nav-144.webp 2x, assets/img/brand/wra-logo-nav-216.webp 3x" width="75" height="72" loading="lazy" alt="Wisconsin Repeater Alliance: Coordinating Wisconsin Amateur Radio">
         </a>
-        <p class="footer__statement">A Wisconsin nonprofit corporation and federally recognized <span class="nowrap">501(c)(3)</span> public charity, governed by a nine-member Board of Directors.</p>
+        <p class="footer__statement">A Wisconsin nonprofit corporation and federally recognized <span class="nowrap">501(c)(3)</span> public charity.</p>
       </div>
 
       <nav class="footer__nav" aria-label="Footer">
@@ -324,7 +324,6 @@
           <ul role="list">
             <li><a href="about.html#who">Who we are</a></li>
             <li><a href="about.html#governance">Governance</a></li>
-            <li><a href="about.html#board">Board of Directors</a></li>
           </ul>
         </div>
         <div>
@@ -373,8 +372,7 @@
         <dl class="footer__facts">
           <div><dt>EIN</dt><dd>42-4481796</dd></div>
           <div><dt>Status</dt><dd><span class="nowrap">501(c)(3)</span> public charity, Section <span class="nowrap">509(a)(2)</span></dd></div>
-          <!-- EDITABLE: replace the tag below with the WRA mailing address -->
-          <div><dt>Mailing address</dt><dd><span class="tbc">To be supplied</span></dd></div>
+          <div><dt>Mailing address</dt><dd>1148 N. Sunnyslope Dr, Mount Pleasant, WI 53406</dd></div>
         </dl>
       </div>
 

@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..800;1,400&display=swap">
-  <link rel="preload" as="image" href="assets/img/photos/tower-group-1200.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/photos/tower-group-sky-1200.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/wra.css">
   <script>document.documentElement.classList.add("js");</script>
   <script src="js/wra.js" defer></script>
@@ -57,8 +57,9 @@
 
     <div class="wrap hdr__bar">
       <a class="brand" href="index.html">
-        <img class="brand__seal" src="assets/img/brand/wra-seal-160.webp" width="46" height="46" alt="">
-        <span class="brand__text"><span class="brand__name">Wisconsin Repeater Alliance</span><span class="brand__tag">Repeater frequency coordination</span></span>
+        <!-- WRA logo, stacked layout as supplied: light version over dark page heads, original colors once the header turns white -->
+        <img class="brand__logo brand__logo--light" src="assets/img/brand/wra-logo-nav-light-72.webp" srcset="assets/img/brand/wra-logo-nav-light-72.webp 1x, assets/img/brand/wra-logo-nav-light-144.webp 2x, assets/img/brand/wra-logo-nav-light-216.webp 3x" width="75" height="72" alt="Wisconsin Repeater Alliance: Coordinating Wisconsin Amateur Radio">
+        <img class="brand__logo brand__logo--dark" src="assets/img/brand/wra-logo-nav-72.webp" srcset="assets/img/brand/wra-logo-nav-72.webp 1x, assets/img/brand/wra-logo-nav-144.webp 2x, assets/img/brand/wra-logo-nav-216.webp 3x" width="75" height="72" alt="Wisconsin Repeater Alliance: Coordinating Wisconsin Amateur Radio">
       </a>
 
       <nav class="nav" aria-label="Primary">
@@ -84,7 +85,7 @@
             <button class="nav__link nav__toggle" type="button" data-nav="resources" aria-expanded="false" aria-controls="nav-resources">Resources<svg class="nav__chev" aria-hidden="true"><use href="#i-chev"/></svg></button>
             <div class="nav__panel" id="nav-resources">
               <a href="resources.html#faq"><strong>Frequently asked questions</strong><span>Clear answers about coordination, membership and WRA.</span></a>
-              <a href="resources.html#library"><strong>Documents and forms</strong><span>Bylaws, policies, band plans and the checklist.</span></a>
+              <a href="resources.html#library"><strong>Documents and forms</strong><span>Bylaws, policies, the band plan and the checklist.</span></a>
               <a href="resources.html#volunteer"><strong>Volunteer</strong><span>Whatever your background, there's a role for you.</span></a>
             </div>
           </li>
@@ -145,7 +146,7 @@
   </div>
 <main id="main">
     <section class="phead" aria-labelledby="page-title">
-      <div class="phead__media"><img src="assets/img/photos/tower-group-1200.webp" width="1200" height="901" alt=""></div>
+      <div class="phead__media"><img src="assets/img/photos/tower-group-sky-1200.webp" width="1200" height="799" alt=""></div>
       <div class="phead__rings" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="wrap phead__inner">
         <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Coordination</li></ol></nav>
@@ -163,9 +164,8 @@
         <li><a href="#shared"><small>01</small>A shared resource</a></li>
         <li><a href="#factors"><small>02</small>Why coordinate</a></li>
         <li><a href="#coordinated"><small>03</small>What it is and isn't</a></li>
-        <li><a href="#process"><small>04</small>How it works</a></li>
-        <li><a href="#benefits"><small>05</small>Who benefits</a></li>
-        <li><a href="#role"><small>06</small>WRA's role</a></li>
+        <li><a href="#benefits"><small>04</small>Who benefits</a></li>
+        <li><a href="#role"><small>05</small>WRA's role</a></li>
       </ul>
     </nav>
 
@@ -197,7 +197,7 @@
             <li class="cell"><span class="cell__idx">02</span><span class="cell__title">Geographic location</span></li>
             <li class="cell"><span class="cell__idx">03</span><span class="cell__title">Elevation and terrain</span></li>
             <li class="cell"><span class="cell__idx">04</span><span class="cell__title">Antenna height</span></li>
-            <li class="cell"><span class="cell__idx">05</span><span class="cell__title">Transmitter power</span></li>
+            <li class="cell"><span class="cell__idx">05</span><span class="cell__title">Effective radiated power (ERP)</span></li>
             <li class="cell"><span class="cell__idx">06</span><span class="cell__title">Operating mode</span></li>
             <li class="cell"><span class="cell__idx">07</span><span class="cell__title">Coverage area</span></li>
             <li class="cell"><span class="cell__idx">08</span><span class="cell__title">Potential co-channel interference</span></li>
@@ -228,25 +228,7 @@
       </div>
     </section>
 
-    <section class="sec sec--navy dark" id="process" aria-labelledby="process-h">
-      <div class="wrap">
-        <div class="grid band__head" style="margin-bottom:0">
-          <div data-reveal>
-            <h2 class="eyebrow" id="process-h">How coordination works in Wisconsin</h2>
-            <p class="statement">The Wisconsin Repeater Alliance (WRA) coordinates Wisconsin's amateur spectrum. The Amateur Radio Coordination System (ARCS) is how the work gets done.</p>
-          </div>
-          <a class="alink" href="coordination-process.html" data-reveal>Steps, requirements and timelines</a>
-        </div>
-        <ol class="steps" role="list" data-reveal style="margin-top:clamp(3rem,2rem + 3vw,4.5rem)">
-          <li class="step"><span class="step__num">01</span><span class="step__title">Apply</span><span class="step__text">Repeater owners submit their system details through the Amateur Radio Coordination System (ARCS).</span><span class="owner owner--applicant">Applicant</span></li>
-          <li class="step"><span class="step__num">02</span><span class="step__title">Engineering analysis</span><span class="step__text">ARCS checks the proposal against existing coordinated systems with interference studies and propagation modeling.</span><span class="owner owner--arcs">ARCS</span></li>
-          <li class="step"><span class="step__num">03</span><span class="step__title">Review under published policy</span><span class="step__text">Coordinators authorized by WRA review the application under policies set by the Board of Directors.</span><span class="owner owner--wra">WRA</span></li>
-          <li class="step"><span class="step__num">04</span><span class="step__title">Decision and record</span><span class="step__text">The decision is documented and kept in Wisconsin's coordination records.</span><span class="owner owner--wra">WRA</span></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="sec" id="benefits" aria-labelledby="benefits-h">
+    <section class="sec sec--paper" id="benefits" aria-labelledby="benefits-h">
       <div class="wrap">
         <div class="sec-head" data-reveal>
           <h2 class="eyebrow" id="benefits-h">Who benefits</h2>
@@ -279,24 +261,6 @@
             </ul>
             <p class="body-copy" style="margin-top:1.25rem">The result is a healthier and more active amateur radio community.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="sec sec--paper" id="emergency" aria-labelledby="em-h">
-      <div class="wrap grid split">
-        <div class="split__head" data-reveal>
-          <h2 class="eyebrow" id="em-h">Supporting emergency communications</h2>
-          <p class="statement">Reliable communications begin with responsible spectrum management</p>
-        </div>
-        <div class="split__body" data-reveal style="--d:.08s">
-          <p class="body-copy">Wisconsin's repeater infrastructure plays an important role in emergency communications, weather spotting, public service events and disaster response. Well-coordinated systems help ensure communication resources remain available when they are needed most.</p>
-          <ul class="icols" role="list" style="margin-top:2.5rem">
-            <li><span class="icol__idx">1 of 3</span><span class="icol__title icol__title--x">ARES</span><span class="icol__text">Amateur Radio Emergency Service</span></li>
-            <li><span class="icol__idx">2 of 3</span><span class="icol__title icol__title--x">RACES</span><span class="icol__text">Radio Amateur Civil Emergency Service</span></li>
-            <li><span class="icol__idx">3 of 3</span><span class="icol__title icol__title--x">SKYWARN</span><span class="icol__text">National Weather Service storm spotters</span></li>
-          </ul>
-          <p class="body-copy" style="margin-top:2rem">Coordination supports organizations and activities including ARES, RACES, SKYWARN, public service events and community emergency response efforts.</p>
         </div>
       </div>
     </section>
@@ -336,10 +300,9 @@
     <div class="wrap">
       <div class="footer__head">
         <a class="brand brand--footer" href="index.html">
-          <img class="brand__seal" src="assets/img/brand/wra-seal-160.webp" width="56" height="56" loading="lazy" alt="">
-          <span class="brand__text"><span class="brand__name">Wisconsin Repeater Alliance, Inc.</span><span class="brand__tag">Repeater frequency coordination</span></span>
+          <img class="brand__logo" src="assets/img/brand/wra-logo-nav-72.webp" srcset="assets/img/brand/wra-logo-nav-72.webp 1x, assets/img/brand/wra-logo-nav-144.webp 2x, assets/img/brand/wra-logo-nav-216.webp 3x" width="75" height="72" loading="lazy" alt="Wisconsin Repeater Alliance: Coordinating Wisconsin Amateur Radio">
         </a>
-        <p class="footer__statement">A Wisconsin nonprofit corporation and federally recognized <span class="nowrap">501(c)(3)</span> public charity, governed by a nine-member Board of Directors.</p>
+        <p class="footer__statement">A Wisconsin nonprofit corporation and federally recognized <span class="nowrap">501(c)(3)</span> public charity.</p>
       </div>
 
       <nav class="footer__nav" aria-label="Footer">
@@ -348,7 +311,6 @@
           <ul role="list">
             <li><a href="about.html#who">Who we are</a></li>
             <li><a href="about.html#governance">Governance</a></li>
-            <li><a href="about.html#board">Board of Directors</a></li>
           </ul>
         </div>
         <div>
@@ -397,8 +359,7 @@
         <dl class="footer__facts">
           <div><dt>EIN</dt><dd>42-4481796</dd></div>
           <div><dt>Status</dt><dd><span class="nowrap">501(c)(3)</span> public charity, Section <span class="nowrap">509(a)(2)</span></dd></div>
-          <!-- EDITABLE: replace the tag below with the WRA mailing address -->
-          <div><dt>Mailing address</dt><dd><span class="tbc">To be supplied</span></dd></div>
+          <div><dt>Mailing address</dt><dd>1148 N. Sunnyslope Dr, Mount Pleasant, WI 53406</dd></div>
         </dl>
       </div>
 

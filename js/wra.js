@@ -21,7 +21,6 @@
       if (!ticking) { ticking = true; requestAnimationFrame(update); }
     }, { passive: true });
     update();
-
     /* Dropdowns: disclosure buttons (click, keyboard), with hover on mice */
     var items = $$(".nav__item", hdr).filter(function (i) { return !!$(".nav__toggle", i); });
     var setItem = function (item, open) {
@@ -113,16 +112,14 @@
     revealables.forEach(function (el) { el.classList.add("is-in"); });
   }
 
-  /* Hero: slideshow ------------------------------------------------------- */
+  /* Hero: background images cross-fade. No visible player; a pause button
+     appears on keyboard focus, and reduced-motion users get a still image. */
   var hero = $(".hero");
   if (hero) {
-    var sets = $$(".hero__frame", hero).map(function (f) { return $$(".hero__slide", f); });
-    var count = sets[0].length;
-    var cap = $(".hero__cap", hero), num = $(".hero__num", hero), bar = $(".hero__progress i", hero), pauseBtn = $(".hero__pause", hero);
+    var slides = $$(".hero__slide", hero);
+    var pauseBtn = $(".hero__pause", hero);
     var interval = parseInt(hero.getAttribute("data-interval"), 10) || 7000;
     var index = 0, timer = null, paused = reduceMotion;
-    hero.style.setProperty("--dur", interval + "ms");
-    var restartBar = function () { bar.classList.remove("is-running"); void bar.offsetWidth; if (!paused) bar.classList.add("is-running"); };
     /* Slides after the first load once the page has finished loading */
     var hydrate = function () {
       $$("img[data-src]", hero).forEach(function (img) {
@@ -133,53 +130,18 @@
     };
     if (document.readyState === "complete") hydrate(); else window.addEventListener("load", hydrate);
     var show = function (i) {
-      index = (i + count) % count;
-      sets.forEach(function (set) { set.forEach(function (s, n) { s.classList.toggle("is-active", n === index); }); });
-      cap.textContent = sets[0][index].getAttribute("data-caption");
-      num.textContent = String(index + 1);
-      restartBar();
+      index = (i + slides.length) % slides.length;
+      slides.forEach(function (s, n) { s.classList.toggle("is-active", n === index); });
     };
     var schedule = function () { clearTimeout(timer); if (!paused) timer = setTimeout(function () { show(index + 1); schedule(); }, interval); };
     var setPaused = function (p) {
       paused = p;
-      hero.classList.toggle("is-paused", p);
-      pauseBtn.setAttribute("aria-label", p ? "Play slideshow" : "Pause slideshow");
-      if (p) clearTimeout(timer); else { restartBar(); schedule(); }
+      if (pauseBtn) pauseBtn.textContent = p ? "Play background images" : "Pause background images";
+      if (p) clearTimeout(timer); else schedule();
     };
-    pauseBtn.addEventListener("click", function () { setPaused(!paused); });
-    document.addEventListener("visibilitychange", function () { if (document.hidden) clearTimeout(timer); else if (!paused) { restartBar(); schedule(); } });
+    if (pauseBtn) pauseBtn.addEventListener("click", function () { setPaused(!paused); });
+    document.addEventListener("visibilitychange", function () { if (document.hidden) clearTimeout(timer); else if (!paused) schedule(); });
     setPaused(paused);
-
-    /* The signal lens rests over the headline and follows a mouse pointer.
-       It never wanders on its own, and the frame loop sleeps once settled. */
-    var title = $(".hero__center .hero__title", hero);
-    var lx = 0, ly = 0, tx = 0, ty = 0, rest = { x: 0, y: 0 }, running = false;
-    var measure = function () {
-      var hr = hero.getBoundingClientRect(), r = title.getBoundingClientRect();
-      rest = { x: r.left - hr.left + r.width * 0.72, y: r.top - hr.top + r.height * 0.5 };
-    };
-    var place = function () { hero.style.setProperty("--lx", lx.toFixed(1) + "px"); hero.style.setProperty("--ly", ly.toFixed(1) + "px"); };
-    var frame = function () {
-      lx += (tx - lx) * 0.14;
-      ly += (ty - ly) * 0.14;
-      place();
-      if (Math.abs(tx - lx) + Math.abs(ty - ly) > 0.4) requestAnimationFrame(frame);
-      else { lx = tx; ly = ty; place(); running = false; }
-    };
-    var aim = function (x, y) {
-      tx = x; ty = y;
-      if (reduceMotion) { lx = tx; ly = ty; place(); return; }
-      if (!running) { running = true; requestAnimationFrame(frame); }
-    };
-    var init = function () { measure(); lx = tx = rest.x; ly = ty = rest.y; place(); };
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(init); else init();
-    window.addEventListener("resize", function () { measure(); aim(rest.x, rest.y); });
-    hero.addEventListener("pointermove", function (e) {
-      if (e.pointerType !== "mouse" || !finePointer.matches) return;
-      var hr = hero.getBoundingClientRect();
-      aim(e.clientX - hr.left, e.clientY - hr.top);
-    });
-    hero.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") aim(rest.x, rest.y); });
   }
 
   /* Map: tooltip for each repeater mark ----------------------------------- */
@@ -229,7 +191,7 @@
   /* Pre-application checklist: remember ticks, print on its own ---------- */
   var checklist = $(".checklist");
   if (checklist) {
-    var key = "wra-checklist";
+    var key = "wra-checklist-v2";
     var boxes = $$("input[type=checkbox]", checklist);
     var saved = [];
     try { saved = JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) { saved = []; }

@@ -1,28 +1,22 @@
 <!--{
-  "title": "Repeater Coordination – Wisconsin Repeater Alliance",
+  "title": "Wisconsin Repeater Coordination – Wisconsin Repeater Alliance",
   "description": "Apply for a new repeater coordination, update an existing system, renew records or report interference: what to supply, how review works, and a printable pre-application checklist.",
   "canonical": "/coordination/process/",
   "nav": "coordination",
   "crumbs": [["Coordination", "coordination.html"], ["Repeater coordination", null]],
-  "preload": {"href": "assets/img/photos/rooftop-antennas-1200.webp"}
+  "preload": {"href": "assets/img/photos/yagi-arrays-1200.webp"}
 }-->
   <main id="main">
     <section class="phead" aria-labelledby="page-title">
-      <div class="phead__media"><img src="assets/img/photos/rooftop-antennas-1200.webp" width="1200" height="900" alt=""></div>
+      <div class="phead__media"><img src="assets/img/photos/yagi-arrays-1200.webp" width="1200" height="799" alt=""></div>
       <div class="phead__rings" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="wrap phead__inner">
         {{crumbs}}
-        <h1 class="phead__title" id="page-title">Repeater coordination in Wisconsin</h1>
-        <p class="phead__lead">Apply for a new coordination, update an existing system, or resolve interference, reviewed fairly and consistently under the Wisconsin Repeater Alliance's (WRA's) established process. Applications are made in the Amateur Radio Coordination System (ARCS).</p>
+        <h1 class="phead__title" id="page-title">Wisconsin Repeater Coordination</h1>
+        <p class="phead__lead">Apply for a new coordination, update an existing system, or resolve interference.</p>
         <div class="btn-row">
           <a class="btn btn--ext" href="https://arcsonline.org/accounts/login/?next=/coordination/apply/" target="_blank" rel="noopener">Start an application in ARCS<span class="visually-hidden">(opens in a new tab)</span></a>
           <a class="btn btn--line" href="#checklist">Pre-application checklist</a>
-        </div>
-        <!-- EDITABLE NOTICE: update the text and date when ARCS status changes -->
-        <div class="notice" role="note">
-          <p class="notice__title">ARCS status</p>
-          <p class="notice__text">ARCS is live. New account registration is temporarily turned off; if you need an account to apply, <a class="inline-link" href="contact.html?topic=coordination">contact WRA</a>.</p>
-          <p class="notice__meta">Updated September 29, 2026</p>
         </div>
       </div>
     </section>
@@ -62,7 +56,7 @@
         <div class="split__head" data-reveal>
           <h2 class="eyebrow" id="info-h">What to supply</h2>
           <p class="statement">How to apply for a new repeater coordination</p>
-          <p class="body-copy" style="margin-top:1.25rem">Have this information ready before you start. Once submitted, the application enters the review process and may require additional technical information.</p>
+          <p class="body-copy" style="margin-top:1.25rem">Have this information ready before you start. ARCS saves your application as you go, so you can finish it later. Once submitted, it enters the review process and may require additional technical information.</p>
         </div>
         <div class="split__body">
           <div class="spec-wrap" data-reveal>
@@ -73,29 +67,26 @@
                 <tr><th scope="rowgroup" colspan="2">Station and contacts</th></tr>
                 <tr><td>Callsign</td><td>The callsign of the repeater station.</td></tr>
                 <tr><td>Trustee</td><td>Name, callsign and contact details of the trustee responsible for the system.</td></tr>
-                <tr><td>Sponsor</td><td>The club or organization sponsoring the system, if any.</td></tr>
                 <tr><td>Contact information</td><td>How WRA can reach the holder of the coordination.</td></tr>
               </tbody>
               <tbody>
                 <tr><th scope="rowgroup" colspan="2">Site</th></tr>
-                <tr><td>Location and coordinates</td><td>Site name or address, with latitude and longitude.</td></tr>
+                <tr><td>Site name and address</td><td>The name and street address of the transmitter site.</td></tr>
+                <tr><td>ASR number</td><td>The FCC Antenna Structure Registration number, if the site is a commercial site.</td></tr>
               </tbody>
               <tbody>
                 <tr><th scope="rowgroup" colspan="2">Frequencies and mode</th></tr>
                 <tr><td>Band</td><td>The amateur band the system will operate on.</td></tr>
                 <tr><td>Output and input</td><td>The proposed frequency pair. You may request a specific pair.</td></tr>
                 <tr><td>Tone</td><td>The access tone (CTCSS or DCS), or the digital equivalent.</td></tr>
-                <tr><td>Operating mode</td><td>Analog or the digital mode the system will use.</td></tr>
+                <tr><td>Operating mode</td><td>The mode the system will use.</td></tr>
               </tbody>
               <tbody>
                 <tr><th scope="rowgroup" colspan="2">Power and antenna</th></tr>
-                <tr><td>Power and ERP</td><td>Transmitter power levels and effective radiated power.</td></tr>
+                <tr><td>Transmitter power</td><td>Transmitter output power. ARCS calculates the effective radiated power (ERP).</td></tr>
                 <tr><td>Antenna height</td><td>Height of the antenna on the structure.</td></tr>
-                <tr><td>Antenna and pattern</td><td>Antenna type and radiation pattern.</td></tr>
-              </tbody>
-              <tbody>
-                <tr><th scope="rowgroup" colspan="2">Purpose</th></tr>
-                <tr><td>Coverage objectives</td><td>The area the system is intended to serve.</td></tr>
+                <tr><td>Antenna gain and pattern</td><td>Antenna gain and radiation pattern.</td></tr>
+                <tr><td>Antenna system loss</td><td>Losses between the transmitter and the antenna, from coax and filtering.</td></tr>
               </tbody>
             </table>
           </div>
@@ -112,21 +103,22 @@
         <div class="grid band__head">
           <div data-reveal>
             <h2 class="eyebrow" id="process-h">What happens after you apply</h2>
-            <p class="statement">One process across WRA and ARCS, with an owner at every stage</p>
+            <p class="statement">One process with an owner at every stage</p>
           </div>
         </div>
         <ol class="steps steps--5" role="list" data-reveal style="margin-top:clamp(3rem,2rem + 3vw,4.5rem)">
-          <li class="step"><span class="step__num">01</span><span class="step__title">Prepare</span><span class="step__text">Check the ARCS directory for nearby systems and gather the information listed above.</span><span class="owner owner--applicant">Applicant</span></li>
-          <li class="step"><span class="step__num">02</span><span class="step__title">Submit in ARCS</span><span class="step__text">Complete the coordination application in ARCS. WRA may ask for additional technical information.</span><span class="owner owner--applicant">Applicant</span><span class="step__time">Timeline: <span class="tbc">To be supplied</span></span></li>
-          <li class="step"><span class="step__num">03</span><span class="step__title">Engineering analysis</span><span class="step__text">ARCS runs conflict detection and interference studies against existing coordinated systems, with propagation modeling and automatic ERP calculations.</span><span class="owner owner--arcs">ARCS</span><span class="step__time">Timeline: <span class="tbc">To be supplied</span></span></li>
-          <li class="step"><span class="step__num">04</span><span class="step__title">Coordinator review</span><span class="step__text">Individuals authorized by WRA review the application under policies set by the Board of Directors, and may recommend an alternative pair.</span><span class="owner owner--wra">WRA</span><span class="step__time">Timeline: <span class="tbc">To be supplied</span></span></li>
-          <li class="step"><span class="step__num">05</span><span class="step__title">Decision and record</span><span class="step__text">The decision is documented in Wisconsin's coordination records. System information may appear in the public directory.</span><span class="owner owner--wra">WRA</span><span class="step__time">Timeline: <span class="tbc">To be supplied</span></span></li>
+          <li class="step"><span class="step__num">01</span><span class="step__title">Prepare</span><span class="step__text">Gather the required information.</span><span class="owner owner--applicant">Applicant</span></li>
+          <li class="step"><span class="step__num">02</span><span class="step__title">Submit in ARCS</span><span class="step__text">Complete the coordination application in ARCS.</span><span class="owner owner--applicant">Applicant</span><span class="step__time">Timeline: at your own pace</span></li>
+          <li class="step"><span class="step__num">03</span><span class="step__title">Engineering analysis</span><span class="step__text">After submission, ARCS runs conflict detection studies. Once complete, your application is placed in the Coordination Review Queue.</span><span class="owner owner--arcs">ARCS</span><span class="step__time">Timeline: immediately on submission</span></li>
+          <li class="step"><span class="step__num">04</span><span class="step__title">Coordinator review</span><span class="step__text">Individuals authorized by WRA review the application under policies set by the Board of Directors, and may recommend an alternative pair.</span><span class="owner owner--wra">WRA</span><span class="step__time">Timeline: 5 to 10 days</span></li>
+          <li class="step"><span class="step__num">05</span><span class="step__title">Decision and record</span><span class="step__text">The decision is documented in Wisconsin's coordination records. System information may appear in the public directory.</span><span class="owner owner--wra">WRA</span><span class="step__time">Timeline: 5 to 10 days</span></li>
         </ol>
         <div class="grid" style="margin-top:3rem">
           <div class="pull col-8" data-reveal>
             <p>How long does coordination take?</p>
           </div>
-          <p class="body-copy col-8" data-reveal style="margin-top:1.25rem">Coordination times vary depending on the complexity of the request and the availability of spectrum resources. Simple applications may be processed quickly, while applications involving heavily occupied bands, large coverage areas or potential interference concerns may require additional engineering review. WRA's goal is to provide timely and thorough evaluations for every applicant.</p>
+          <p class="body-copy col-8" data-reveal style="margin-top:1.25rem">You can take as long as you need to prepare an application; ARCS saves your work until you submit. Once submitted, ARCS runs its conflict detection studies straight away and places your application in the Coordination Review Queue. Coordinator review typically takes 5 to 10 days, and the decision and record another 5 to 10 days.</p>
+          <p class="body-copy col-8" data-reveal>Coordination times vary depending on the complexity of the request and the availability of spectrum resources. Simple applications may be processed quickly, while applications involving heavily occupied bands, large coverage areas or potential interference concerns may require additional engineering review. WRA's goal is to provide timely and thorough evaluations for every applicant.</p>
         </div>
       </div>
     </section>
@@ -148,17 +140,16 @@
               </div>
             </div>
             <ol class="checklist">
-              <li><label><input type="checkbox"><span>Searched the ARCS directory for systems near my site on my band<small>arcsonline.org/repeaters</small></span></label></li>
               <li><label><input type="checkbox"><span>Repeater callsign</span></label></li>
               <li><label><input type="checkbox"><span>Trustee name, callsign and contact details</span></label></li>
-              <li><label><input type="checkbox"><span>Sponsoring club or organization, if any</span></label></li>
-              <li><label><input type="checkbox"><span>Site name or address, with latitude and longitude</span></label></li>
+              <li><label><input type="checkbox"><span>Site name and address</span></label></li>
+              <li><label><input type="checkbox"><span>ASR number, if a commercial site<small>FCC Antenna Structure Registration</small></span></label></li>
               <li><label><input type="checkbox"><span>Band and proposed frequency pair (output and input)</span></label></li>
               <li><label><input type="checkbox"><span>Access tone (CTCSS or DCS), or the digital equivalent</span></label></li>
-              <li><label><input type="checkbox"><span>Operating mode: analog or digital</span></label></li>
-              <li><label><input type="checkbox"><span>Transmitter power and ERP</span></label></li>
-              <li><label><input type="checkbox"><span>Antenna height, type and pattern</span></label></li>
-              <li><label><input type="checkbox"><span>Coverage objectives</span></label></li>
+              <li><label><input type="checkbox"><span>Operating mode</span></label></li>
+              <li><label><input type="checkbox"><span>Transmitter power<small>ARCS calculates the ERP</small></span></label></li>
+              <li><label><input type="checkbox"><span>Antenna height, gain and pattern</span></label></li>
+              <li><label><input type="checkbox"><span>Antenna system loss: coax and filtering</span></label></li>
               <li><label><input type="checkbox"><span>Contact information for the holder of the coordination</span></label></li>
               <li><label><input type="checkbox"><span>An ARCS account to submit the application<small>Sign in at arcsonline.org</small></span></label></li>
             </ol>
@@ -230,7 +221,7 @@
           </div>
           <div class="sheet" style="margin-top:2.5rem">
             <h3 class="sheet__title">Your privacy</h3>
-            <p class="body-copy">WRA is committed to protecting sensitive personal information. While certain system information may appear in public repeater directories, personal contact information and administrative records are handled in accordance with Alliance policies and applicable privacy requirements.</p>
+            <p class="body-copy">WRA is committed to protecting sensitive personal information. While certain system information may appear in public repeater directories, personal contact information and administrative records are handled in accordance with Alliance policies and applicable privacy requirements. <a class="inline-link" href="privacy.html">Read the Privacy Policy</a>.</p>
           </div>
         </div>
       </div>
