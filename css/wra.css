@@ -567,6 +567,7 @@ p { text-wrap: pretty; }
 .who__grid { align-items: center; row-gap: 3rem; }
 .who__media { grid-column: 1 / span 5; box-shadow: var(--shadow-card); }
 .who__media .frame { aspect-ratio: 4 / 5; }
+.who__img { object-position: 50% 80%; } /* keeps the climber in frame when cropped */
 .who__body { grid-column: 7 / span 6; }
 .who__body .lead { margin-top: 1.75rem; }
 .who__body .body-copy { margin-top: 1.1rem; }
