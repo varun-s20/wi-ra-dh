@@ -1,0 +1,36 @@
+/*
+ * WordPress-only additions to the design (assets/css/wra.css is the design itself,
+ * copied unchanged from the static build). Keep this file small.
+ */
+
+/* Logged-in admin bar: keep the fixed site header below it */
+.admin-bar .hdr { top: 32px; }
+@media (max-width: 782px) { .admin-bar .hdr { top: 46px; } }
+@media (max-width: 600px) { .admin-bar .hdr { top: 0; } }
+
+/* Form honeypot: invisible to people and to assistive technology */
+.wra-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Content added in the post editor (images, figures, quotes, numbered lists, embeds) */
+.prose img { max-width: 100%; height: auto; }
+.prose figure { margin-inline: 0; }
+.prose figure + *, .prose * + figure { margin-top: 2em; }
+.prose figcaption { margin-top: 0.6rem; color: var(--label); font-size: 0.875rem; line-height: 1.5; }
+.prose a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.prose a:hover { color: var(--navy); }
+.prose ol { padding-left: 1.4rem; list-style: decimal; }
+.prose ol li + li { margin-top: 0.5em; }
+.prose ol li::marker { color: var(--blue); font-weight: 700; }
+.prose blockquote { padding-left: 1.25rem; border-left: 3px solid var(--blue); color: var(--navy); }
+.prose hr { border: 0; border-top: 1px solid var(--hair); }
+.prose .wp-block-embed iframe, .prose iframe { max-width: 100%; }
+.prose .alignleft { float: left; margin: 0.4rem 1.5rem 1rem 0; }
+.prose .alignright { float: right; margin: 0.4rem 0 1rem 1.5rem; }
+.prose .aligncenter { margin-inline: auto; }
+
+/* Archive/search pagination (index.php) */
+.wra-pagination { margin-top: 3rem; }
+.wra-pagination .nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.wra-pagination .page-numbers { display: inline-grid; place-items: center; min-width: 2.75rem; height: 2.75rem; padding: 0 0.9rem; border: 1px solid var(--hair); color: var(--navy); font-weight: 600; text-decoration: none; }
+.wra-pagination .page-numbers.current { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.wra-pagination .screen-reader-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

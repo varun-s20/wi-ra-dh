@@ -1,0 +1,15 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "preferredVersions": { "php": "8.3", "wp": "latest" },
+  "features": { "networking": true },
+  "steps": [
+    { "step": "login", "username": "admin", "password": "password" },
+    { "step": "installTheme", "themeData": { "resource": "wordpress.org/themes", "slug": "hello-elementor" }, "options": { "activate": true } },
+    { "step": "installPlugin", "pluginData": { "resource": "wordpress.org/plugins", "slug": "elementor" }, "options": { "activate": true } },
+    { "step": "activatePlugin", "pluginPath": "wra-site/wra-site.php" },
+    { "step": "activatePlugin", "pluginPath": "wra-setup/wra-setup.php" },
+    { "step": "runPHP", "code": "<?php require '/wordpress/wra-tests/simulate-live.php';" },
+    { "step": "runPHP", "code": "<?php require '/wordpress/wra-tests/run-setup.php';" }
+  ]
+}

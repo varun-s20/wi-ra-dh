@@ -1,0 +1,13 @@
+/*
+Theme Name:   Wisconsin Repeater Alliance
+Theme URI:    https://wi-ra.org/
+Description:  The Wisconsin Repeater Alliance website design, as a child theme of Hello Elementor. Page templates are generated from the approved static design (_build/wp_build.py); the real stylesheet is assets/css/wra.css. Pair with the "WRA Site" plugin for News bylines, the ARCS status setting and the website forms.
+Author:       Digital Heroes
+Template:     hello-elementor
+Version:      1.0.0
+Requires at least: 6.4
+Tested up to: 7.1
+Requires PHP: 7.4
+License:      Proprietary, for wi-ra.org
+Text Domain:  wra-child
+*/

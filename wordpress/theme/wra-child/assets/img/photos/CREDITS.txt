@@ -1,0 +1,11 @@
+Photo sources. Every stock photo here is public domain or CC0; member-site-install is WRA's own photo (no copyright restrictions, free for commercial use, no attribution required).
+
+rib-mountain: Rib Mountain Radio Tower Wisconsin.jpg | CC0 | https://commons.wikimedia.org/wiki/File:Rib_Mountain_Radio_Tower_Wisconsin.jpg
+lacrosse-towers: WIZM radio towers La Crosse.jpg | CC0 | https://commons.wikimedia.org/wiki/File:WIZM_radio_towers_La_Crosse.jpg
+ham-beam: Antenna-178969.jpg | CC0 | https://commons.wikimedia.org/wiki/File:Antenna-178969.jpg
+lattice-autumn: Lattice cell tower-2.jpg | CC0 | https://commons.wikimedia.org/wiki/File:Lattice_cell_tower-2.jpg
+tower-group-sky: Radio tower, Japan; May 2016 (04).jpg | CC0 | https://commons.wikimedia.org/wiki/File:Radio_tower,_Japan;_May_2016_(04).jpg
+yagi-arrays: Radio tower, Japan; May 2016 (08).jpg | CC0 | https://commons.wikimedia.org/wiki/File:Radio_tower,_Japan;_May_2016_(08).jpg
+ham-operator: G0RTN operating amateur radio.jpg | Public domain | https://commons.wikimedia.org/wiki/File:G0RTN_operating_amateur_radio.jpg
+repeater-install: 2020Oct21-Mount-Terror-Repeater-Install-HR.jpg | Public domain | https://commons.wikimedia.org/wiki/File:2020Oct21-Mount-Terror-Repeater-Install-HR.jpg
+member-site-install: Antenna service at a member's coordinated repeater site | supplied by WRA (Corey Becker, DSC06205.JPG) | used with WRA's permission
