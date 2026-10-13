@@ -107,6 +107,9 @@ python wordpress/tests/compare.py     # pixel diff vs the static design, desktop
 python wordpress/tests/functional.py  # forms, spam, Messages, ARCS status, publishing News
 python wordpress/tests/a11y.py        # axe, console, images, links, overflow, one h1
 python wordpress/tests/interact.py    # menus, dropdown, hero, FAQ filter, checklist, Zeffy (read-only)
+python wordpress/tests/sweep.py       # every page x every menu + page features, script errors (sends no form)
+# static preview: sweep.py http://127.0.0.1:8767/ --static
+# script check for features overwriting each other: npx eslint (no-redeclare, block-scoped-var) on js/wra.js
 # against staging (submits nothing): a11y.py <url> --readonly, interact.py <url>
 # syntax check on any PHP version, without PHP installed:
 npx @wp-playground/cli php --php=7.4 --wordpress-install-mode=do-not-attempt-installing   --mount-dir wordpress /w -- /w/tests/lint.php /w
@@ -140,3 +143,4 @@ generator, re-package and upload the theme.
 - 1.0.0: first WordPress release of the approved design.
 - 1.0.0 (Oct 9): Terms of Use page; Bylaws, Coordination Policy and Band Plan PDFs linked; coordination wording aligned with the adopted policy. Setup 1.1.0: works on a fresh WordPress (creates posts in a News category with order-preserving times, bins the untouched sample post/page, sets site title, tagline and time zone).
 - WRA Site 1.0.1 (Oct 10): redirects the WAR post's old address (`/lorem-ipsum-dolor-sit-amet-consectetur-2/`) itself, because WordPress's old-slug redirect is lost on a fresh install and on an All-in-One WP Migration import.
+- Theme 1.0.1 (Oct 13, Corey's launch feedback): removed the hero pause control (keyboard-only); fixed the Resources page menu (the FAQ script reused the menu's variable names, so every dropdown stopped working there and the header stopped turning white on scroll); dropdown panels close after a same-page link; Facebook group link in the top bar, phone menu and footer (opens in a new tab); mailing address now `1148 N. Sunnyslope Dr. #202`; Wisconsin Band Plan replaced with the full 27-page plan.

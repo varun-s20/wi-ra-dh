@@ -10,7 +10,7 @@
  */
 defined( 'ABSPATH' ) || exit;
 
-define( 'WRA_THEME_VERSION', '1.0.0' );
+define( 'WRA_THEME_VERSION', '1.0.1' );
 define( 'WRA_DIR', get_stylesheet_directory() );
 // Base URL of the theme's assets folder. Templates echo it in front of design image paths ("img/brand/...").
 define( 'WRA_A', esc_url( get_stylesheet_directory_uri() . '/assets/' ) );

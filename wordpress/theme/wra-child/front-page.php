@@ -29,8 +29,6 @@ get_header();
         </div>
       </div>
 
-      <!-- Keyboard and screen-reader users can still stop the background images (WCAG 2.2.2); the button only appears on focus -->
-      <button class="hero__pause" type="button">Pause background images</button>
     </section>
 
     <!-- ================= QUICK ACCESS ================= -->

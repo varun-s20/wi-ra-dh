@@ -6,9 +6,8 @@ defined( 'ABSPATH' ) || exit;
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="i-ext" viewBox="0 0 24 24"><path d="M6.5 17.5 17 7M8.5 6.5H17.5V15.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.6 21.8v-8.6h2.9l.4-3.4h-3.3V7.7c0-1 .3-1.6 1.7-1.6h1.8V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.4H7.2v3.4h2.9v8.6h3.5z" fill="currentColor"/></symbol>
     <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9.5 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
-    <symbol id="i-pause" viewBox="0 0 10 10"><path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor"/></symbol>
-    <symbol id="i-play" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="currentColor"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2"/></symbol>
   </svg>
 
@@ -21,6 +20,7 @@ defined( 'ABSPATH' ) || exit;
         <p>Wisconsin nonprofit corporation <span aria-hidden="true">&middot;</span> <span class="nowrap">501(c)(3)</span> public charity</p>
         <ul role="list">
           <li><a href="mailto:info@wi-ra.org">Info@wi-ra.org</a></li>
+          <li><a class="hdr__fb" href="https://www.facebook.com/groups/wrainc" target="_blank" rel="noopener"><svg class="ico-fb" aria-hidden="true"><use href="#i-fb"/></svg>Facebook<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></li>
           <li><a href="https://arcsonline.org/repeaters/" target="_blank" rel="noopener">Repeater directory<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></li>
           <li><a class="hdr__arcs" href="https://arcsonline.org/" target="_blank" rel="noopener">Sign in to ARCS<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></li>
         </ul>
@@ -112,7 +112,7 @@ defined( 'ABSPATH' ) || exit;
       <div class="drawer__actions">
         <a class="btn" href="<?php wra_u( '/membership/' ); ?>">Become a Member</a>
         <a class="btn btn--ghost btn--ext" href="https://arcsonline.org/" target="_blank" rel="noopener">Sign in to ARCS<span class="visually-hidden"> (opens in a new tab)</span></a>
-        <p class="drawer__meta"><a href="mailto:info@wi-ra.org">Info@wi-ra.org</a> &middot; <span class="nowrap">501(c)(3)</span> public charity</p>
+        <p class="drawer__meta"><a href="mailto:info@wi-ra.org">Info@wi-ra.org</a> &middot; <a href="https://www.facebook.com/groups/wrainc" target="_blank" rel="noopener">Facebook<span class="visually-hidden"> (opens in a new tab)</span></a> &middot; <span class="nowrap">501(c)(3)</span> public charity</p>
       </div>
     </div>
   </div>

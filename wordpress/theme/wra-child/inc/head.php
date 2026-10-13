@@ -93,9 +93,10 @@ function wra_org_node() {
 		'url'             => home_url( '/' ),
 		'logo'            => WRA_A . 'img/brand/wra-logo-640.webp',
 		'email'           => 'info@wi-ra.org',
+		'sameAs'          => array( 'https://www.facebook.com/groups/wrainc' ),
 		'address'         => array(
 			'@type'           => 'PostalAddress',
-			'streetAddress'   => '1148 N. Sunnyslope Dr',
+			'streetAddress'   => '1148 N. Sunnyslope Dr. #202',
 			'addressLocality' => 'Mount Pleasant',
 			'addressRegion'   => 'WI',
 			'postalCode'      => '53406',

@@ -38,3 +38,7 @@ Symptom → cause → fix. Add to it whenever something new comes up.
   arbitrarily (the generator writes order-preserving times into posts.json).
 - The form tag gets its PHP endpoint attribute after the hidden fields are
   inserted; the other order breaks the tag because the attribute contains `?>`.
+- `js/wra.js` is one function, and `var` is function-scoped: two features that
+  both declare `var items` or `var update` overwrite each other on any page that
+  has both. Give each feature's variables their own names (`navItems`,
+  `faqItems`, `filterFaq`).

@@ -58,6 +58,7 @@ defined( 'ABSPATH' ) || exit;
             <li><a href="<?php wra_u( '/contact/' ); ?>">Contact</a></li>
             <li><a href="<?php wra_u( '/contact/?topic=coordination' ); ?>">Coordination questions</a></li>
             <li><a href="mailto:info@wi-ra.org">Info@wi-ra.org</a></li>
+            <li><a href="https://www.facebook.com/groups/wrainc" target="_blank" rel="noopener">WRA on Facebook<svg aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></li>
           </ul>
         </div>
       </nav>
@@ -66,7 +67,7 @@ defined( 'ABSPATH' ) || exit;
         <dl class="footer__facts">
           <div><dt>EIN</dt><dd>42-4481796</dd></div>
           <div><dt>Status</dt><dd><span class="nowrap">501(c)(3)</span> public charity, Section <span class="nowrap">509(a)(2)</span></dd></div>
-          <div><dt>Mailing address</dt><dd>1148 N. Sunnyslope Dr, Mount Pleasant, WI 53406</dd></div>
+          <div><dt>Mailing address</dt><dd>1148 N. Sunnyslope Dr. #202, Mount Pleasant, WI 53406</dd></div>
         </dl>
       </div>
 

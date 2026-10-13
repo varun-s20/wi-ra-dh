@@ -22,13 +22,13 @@
     }, { passive: true });
     update();
     /* Dropdowns: disclosure buttons (click, keyboard), with hover on mice */
-    var items = $$(".nav__item", hdr).filter(function (i) { return !!$(".nav__toggle", i); });
+    var navItems = $$(".nav__item", hdr).filter(function (i) { return !!$(".nav__toggle", i); });
     var setItem = function (item, open) {
       item.classList.toggle("is-open", open);
       $(".nav__toggle", item).setAttribute("aria-expanded", String(open));
     };
-    var closeAll = function (except) { items.forEach(function (i) { if (i !== except) setItem(i, false); }); };
-    items.forEach(function (item) {
+    var closeAll = function (except) { navItems.forEach(function (i) { if (i !== except) setItem(i, false); }); };
+    navItems.forEach(function (item) {
       var btn = $(".nav__toggle", item), timer = null;
       btn.addEventListener("click", function () {
         var open = !item.classList.contains("is-open");
@@ -49,6 +49,8 @@
         if (e.key === "Escape" && item.classList.contains("is-open")) { setItem(item, false); btn.focus(); }
       });
       item.addEventListener("focusout", function (e) { if (!item.contains(e.relatedTarget)) setItem(item, false); });
+      // a link to a section of the current page does not reload it, so close the panel
+      $$(".nav__panel a", item).forEach(function (a) { a.addEventListener("click", function () { setItem(item, false); }); });
     });
     document.addEventListener("click", function (e) { if (!e.target.closest(".nav__item")) closeAll(); });
   }
@@ -112,12 +114,10 @@
     revealables.forEach(function (el) { el.classList.add("is-in"); });
   }
 
-  /* Hero: background images cross-fade. No visible player; a pause button
-     appears on keyboard focus, and reduced-motion users get a still image. */
+  /* Hero: background images cross-fade; reduced-motion users get a still image. */
   var hero = $(".hero");
   if (hero) {
     var slides = $$(".hero__slide", hero);
-    var pauseBtn = $(".hero__pause", hero);
     var interval = parseInt(hero.getAttribute("data-interval"), 10) || 7000;
     var index = 0, timer = null, paused = reduceMotion;
     /* Slides after the first load once the page has finished loading */
@@ -134,14 +134,8 @@
       slides.forEach(function (s, n) { s.classList.toggle("is-active", n === index); });
     };
     var schedule = function () { clearTimeout(timer); if (!paused) timer = setTimeout(function () { show(index + 1); schedule(); }, interval); };
-    var setPaused = function (p) {
-      paused = p;
-      if (pauseBtn) pauseBtn.textContent = p ? "Play background images" : "Pause background images";
-      if (p) clearTimeout(timer); else schedule();
-    };
-    if (pauseBtn) pauseBtn.addEventListener("click", function () { setPaused(!paused); });
     document.addEventListener("visibilitychange", function () { if (document.hidden) clearTimeout(timer); else if (!paused) schedule(); });
-    setPaused(paused);
+    schedule();
   }
 
   /* Map: tooltip for each repeater mark ----------------------------------- */
@@ -168,21 +162,21 @@
   var faq = $(".faq");
   if (faq) {
     var input = $(".faq__filter input", faq), countEl = $(".faq__count", faq), empty = $(".faq__empty", faq);
-    var items = $$(".qa", faq), groups = $$(".faq__group", faq);
-    var update = function () {
+    var faqItems = $$(".qa", faq), groups = $$(".faq__group", faq);
+    var filterFaq = function () {
       var q = input.value.trim().toLowerCase(), shown = 0;
-      items.forEach(function (qa) {
+      faqItems.forEach(function (qa) {
         var hit = !q || qa.textContent.toLowerCase().indexOf(q) !== -1;
         qa.hidden = !hit;
         if (hit) shown++;
         if (q && hit) qa.open = true;
       });
       groups.forEach(function (g) { g.hidden = !$$(".qa", g).some(function (qa) { return !qa.hidden; }); });
-      countEl.textContent = q ? shown + " of " + items.length + " questions" : items.length + " questions";
+      countEl.textContent = q ? shown + " of " + faqItems.length + " questions" : faqItems.length + " questions";
       empty.hidden = shown !== 0;
     };
-    input.addEventListener("input", update);
-    update();
+    input.addEventListener("input", filterFaq);
+    filterFaq();
     // Open a question linked by hash, e.g. resources.html#faq-fcc
     var target = location.hash && document.getElementById(location.hash.slice(1));
     if (target && target.classList.contains("qa")) target.open = true;
