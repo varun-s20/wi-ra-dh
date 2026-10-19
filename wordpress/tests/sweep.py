@@ -19,12 +19,12 @@ BASE = (args[0] if args else "http://127.0.0.1:9400/").rstrip("/") + "/"
 
 if STATIC:
     PAGES = ["index.html", "about.html", "coordination.html", "coordination-process.html", "arcs.html",
-             "membership.html", "resources.html", "news.html", "contact.html", "privacy.html", "terms.html",
+             "membership.html", "resources.html", "news.html", "clubs.html", "contact.html", "privacy.html", "terms.html",
              "404.html", "news-501c3-public-charity-status.html", "news-arcs-development-update.html",
              "news-open-letter.html", "news-war-transition.html", "news-welcome.html"]
 else:
     PAGES = ["", "about/", "frequency-coordination/", "repeater-coordination/", "arcs/", "membership/",
-             "resources/", "news/", "contact/", "privacy-policy/", "terms-of-use/", "no-such-page/",
+             "resources/", "news/", "clubs/", "contact/", "privacy-policy/", "terms-of-use/", "no-such-page/",
              "wisconsin-repeater-alliance-receives-federal-501c3-public-charity-status/",
              "arcs-amateur-radio-coordination-system/",
              "an-open-letter-to-the-wisconsin-amateur-radio-community/",
@@ -71,8 +71,22 @@ def clickable(pg, loc):
         return !!at && (at === el || el.contains(at)); }""", loc.element_handle())
 
 
+def as_visitor(ctx, base):
+    """Local Playground started with --login signs every new browser in as admin on
+    its first request. Warm up, then keep only its "already happened" cookie so the
+    checks see what a logged-out visitor sees (as compare.py and a11y.py do)."""
+    jar = [{"name": "playground_auto_login_already_happened", "value": "1", "url": base}]
+    ctx.add_cookies(jar)
+    pg = ctx.new_page()
+    pg.goto(base, wait_until="load")
+    ctx.clear_cookies()
+    ctx.add_cookies(jar)
+    pg.close()
+    return ctx
+
+
 def desktop(b, rel):
-    ctx = b.new_context(viewport={"width": 1440, "height": 900}, user_agent=UA, permissions=["clipboard-read", "clipboard-write"])
+    ctx = as_visitor(b.new_context(viewport={"width": 1440, "height": 900}, user_agent=UA, permissions=["clipboard-read", "clipboard-write"]), BASE)
     pg = ctx.new_page()
     errs, posts = [], []
     pg.on("pageerror", lambda e: errs.append(str(e)[:160]) if own_page_error(e) else None)
@@ -190,7 +204,7 @@ def desktop(b, rel):
 
 
 def phone(b, rel):
-    ctx = b.new_context(viewport={"width": 390, "height": 844}, user_agent=UA, is_mobile=True, has_touch=True)
+    ctx = as_visitor(b.new_context(viewport={"width": 390, "height": 844}, user_agent=UA, is_mobile=True, has_touch=True), BASE)
     pg = ctx.new_page()
     errs = []
     pg.on("pageerror", lambda e: errs.append(str(e)[:160]) if own_page_error(e) else None)

@@ -81,6 +81,16 @@ return array(
 		'noindex' => false,
 		'crumbs' => array( array( 'News', null ) ),
 	),
+	'clubs' => array(
+		'title' => 'Radio Clubs & Sponsors – Wisconsin Repeater Alliance',
+		'description' => 'A directory of Wisconsin\'s amateur radio and repeater clubs and sponsors, with a link to each website.',
+		'og_title' => 'Radio Clubs & Sponsors – Wisconsin Repeater Alliance',
+		'nav' => 'resources',
+		'path' => '/clubs/',
+		'noindex' => false,
+		'crumbs' => array( array( 'Resources', '/resources/' ), array( 'Radio clubs &amp; sponsors', null ) ),
+		'preload' => array( 'href' => 'img/photos/ham-beam-800.webp', 'srcset' => 'img/photos/ham-beam-800.webp 800w, img/photos/ham-beam-1600.webp 1600w', 'sizes' => '(max-width: 960px) 100vw, 50vw' ),
+	),
 	'contact' => array(
 		'title' => 'Contact – Wisconsin Repeater Alliance',
 		'description' => 'Contact the Wisconsin Repeater Alliance about coordination, interference, membership or volunteering. Email info@wi-ra.org or send a message.',

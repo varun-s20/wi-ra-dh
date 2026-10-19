@@ -51,10 +51,11 @@ Don't edit the root `*.html` files directly; the next build overwrites them.
 | Membership | `membership.html` | $20 a year shown up front, Join and Renew side by side, where dues go, benefits, paying dues via Zeffy (#dues) |
 | Resources | `resources.html` | Filterable FAQ (#faq), document library (#library), volunteer roles (#volunteer) and interest form (#interest) |
 | News | `news.html` + 5 `news-*.html` | Announcement template: byline, reading time, copy link, more news, previous/next |
+| Radio clubs & sponsors | `clubs.html` (`/clubs/`) | Directory of amateur radio clubs and sponsors (added Oct 2026; under Resources in the menu): photo page head (the beam antenna), one standard card per club (logo plate, name, "Visit website"), A to Z with an A–Z / Z–A switch (the cards glide to their new places), 4/3/2 across and a one-column list on phones, and the header logo in greyscale when a club has no logo. The 8 clubs here are samples (logos in `assets/img/samples/`); in WordPress the cards come from wp-admin → Clubs & Sponsors |
 | Contact | `contact.html` | Contact routes (coordination, interference, membership, volunteering) and the form; `?topic=` preselects the subject |
 | Privacy, Terms, 404 | `privacy.html`, `terms.html`, `404.html` | Placeholders until WRA supplies the policy text |
 
-**Navigation** follows the agreed 8-item structure, identical in the header, the mobile drawer and the footer: Home (the logo), About WRA, Coordination, ARCS, Membership, Resources, News, Contact.
+**Navigation** follows the agreed structure, identical in the header, the mobile drawer and the footer: Home (the logo), About WRA, Coordination, ARCS, Membership, Resources, News, Contact. The Radio clubs & sponsors directory is the last item under Resources (Corey, Oct 19 2026: "keeps the flow clean without cluttering up the navigation").
 
 - **Header** (`.hdr`, `_build/partials/header.html`):
   - A utility strip carries the email, the ARCS repeater directory and "Sign in to ARCS".
@@ -89,11 +90,11 @@ Don't edit the root `*.html` files directly; the next build overwrites them.
 - 400 at 18px for body copy
 - Uppercase only for small labels (eyebrows, meta, table headers)
 
-**Components** (all in `css/wra.css`, sections 18–30):
+**Components** (all in `css/wra.css`, sections 18–30 and 33):
 - Page structure: `phead` (page head, with photo, screen, plain and article variants), `toc` (on-this-page cells), `split`, `sec-head`
 - Lists and cells: `cells`, `icols`, `duo` / `sheet`, `ticks`, `pull`
 - Process and reference: `steps` with `owner` chips, `spec` table, `checklist`
-- Content blocks: `faq` / `qa`, `docs`, `people`, `price`, `notice`
+- Content blocks: `faq` / `qa`, `docs`, `people`, `price`, `notice`, `clubs` / `club`
 - Forms: `form` / `field`
 - News: `article` / `prose`, `feature`, `archive`
 - Closing band: `endcap`

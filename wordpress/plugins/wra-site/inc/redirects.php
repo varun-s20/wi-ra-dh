@@ -41,6 +41,7 @@ add_action(
 				'membership'           => '/membership/',
 				'resources'            => '/resources/',
 				'news'                 => '/news/',
+				'clubs'                => '/clubs/',
 				'contact'              => '/contact/',
 				'privacy'              => '/privacy-policy/',
 				'terms'                => '/terms-of-use/',

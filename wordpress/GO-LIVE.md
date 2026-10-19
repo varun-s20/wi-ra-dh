@@ -9,6 +9,8 @@ Two stages:
    there. This keeps his existing plugins, users and integrations running
    throughout — see "Why this route" below.
 
+Updates after launch are at the end: **Updating the live site**.
+
 ---
 
 ## Stage 1: staging on our WordPress (about 15 minutes)
@@ -177,3 +179,61 @@ existing there. Plan for these before you start:
 
 **All-in-One WP Migration → Import** the wi-ra.org `.wpress` backup from step 2.
 That restores the site exactly as it was before the migration.
+
+---
+
+## Updating the live site
+
+The site is live, so an update replaces the theme and plugin in place. No setup
+is run again. Do it on staging first, let Corey check it there, then repeat on
+wi-ra.org.
+
+### Clubs release (theme 1.1.0, WRA Site 1.1.0)
+
+Adds the Clubs page (`/clubs/`), "Clubs" between News and Contact in the menu,
+and **Clubs** in wp-admin. **Order matters: plugin first, then theme.** The
+plugin creates the Clubs page, and the theme adds the menu link to it.
+
+1. **Back up**: All-in-One WP Migration → Export → File, and keep the download.
+2. **Plugins → Add New → Upload Plugin** → `dist/wra-site.zip` → Install Now →
+   **Replace current with uploaded**. The plugin stays active.
+3. The next wp-admin page you open (by an administrator) creates the **Clubs**
+   page once. Check **Pages**: "Clubs" is there and Published, and **Clubs** is in
+   the left-hand menu.
+4. **Appearance → Themes → Add New → Upload Theme** → `dist/wra-child.zip` →
+   Install Now → **Replace active with uploaded**.
+5. On wi-ra.org: **Settings → Redis → Flush Cache**, then purge any CDN cache.
+6. **Check, logged out**: the Clubs page (before any clubs are added it says "The
+   directory is being compiled"), "Clubs" in the header between News and
+   Contact on two or three pages, the phone menu, the footer, and that the rest
+   of the site is unchanged.
+7. **Add the clubs**: Clubs → Add New Club (OWNER-HANDOFF.md, section 2), or
+   load the list Corey sends.
+
+**Rollback**: upload the previous zips the same way (theme 1.0.1, WRA Site
+1.0.1; both are in git at commit `0df855d`, `wordpress/dist/`). Club records
+and the Clubs page stay in the database and do no harm. To remove them, move the
+Clubs page to the Trash.
+
+### Radio Clubs & Sponsors update (theme 1.1.1, WRA Site 1.1.1)
+
+Live has 1.1.0. This renames the directory **Radio Clubs & Sponsors**, moves its
+menu link from the top level into **Resources**, and renames wp-admin **Clubs** to
+**Clubs & Sponsors**. The address stays `/clubs/`, and any clubs already entered
+stay as they are.
+
+1. **Back up** (All-in-One WP Migration → Export → File).
+2. **Plugins → Add New → Upload Plugin** → `dist/wra-site.zip` → **Replace current
+   with uploaded**.
+3. Open the **Dashboard** once. This renames the page from "Clubs" to "Radio Clubs &
+   Sponsors" (check **Pages**), and the left-hand menu now says **Clubs & Sponsors**.
+4. **Appearance → Themes → Add New → Upload Theme** → `dist/wra-child.zip` →
+   **Replace active with uploaded**.
+5. **Settings → Redis → Flush Cache**, then purge any CDN cache.
+6. **Check, logged out**: the header has no "Clubs" link; **Resources** opens with
+   "Radio clubs & sponsors" as its last item; the page heading and the breadcrumb
+   (Home / Resources / Radio clubs & sponsors) read correctly; the phone menu and
+   the footer list it under Resources.
+
+**Rollback**: upload the 1.1.0 zips the same way (theme first is fine here, as the
+page already exists).

@@ -63,7 +63,7 @@ def jsonld_for(meta, path):
     else:
         trail = [{"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"}]
         for i, (label, href) in enumerate(meta.get("crumbs", []), start=2):
-            node = {"@type": "ListItem", "position": i, "name": re.sub("<[^>]+>", "", label)}
+            node = {"@type": "ListItem", "position": i, "name": html.unescape(re.sub("<[^>]+>", "", label))}
             node["item"] = SITE + (canonical_of(href) if href else meta["canonical"])
             trail.append(node)
         graph.append({"@type": "BreadcrumbList", "itemListElement": trail})

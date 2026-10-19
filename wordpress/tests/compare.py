@@ -25,6 +25,7 @@ PAIRS = [
     ("membership.html", "membership/"),
     ("resources.html", "resources/"),
     ("news.html", "news/"),
+    ("clubs.html", "clubs/"),
     ("contact.html", "contact/"),
     ("privacy.html", "privacy-policy/"),
     ("terms.html", "terms-of-use/"),

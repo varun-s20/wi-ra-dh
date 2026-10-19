@@ -12,7 +12,7 @@ from playwright.sync_api import sync_playwright
 WP = next((x for x in sys.argv[1:] if x.startswith("http")), "http://127.0.0.1:9400/")
 AXE = "https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.10.2/axe.min.js"
 PATHS = ["", "about/", "frequency-coordination/", "repeater-coordination/", "arcs/", "membership/", "resources/",
-         "news/", "contact/", "privacy-policy/", "terms-of-use/", "no-such-page/", "category/news/", "?s=coordination",
+         "news/", "clubs/", "contact/", "privacy-policy/", "terms-of-use/", "no-such-page/", "category/news/", "?s=coordination",
          "wisconsin-repeater-alliance-receives-federal-501c3-public-charity-status/",
          "an-open-letter-to-the-wisconsin-amateur-radio-community/", "news-welcome-to-wra/"]
 FAILS = []

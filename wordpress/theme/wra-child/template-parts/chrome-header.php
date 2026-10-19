@@ -59,6 +59,7 @@ defined( 'ABSPATH' ) || exit;
               <a href="<?php wra_u( '/resources/#faq' ); ?>"><strong>Frequently asked questions</strong><span>Clear answers about coordination, membership and WRA.</span></a>
               <a href="<?php wra_u( '/resources/#library' ); ?>"><strong>Documents and forms</strong><span>Bylaws, policies, the band plan and the checklist.</span></a>
               <a href="<?php wra_u( '/resources/#volunteer' ); ?>"><strong>Volunteer</strong><span>Whatever your background, there's a role for you.</span></a>
+              <a href="<?php wra_u( '/clubs/' ); ?>"<?php wra_aria_current( '/clubs/' ); ?>><strong>Radio clubs &amp; sponsors</strong><span>Amateur radio clubs and sponsors across Wisconsin.</span></a>
             </div>
           </li>
           <li class="nav__item"><a class="nav__link" data-nav="news"<?php wra_nav_current( 'news' ); ?> href="<?php wra_u( '/news/' ); ?>">News</a></li>
@@ -103,6 +104,7 @@ defined( 'ABSPATH' ) || exit;
               <li><a href="<?php wra_u( '/resources/#faq' ); ?>">Frequently asked questions</a></li>
               <li><a href="<?php wra_u( '/resources/#library' ); ?>">Documents and forms</a></li>
               <li><a href="<?php wra_u( '/resources/#volunteer' ); ?>">Volunteer</a></li>
+              <li><a href="<?php wra_u( '/clubs/' ); ?>"<?php wra_aria_current( '/clubs/' ); ?>>Radio clubs &amp; sponsors</a></li>
             </ul>
           </li>
           <li><a class="drawer__link" href="<?php wra_u( '/news/' ); ?>"<?php wra_aria_current( '/news/' ); ?>>News</a></li>

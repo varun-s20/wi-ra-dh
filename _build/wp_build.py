@@ -13,7 +13,8 @@ the WordPress theme in wordpress/theme/wra-child:
 
   hand-written (live in the theme folder): functions.php, header.php,
   footer.php, single.php, page.php, index.php, inc/*.php (except page-meta),
-  template-parts/news-*.php, template-parts/arcs-status.php, assets/css/wp.css
+  template-parts/news-*.php, template-parts/arcs-status.php,
+  template-parts/clubs.php, assets/css/wp.css
 
 Run from anywhere:  python _build/wp_build.py
 """
@@ -38,6 +39,7 @@ PAGES = {
     "membership.html": ("membership", "/membership/"),
     "resources.html": ("resources", "/resources/"),
     "news.html": ("news", "/news/"),
+    "clubs.html": ("clubs", "/clubs/"),
     "contact.html": ("contact", "/contact/"),
     "privacy.html": ("privacy-policy", "/privacy-policy/"),
     "terms.html": ("terms-of-use", "/terms-of-use/"),
@@ -130,6 +132,11 @@ def page_specific(key, body):
         a = body.index("        <!-- CMS: newest post as the feature")
         b = body.index("</ul>", a) + len("</ul>")
         body = body[:a] + "        <?php get_template_part( 'template-parts/news', 'list' ); ?>" + body[b:]
+    elif key == "clubs":
+        # the listing cards (and their count) come from WordPress (wp-admin -> Clubs & Sponsors)
+        a = body.index("        <!-- CMS: the published listings")
+        b = body.index("<!-- /CMS -->", a) + len("<!-- /CMS -->")
+        body = body[:a] + "        <?php get_template_part( 'template-parts/clubs' ); ?>" + body[b:]
     elif key == "arcs":
         a = body.index("          <!-- EDITABLE NOTICE")
         d = body.index('<div class="notice"', a)
@@ -232,7 +239,8 @@ def build():
         dst = THEME / "assets" / sub
         if dst.exists():
             shutil.rmtree(dst)
-        shutil.copytree(ROOT / "assets" / sub, dst, ignore=shutil.ignore_patterns("CREDITS.txt"))
+        # samples/: the Clubs preview's sample logos, static preview only
+        shutil.copytree(ROOT / "assets" / sub, dst, ignore=shutil.ignore_patterns("CREDITS.txt", "samples"))
     shutil.copy2(ROOT / "assets" / "img" / "photos" / "CREDITS.txt", THEME / "assets" / "img" / "photos" / "CREDITS.txt")
     print("  assets copied")
 
@@ -243,7 +251,7 @@ def build():
     defined = set()
     for f in (THEME / "inc").glob("*.php"):
         defined |= set(re.findall(r"function\s+(wra_[a-z_]+)\s*\(", f.read_text(encoding="utf8")))
-    plugin_api = {"wra_site_arcs_status", "wra_site_byline"}  # provided by the wra-site plugin, always guarded with function_exists
+    plugin_api = {"wra_site_arcs_status", "wra_site_byline", "wra_site_clubs"}  # provided by the wra-site plugin, always guarded with function_exists
     missing = used - defined - plugin_api
     assert not missing, f"templates call undefined helpers: {sorted(missing)}"
 

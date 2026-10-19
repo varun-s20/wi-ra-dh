@@ -10,6 +10,20 @@ WP = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:9400/"
 FAILS = []
 
 
+def as_visitor(ctx, base):
+    """Local Playground started with --login signs every new browser in as admin on
+    its first request. Warm up, then keep only its "already happened" cookie so the
+    checks see what a logged-out visitor sees (as compare.py and a11y.py do)."""
+    jar = [{"name": "playground_auto_login_already_happened", "value": "1", "url": base}]
+    ctx.add_cookies(jar)
+    pg = ctx.new_page()
+    pg.goto(base, wait_until="load")
+    ctx.clear_cookies()
+    ctx.add_cookies(jar)
+    pg.close()
+    return ctx
+
+
 def check(label, ok, detail=""):
     print(("PASS " if ok else "FAIL ") + label + (f"  ({detail})" if detail and not ok else ""))
     if not ok:
@@ -20,7 +34,7 @@ with sync_playwright() as p:
     b = p.chromium.launch()
 
     # phone: drawer menu
-    m = b.new_context(viewport={"width": 390, "height": 844}).new_page()
+    m = as_visitor(b.new_context(viewport={"width": 390, "height": 844}), WP).new_page()
     m.goto(WP, wait_until="load")
     m.click(".hdr__menu")
     m.wait_for_timeout(600)
@@ -33,7 +47,7 @@ with sync_playwright() as p:
     check("phone: Escape closes the menu", not m.evaluate("document.documentElement.classList.contains('menu-open')"))
 
     # desktop: dropdown, hero, header on scroll
-    d = b.new_context(viewport={"width": 1440, "height": 900}).new_page()
+    d = as_visitor(b.new_context(viewport={"width": 1440, "height": 900}), WP).new_page()
     d.goto(WP, wait_until="load")
     d.click("button.nav__toggle[data-nav='coordination']")
     d.wait_for_timeout(400)

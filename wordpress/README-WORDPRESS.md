@@ -8,7 +8,7 @@ For whoever installs or maintains the build. The owner's guide is
 ```
 wordpress/
 ├── theme/wra-child/      child theme of Hello Elementor (the design)
-├── plugins/wra-site/     ARCS status setting, forms + Messages, byline, redirects
+├── plugins/wra-site/     Radio Clubs & Sponsors directory, ARCS status setting, forms + Messages, byline, redirects
 ├── plugins/wra-setup/    one-time switch-over (plan / run / undo), deleted after launch
 ├── dist/                 the three installable .zip files
 ├── tests/                visual, functional, accessibility and syntax checks
@@ -36,14 +36,14 @@ Generated, never edit by hand (each starts with a GENERATED comment):
 `plugins/wra-setup/content/posts.json`.
 
 Hand-written: `functions.php`, `header.php`, `footer.php`, `single.php`,
-`page.php`, `index.php`, `inc/{helpers,news,setup,head}.php`,
-`template-parts/{news-home,news-list,news-row,arcs-status}.php`,
+`page.php`, `index.php`, `inc/{helpers,news,clubs,setup,head}.php`,
+`template-parts/{news-home,news-list,news-row,arcs-status,clubs}.php`,
 `assets/css/wp.css`.
 
 What the generator does to the static HTML: asset paths become theme URLs,
 `.html` links become WordPress URLs (`wra_u()`), breadcrumbs and nav state
-become helpers, the home/News post lists, the ARCS notice and the document links
-become template parts, and the forms get their endpoint and hidden spam fields.
+become helpers, the home/News post lists, the Clubs cards, the ARCS notice and the
+document links become template parts, and the forms get their endpoint and hidden spam fields.
 It fails loudly if a template calls a helper the theme does not define.
 
 After any design change: re-run both scripts, run the tests, bump the theme
@@ -69,6 +69,7 @@ version in `style.css`, re-package (below) and upload the theme zip.
 | Content | Storage | Rendered by |
 | --- | --- | --- |
 | News | core posts (category News), excerpt, featured image, `_wra_byline` meta | `single.php`, `template-parts/news-*.php` |
+| Radio Clubs & Sponsors (`/clubs/`) | CPT `wra_club` (not public; wp-admin "Clubs & Sponsors", one "listing" per club or sponsor): title = name, featured image = logo, meta `_wra_club_url`; Published = shown, Draft = hidden | `page-clubs.php` → `template-parts/clubs.php` (A to Z, WRA placeholder without a logo) |
 | ARCS status | option `wra_site_options` | `template-parts/arcs-status.php` (falls back to the approved wording if the plugin is off) |
 | Messages | CPT `wra_message`, meta `_wra_form`, `_wra_fields`, `_wra_mailed` | wp-admin only |
 | Everything else | the generated templates | — |
@@ -77,9 +78,17 @@ version in `style.css`, re-package (below) and upload the theme zip.
 
 - `wra_site_arcs_status()`: `show`, `title`, `message`, `updated` (Y-m-d)
 - `wra_site_byline( $post_id )`: string, '' when unset
+- `wra_site_clubs()`: the published listings (clubs and sponsors), A to Z (natural, case-insensitive, by
+  the name as typed): `id`, `name` (plain text), `url` ('' if none), `logo`
+  (attachment ID, 0 if none)
+- The Clubs page (`/clubs/`) is created once by `wra_site_upgrade()`, on
+  activation or on the first admin visit after updating to 1.1.0 (uploading a
+  zip does not re-run activation). Option `wra_site_version` records it. The
+  1.1.1 step renames that page from "Clubs" to "Radio Clubs & Sponsors" if its
+  title is still "Clubs".
 - `POST /wp-json/wra/v1/message`: form fields + `_form` (contact|volunteer), `_ts`, `_hp`
 - Redirect map: `wra_site_redirect_map()` in `inc/redirects.php`
-- Uninstall deletes the settings only; Messages and bylines are kept.
+- Uninstall deletes the settings only; Messages, Clubs and bylines are kept.
 
 ## Packaging
 
@@ -100,6 +109,9 @@ Start the local site with the command below. Its blueprint installs Hello
 Elementor and Elementor, recreates the live site's current state
 (`tests/playground/simulate-live.php`), then rehearses the setup: run, undo,
 check everything is back, run again. Results land in `<logs-dir>/setup-test.txt`.
+Last, it adds the eight sample clubs from the static Clubs preview
+(`tests/playground/seed-clubs.php`, logos from `assets/img/samples`), so
+`compare.py` can check the Clubs page against the design.
 Then, with the static preview also running on port 8767:
 
 ```bash
@@ -108,6 +120,7 @@ python wordpress/tests/functional.py  # forms, spam, Messages, ARCS status, publ
 python wordpress/tests/a11y.py        # axe, console, images, links, overflow, one h1
 python wordpress/tests/interact.py    # menus, dropdown, hero, FAQ filter, checklist, Zeffy (read-only)
 python wordpress/tests/sweep.py       # every page x every menu + page features, script errors (sends no form)
+python wordpress/tests/clubs.py       # directory page + every wp-admin task + the 1.0 -> 1.1 and 1.1.0 -> 1.1.1 update paths
 # static preview: sweep.py http://127.0.0.1:8767/ --static
 # script check for features overwriting each other: npx eslint (no-redeclare, block-scoped-var) on js/wra.js
 # against staging (submits nothing): a11y.py <url> --readonly, interact.py <url>
@@ -122,7 +135,7 @@ npx @wp-playground/cli server --port=9400 --php=8.4 --login \
   --mount-dir wordpress/theme/wra-child /wordpress/wp-content/themes/wra-child \
   --mount-dir wordpress/plugins/wra-site /wordpress/wp-content/plugins/wra-site \
   --mount-dir wordpress/plugins/wra-setup /wordpress/wp-content/plugins/wra-setup \
-  --mount-dir wordpress/tests/playground /wordpress/wra-tests \
+  --mount-dir wordpress/tests/playground /wordpress/wra-tests   --mount-dir assets/img/samples /wordpress/wra-samples \
   --mount-dir <logs-dir> /wordpress/wralogs \
   --define-bool WP_DEBUG true --define-bool WP_DEBUG_DISPLAY false \
   --define WP_DEBUG_LOG /wordpress/wralogs/debug.log \
@@ -144,3 +157,5 @@ generator, re-package and upload the theme.
 - 1.0.0 (Oct 9): Terms of Use page; Bylaws, Coordination Policy and Band Plan PDFs linked; coordination wording aligned with the adopted policy. Setup 1.1.0: works on a fresh WordPress (creates posts in a News category with order-preserving times, bins the untouched sample post/page, sets site title, tagline and time zone).
 - WRA Site 1.0.1 (Oct 10): redirects the WAR post's old address (`/lorem-ipsum-dolor-sit-amet-consectetur-2/`) itself, because WordPress's old-slug redirect is lost on a fresh install and on an All-in-One WP Migration import.
 - Theme 1.0.1 (Oct 13, Corey's launch feedback): removed the hero pause control (keyboard-only); fixed the Resources page menu (the FAQ script reused the menu's variable names, so every dropdown stopped working there and the header stopped turning white on scroll); dropdown panels close after a same-page link; Facebook group link in the top bar, phone menu and footer (opens in a new tab); mailing address now `1148 N. Sunnyslope Dr. #202`; Wisconsin Band Plan replaced with the full 27-page plan.
+- 1.1.0 (Oct 19): **Clubs directory** (Corey's Oct 16 order). Theme 1.1.0: new Clubs page (`/clubs/`, static source `_build/pages/clubs.html`), "Clubs" between News and Contact in the header, phone menu and footer, card styles in `wra.css` section 33, an A–Z / Z–A switch for visitors (`js/wra.js`, cards animate to their new places; instant with reduced motion), and the header logo in greyscale as the no-logo placeholder. WRA Site 1.1.0: wp-admin → Clubs (Add New Club: name, logo, website; Publish shows, Draft hides; one-click and bulk Show/Hide in the list; name required; website addresses checked and completed with https://), and creates the Clubs page on update. Sample logos in `assets/img/samples` are for the static preview only and are not copied into the theme.
+- 1.1.1 (Oct 19, Corey's feedback): the directory is now **Radio Clubs & Sponsors**, moved from the top-level menu into the Resources dropdown (header, phone menu, footer; breadcrumb Home / Resources / Radio clubs & sponsors; the page marks Resources as current). Address unchanged (`/clubs/`). wp-admin menu renamed **Clubs & Sponsors** (Add New Listing; Show in / Hide from directory). WRA Site 1.1.1 renames the live page record on the first admin visit. Theme 1.1.1, WRA Site 1.1.1.

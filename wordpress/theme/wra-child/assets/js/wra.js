@@ -318,6 +318,41 @@
     });
   }
 
+  /* Clubs: A to Z / Z to A. Each card glides from its old place to its new one
+     (measure, reorder, then animate the difference); reduced motion just reorders. */
+  var clubsSort = $("[data-clubs-sort]");
+  var clubsList = $(".clubs");
+  if (clubsSort && clubsList) {
+    var clubsStatus = $("[data-clubs-status]");
+    var clubsMoving = [];
+    var sortClubs = function (order) {
+      if (clubsSort.getAttribute("data-current") === order) return;
+      var cards = $$(".club", clubsList);
+      var from = cards.map(function (c) { return c.getBoundingClientRect(); }); // where they are now, mid-move included
+      clubsMoving.forEach(function (a) { a.cancel(); });
+      clubsMoving = [];
+      cards.slice().reverse().forEach(function (c) { clubsList.appendChild(c); }); // the list is always A to Z or its reverse
+      clubsSort.setAttribute("data-current", order);
+      $$("button[data-order]", clubsSort).forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-order") === order)); });
+      if (clubsStatus) clubsStatus.textContent = order === "desc" ? "Sorted Z to A" : "Sorted A to Z";
+      if (reduceMotion || !clubsList.animate) return;
+      var near = function (r) { return r.bottom > -200 && r.top < window.innerHeight + 200; };
+      var n = 0;
+      cards.slice().reverse().forEach(function (c) {
+        var a = from[cards.indexOf(c)], b = c.getBoundingClientRect();
+        var dx = a.left - b.left, dy = a.top - b.top;
+        if ((!dx && !dy) || (!near(a) && !near(b))) return; // off-screen both ways: no need to watch it travel
+        clubsMoving.push(c.animate(
+          [{ transform: "translate(" + dx + "px," + dy + "px)" }, { transform: "none" }],
+          { duration: 700, delay: Math.min(n++ * 18, 180), easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "backwards" }
+        ));
+      });
+    };
+    $$("button[data-order]", clubsSort).forEach(function (b) {
+      b.addEventListener("click", function () { sortClubs(b.getAttribute("data-order")); });
+    });
+  }
+
   /* Articles: copy link ---------------------------------------------------- */
   $$("[data-copy-link]").forEach(function (btn) {
     btn.addEventListener("click", function () {

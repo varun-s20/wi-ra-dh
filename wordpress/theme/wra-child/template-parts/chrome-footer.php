@@ -49,6 +49,7 @@ defined( 'ABSPATH' ) || exit;
             <li><a href="<?php wra_u( '/resources/#faq' ); ?>">FAQ</a></li>
             <li><a href="<?php wra_u( '/resources/#library' ); ?>">Documents and forms</a></li>
             <li><a href="<?php wra_u( '/resources/#volunteer' ); ?>">Volunteer</a></li>
+            <li><a href="<?php wra_u( '/clubs/' ); ?>">Radio clubs &amp; sponsors</a></li>
           </ul>
         </div>
         <div>
