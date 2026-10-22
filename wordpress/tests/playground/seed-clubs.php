@@ -1,7 +1,7 @@
 <?php
 /**
- * Test fixture: the eight sample clubs from the static Clubs preview
- * (_build/pages/clubs.html), so compare.py can check the WordPress Clubs page
+ * Test fixture: the fourteen sample listings from the static Clubs preview
+ * (_build/clubs-sample.json), so compare.py can check the WordPress Clubs page
  * against the design pixel for pixel. Logos come from the static source's
  * assets/img/samples, mounted at /wordpress/wra-samples. Entered in a random
  * order on purpose: the page must still list them A to Z.
@@ -21,6 +21,12 @@ $clubs = array(
 	array( 'Test Lakes Repeater Club', 'https://example.net/', '' ),
 	array( 'North Woods Sample Amateur Radio Association', 'https://www.example.org/north-woods/', 'club-north-woods.webp' ),
 	array( 'Example Amateur Radio Club', 'https://www.example.com/', '' ),
+	array( 'Sample Equipment Sponsor Co.', 'https://www.example.com/sponsor/', 'club-sample-sponsor.webp' ),
+	array( 'Badger State Sample Repeater Society', 'https://example.net/badger-state/', 'club-badger-state.webp' ),
+	array( 'Rivertown Test Amateur Radio Club', 'https://example.net/rivertown/', '' ),
+	array( 'Lake Example Emergency Net', 'https://example.org/leen/', 'club-lake-example.webp' ),
+	array( 'Cedar Valley Amateur Radio Club', 'https://www.example.com/cedar-valley/', '' ),
+	array( 'Dairyland Demo Radio Association', '', '' ),
 );
 $log = array();
 foreach ( $clubs as $c ) {

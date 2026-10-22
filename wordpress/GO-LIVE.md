@@ -237,3 +237,25 @@ stay as they are.
 
 **Rollback**: upload the 1.1.0 zips the same way (theme first is fine here, as the
 page already exists).
+
+### Radio Clubs & Sponsors paging (theme 1.1.2, theme only)
+
+Adds pages of 12 and the A–Z / Z–A switch across pages. **WRA Site is not touched**, so
+this is a single upload and nothing needs doing in wp-admin. Listings already entered stay.
+
+1. **Back up** (All-in-One WP Migration → Export → File).
+2. **Appearance → Themes → Add New → Upload Theme** → `dist/wra-child.zip` →
+   **Replace active with uploaded**.
+3. **Settings → Redis → Flush Cache**, then purge any CDN cache.
+4. **Check, logged out**, on `/clubs/`:
+   - 12 cards and, once there are more than 12 listings, page links under them;
+   - **Next** opens `/clubs/page/2/` and **Previous** returns;
+   - **Z–A** shows the last listing first, and its page links keep Z–A.
+5. **Cache check (do not skip).** Open `https://wi-ra.org/clubs/?order=za` in a private
+   window. It must list Z–A (Z first). If it lists A–Z, a cache in front of the site is
+   ignoring the part after the "?": ask the host to include the query string in that
+   cache key (or to bypass the cache for `/clubs/`), and tell us.
+6. **Edge cases:** `/clubs/page/99/` should land on the last page; with JavaScript off
+   (browser settings), the switch and the page links still work as ordinary links.
+
+**Rollback**: upload the previous theme zip (1.1.1) the same way.

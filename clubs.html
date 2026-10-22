@@ -159,76 +159,116 @@
 
     <section class="sec sec--first" aria-labelledby="dir-h">
       <div class="wrap">
-        <!-- CMS: the published listings, A to Z (wp-admin → Clubs & Sponsors; template-parts/clubs.php).
-             These eight are sample entries for the design preview: logos of every shape, missing logos and a club with no website. -->
-        <div class="clubs-head">
-          <h2 class="eyebrow" id="dir-h">Directory</h2>
-          <div class="clubs-tools">
-            <p class="clubs-count">8 listings</p>
-            <div class="clubs-sort" role="group" aria-label="Sort listings" data-clubs-sort data-current="asc">
-              <button type="button" data-order="asc" aria-pressed="true"><span aria-hidden="true">A–Z</span><span class="visually-hidden">A to Z</span></button>
-              <button type="button" data-order="desc" aria-pressed="false"><span aria-hidden="true">Z–A</span><span class="visually-hidden">Z to A</span></button>
+        <!-- CMS: the published listings, A to Z, 12 to a page (wp-admin → Clubs & Sponsors; template-parts/clubs.php).
+             In this static preview the cards come from _build/clubs-sample.json: fourteen sample entries, built into four
+             pages by build.py (A–Z and Z–A, pages 1 and 2) with logos of every shape, missing logos and a club with no website. -->
+        <div class="clubs-dir" id="directory" data-clubs-dir data-order="az" data-page="1" data-pages="2" data-total="14" data-per="12">
+          <div class="clubs-head">
+            <h2 class="eyebrow" id="dir-h" tabindex="-1">Directory</h2>
+            <div class="clubs-tools">
+              <p class="clubs-count">Showing 1–12 of 14</p>
+              <div class="clubs-sort" role="group" aria-label="Sort listings" data-clubs-sort data-current="asc">
+                <a href="clubs.html#directory" aria-current="true"><span aria-hidden="true">A–Z</span><span class="visually-hidden">A to Z</span></a>
+                <a href="clubs-za.html#directory"><span aria-hidden="true">Z–A</span><span class="visually-hidden">Z to A</span></a>
+              </div>
+              <p class="visually-hidden" role="status" data-clubs-status></p>
             </div>
-            <p class="visually-hidden" role="status" data-clubs-status></p>
           </div>
-        </div>
-        <ul class="clubs" role="list" data-reveal>
-          <li class="club club--link">
+          <div class="clubs-frame">
+          <ul class="clubs" role="list" data-reveal>
+          <li class="club club--link" data-club="s1">
             <div class="club__logo"><img src="assets/img/samples/club-anytown.webp" width="600" height="600" alt="" loading="lazy"></div>
             <div class="club__body">
               <h3 class="club__name">Anytown Amateur Radio Club</h3>
               <a class="alink alink--ext club__link" href="https://www.example.org/anytown-arc/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: Anytown Amateur Radio Club (opens in a new tab)</span></a>
             </div>
           </li>
-          <li class="club club--link">
+          <li class="club club--link" data-club="s2">
+            <div class="club__logo"><img src="assets/img/samples/club-badger-state.webp" width="560" height="640" alt="" loading="lazy"></div>
+            <div class="club__body">
+              <h3 class="club__name">Badger State Sample Repeater Society</h3>
+              <a class="alink alink--ext club__link" href="https://example.net/badger-state/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: Badger State Sample Repeater Society (opens in a new tab)</span></a>
+            </div>
+          </li>
+          <li class="club club--link" data-club="s3">
+            <div class="club__logo club__logo--none"><img src="assets/img/brand/wra-logo-nav-144.webp" srcset="assets/img/brand/wra-logo-nav-144.webp 1x, assets/img/brand/wra-logo-nav-216.webp 2x" width="151" height="144" alt="" loading="lazy"></div>
+            <div class="club__body">
+              <h3 class="club__name">Cedar Valley Amateur Radio Club</h3>
+              <a class="alink alink--ext club__link" href="https://www.example.com/cedar-valley/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: Cedar Valley Amateur Radio Club (opens in a new tab)</span></a>
+            </div>
+          </li>
+          <li class="club" data-club="s4">
+            <div class="club__logo club__logo--none"><img src="assets/img/brand/wra-logo-nav-144.webp" srcset="assets/img/brand/wra-logo-nav-144.webp 1x, assets/img/brand/wra-logo-nav-216.webp 2x" width="151" height="144" alt="" loading="lazy"></div>
+            <div class="club__body">
+              <h3 class="club__name">Dairyland Demo Radio Association</h3>
+            </div>
+          </li>
+          <li class="club club--link" data-club="s5">
             <div class="club__logo club__logo--none"><img src="assets/img/brand/wra-logo-nav-144.webp" srcset="assets/img/brand/wra-logo-nav-144.webp 1x, assets/img/brand/wra-logo-nav-216.webp 2x" width="151" height="144" alt="" loading="lazy"></div>
             <div class="club__body">
               <h3 class="club__name">Example Amateur Radio Club</h3>
               <a class="alink alink--ext club__link" href="https://www.example.com/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: Example Amateur Radio Club (opens in a new tab)</span></a>
             </div>
           </li>
-          <li class="club club--link">
+          <li class="club club--link" data-club="s6">
+            <div class="club__logo"><img src="assets/img/samples/club-lake-example.webp" width="640" height="640" alt="" loading="lazy"></div>
+            <div class="club__body">
+              <h3 class="club__name">Lake Example Emergency Net</h3>
+              <a class="alink alink--ext club__link" href="https://example.org/leen/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: Lake Example Emergency Net (opens in a new tab)</span></a>
+            </div>
+          </li>
+          <li class="club club--link" data-club="s7">
             <div class="club__logo"><img src="assets/img/samples/club-north-woods.webp" width="900" height="300" alt="" loading="lazy"></div>
             <div class="club__body">
               <h3 class="club__name">North Woods Sample Amateur Radio Association</h3>
               <a class="alink alink--ext club__link" href="https://www.example.org/north-woods/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: North Woods Sample Amateur Radio Association (opens in a new tab)</span></a>
             </div>
           </li>
-          <li class="club">
+          <li class="club" data-club="s8">
             <div class="club__logo"><img src="assets/img/samples/club-placeholder-ecg.jpg" width="700" height="700" alt="" loading="lazy"></div>
             <div class="club__body">
               <h3 class="club__name">Placeholder Emergency Communications Group</h3>
             </div>
           </li>
-          <li class="club club--link">
+          <li class="club club--link" data-club="s9">
+            <div class="club__logo club__logo--none"><img src="assets/img/brand/wra-logo-nav-144.webp" srcset="assets/img/brand/wra-logo-nav-144.webp 1x, assets/img/brand/wra-logo-nav-216.webp 2x" width="151" height="144" alt="" loading="lazy"></div>
+            <div class="club__body">
+              <h3 class="club__name">Rivertown Test Amateur Radio Club</h3>
+              <a class="alink alink--ext club__link" href="https://example.net/rivertown/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: Rivertown Test Amateur Radio Club (opens in a new tab)</span></a>
+            </div>
+          </li>
+          <li class="club club--link" data-club="s10">
             <div class="club__logo"><img src="assets/img/samples/club-sample-county.webp" width="640" height="360" alt="" loading="lazy"></div>
             <div class="club__body">
               <h3 class="club__name">Sample County Repeater Association</h3>
               <a class="alink alink--ext club__link" href="https://example.com/scra/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: Sample County Repeater Association (opens in a new tab)</span></a>
             </div>
           </li>
-          <li class="club club--link">
+          <li class="club club--link" data-club="s11">
+            <div class="club__logo"><img src="assets/img/samples/club-sample-sponsor.webp" width="960" height="300" alt="" loading="lazy"></div>
+            <div class="club__body">
+              <h3 class="club__name">Sample Equipment Sponsor Co.</h3>
+              <a class="alink alink--ext club__link" href="https://www.example.com/sponsor/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: Sample Equipment Sponsor Co. (opens in a new tab)</span></a>
+            </div>
+          </li>
+          <li class="club club--link" data-club="s12">
             <div class="club__logo club__logo--none"><img src="assets/img/brand/wra-logo-nav-144.webp" srcset="assets/img/brand/wra-logo-nav-144.webp 1x, assets/img/brand/wra-logo-nav-216.webp 2x" width="151" height="144" alt="" loading="lazy"></div>
             <div class="club__body">
               <h3 class="club__name">Test Lakes Repeater Club</h3>
               <a class="alink alink--ext club__link" href="https://example.net/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: Test Lakes Repeater Club (opens in a new tab)</span></a>
             </div>
           </li>
-          <li class="club club--link">
-            <div class="club__logo"><img src="assets/img/samples/club-demo-valley.webp" width="420" height="600" alt="" loading="lazy"></div>
-            <div class="club__body">
-              <h3 class="club__name">The Demo Valley Radio Society</h3>
-              <a class="alink alink--ext club__link" href="https://example.net/dvrs/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: The Demo Valley Radio Society (opens in a new tab)</span></a>
-            </div>
-          </li>
-          <li class="club club--link">
-            <div class="club__logo club__logo--none"><img src="assets/img/brand/wra-logo-nav-144.webp" srcset="assets/img/brand/wra-logo-nav-144.webp 1x, assets/img/brand/wra-logo-nav-216.webp 2x" width="151" height="144" alt="" loading="lazy"></div>
-            <div class="club__body">
-              <h3 class="club__name">Wisconsin Example Radio Club</h3>
-              <a class="alink alink--ext club__link" href="https://www.example.com/wisconsin/" target="_blank" rel="noopener">Visit website<span class="visually-hidden">: Wisconsin Example Radio Club (opens in a new tab)</span></a>
-            </div>
-          </li>
-        </ul>
+          </ul>
+          </div>
+          <nav class="clubs-pager clubs-pager--few" aria-label="Directory pages">
+            <ol class="clubs-pager__pages" role="list">
+              <li><span class="clubs-pager__num" aria-current="page"><span class="visually-hidden">Page </span>1</span></li>
+              <li><a class="clubs-pager__num" href="clubs-2.html#directory" aria-label="Page 2">2</a></li>
+            </ol>
+            <p class="clubs-pager__of">Page 1 of 2</p>
+            <a class="clubs-pager__step clubs-pager__step--next" href="clubs-2.html#directory" rel="next"><span class="clubs-pager__word">Next</span><span class="visually-hidden"> page</span><span aria-hidden="true">→</span></a>
+          </nav>
+        </div>
         <!-- /CMS -->
         <p class="clubs-note">Is your club or organization missing, or is a listing out of date? <a class="inline-link" href="contact.html">Contact us</a> and we'll update the directory.</p>
       </div>

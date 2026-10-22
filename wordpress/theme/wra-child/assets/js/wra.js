@@ -318,38 +318,197 @@
     });
   }
 
-  /* Clubs: A to Z / Z to A. Each card glides from its old place to its new one
-     (measure, reorder, then animate the difference); reduced motion just reorders. */
-  var clubsSort = $("[data-clubs-sort]");
-  var clubsList = $(".clubs");
-  if (clubsSort && clubsList) {
-    var clubsStatus = $("[data-clubs-status]");
-    var clubsMoving = [];
-    var sortClubs = function (order) {
-      if (clubsSort.getAttribute("data-current") === order) return;
-      var cards = $$(".club", clubsList);
-      var from = cards.map(function (c) { return c.getBoundingClientRect(); }); // where they are now, mid-move included
-      clubsMoving.forEach(function (a) { a.cancel(); });
-      clubsMoving = [];
-      cards.slice().reverse().forEach(function (c) { clubsList.appendChild(c); }); // the list is always A to Z or its reverse
-      clubsSort.setAttribute("data-current", order);
-      $$("button[data-order]", clubsSort).forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-order") === order)); });
-      if (clubsStatus) clubsStatus.textContent = order === "desc" ? "Sorted Z to A" : "Sorted A to Z";
-      if (reduceMotion || !clubsList.animate) return;
-      var near = function (r) { return r.bottom > -200 && r.top < window.innerHeight + 200; };
-      var n = 0;
-      cards.slice().reverse().forEach(function (c) {
-        var a = from[cards.indexOf(c)], b = c.getBoundingClientRect();
-        var dx = a.left - b.left, dy = a.top - b.top;
-        if ((!dx && !dy) || (!near(a) && !near(b))) return; // off-screen both ways: no need to watch it travel
-        clubsMoving.push(c.animate(
-          [{ transform: "translate(" + dx + "px," + dy + "px)" }, { transform: "none" }],
-          { duration: 700, delay: Math.min(n++ * 18, 180), easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "backwards" }
-        ));
+  /* Clubs: the Radio Clubs & Sponsors directory (12 to a page, A–Z or Z–A across all pages).
+     The A–Z / Z–A switch and the page links are ordinary links that work without this script;
+     here they swap the cards in place instead of reloading:
+       - cards on both pages glide to their new place, others fade in and out (FLIP);
+       - if the next page takes longer than a moment, skeleton cards stand in for it;
+       - a logo plate shimmers until its image has arrived;
+       - any failure falls back to a normal page load, and reduced motion skips the movement. */
+  var clubsDir = $("[data-clubs-dir]");
+  var clubsList = clubsDir && $(".clubs", clubsDir);
+  var clubsFrame = clubsList && clubsList.parentNode;
+  if (clubsList && window.fetch && window.Promise && window.DOMParser && window.history && history.pushState) {
+    var clubsStatus = $("[data-clubs-status]", clubsDir);
+    var clubsHeading = $("#dir-h", clubsDir);
+    var clubsCache = {};     // page address -> Promise of its HTML
+    var clubsSeq = 0;        // the newest request wins
+    var clubsMoving = [];    // animations in flight
+    var clubsPushed = false; // true once this script has added a history entry
+    var clubsMotion = !reduceMotion && !!clubsList.animate;
+    var clubsSkeleton = '<li class="club club--skeleton" aria-hidden="true"><div class="club__logo"></div><div class="club__body"><div class="club__name--sk"><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div><span class="sk sk--link"></span></div></li>';
+
+    /* A logo plate shimmers until its image has loaded (lazy images that are still off-screen count as loading). */
+    var clubsWatchLogos = function (root) {
+      $$(".club__logo img", root).forEach(function (img) {
+        if (img.complete) return;
+        var plate = img.parentNode;
+        plate.classList.add("is-loading");
+        var done = function () { plate.classList.remove("is-loading"); };
+        img.addEventListener("load", done, { once: true });
+        img.addEventListener("error", done, { once: true });
       });
     };
-    $$("button[data-order]", clubsSort).forEach(function (b) {
-      b.addEventListener("click", function () { sortClubs(b.getAttribute("data-order")); });
+    clubsWatchLogos(clubsList);
+
+    var clubsLoad = function (url) {
+      var key = url.split("#")[0];
+      if (!clubsCache[key]) {
+        clubsCache[key] = fetch(key, { credentials: "same-origin", headers: { Accept: "text/html" } }).then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.text();
+        });
+        clubsCache[key].catch(function () { delete clubsCache[key]; });
+      }
+      return clubsCache[key];
+    };
+    var clubsTimeout = function (promise, ms) {
+      return new Promise(function (resolve, reject) {
+        var t = setTimeout(function () { reject(new Error("timeout")); }, ms);
+        promise.then(function (v) { clearTimeout(t); resolve(v); }, function (e) { clearTimeout(t); reject(e); });
+      });
+    };
+    var clubsCards = function () { return $$(".club:not(.club--leaving)", clubsList); };
+    var clubsNear = function (r) { return r.bottom > -200 && r.top < window.innerHeight + 200; };
+
+    var clubsShowSkeleton = function () {
+      var count = clubsCards().length || Number(clubsDir.getAttribute("data-per")) || 12;
+      clubsMoving.forEach(function (a) { a.cancel(); });
+      clubsMoving = [];
+      clubsList.setAttribute("aria-busy", "true");
+      clubsList.innerHTML = new Array(count + 1).join(clubsSkeleton);
+      if (clubsStatus) clubsStatus.textContent = "Loading listings";
+    };
+
+    /* Put the fetched directory in place of the current one. */
+    var clubsApply = function (fresh) {
+      var freshList = $(".clubs", fresh);
+      var oldCards = clubsCards();
+      var oldRects = oldCards.map(function (c) { return c.getBoundingClientRect(); }); // where they are now, mid-move included
+      var listBox = clubsList.getBoundingClientRect();
+      var oldHeight = clubsFrame.getBoundingClientRect().height;
+      clubsMoving.forEach(function (a) { a.cancel(); });
+      clubsMoving = [];
+
+      var byId = {}, kept = {};
+      oldCards.forEach(function (c) { var id = c.getAttribute("data-club"); if (id) byId[id] = c; });
+      var incoming = $$(".club", freshList).map(function (c) {
+        var id = c.getAttribute("data-club");
+        if (id && byId[id]) { kept[id] = true; return { el: byId[id], old: oldCards.indexOf(byId[id]) }; } // same card: keep its loaded logo
+        return { el: document.importNode(c, true), old: -1 };
+      });
+      var leaving = oldCards.filter(function (c) { return !kept[c.getAttribute("data-club")]; }).map(function (c) {
+        var r = oldRects[oldCards.indexOf(c)];
+        var ghost = c.cloneNode(true);
+        ghost.classList.add("club--leaving");
+        ghost.removeAttribute("data-club");
+        ghost.setAttribute("aria-hidden", "true");
+        ghost.setAttribute("inert", "");
+        ghost.style.cssText = "top:" + (r.top - listBox.top) + "px;left:" + (r.left - listBox.left) + "px;width:" + r.width + "px;height:" + r.height + "px";
+        return ghost;
+      });
+
+      clubsList.innerHTML = "";
+      incoming.forEach(function (c) { clubsList.appendChild(c.el); });
+      leaving.forEach(function (g) { clubsList.appendChild(g); });
+      clubsList.removeAttribute("aria-busy");
+      clubsWatchLogos(clubsList);
+
+      /* count, sort switch and page data, updated in place so the switch's thumb slides */
+      $(".clubs-count", clubsDir).textContent = $(".clubs-count", fresh).textContent;
+      var sortNow = $("[data-clubs-sort]", clubsDir), sortNew = $("[data-clubs-sort]", fresh);
+      sortNow.setAttribute("data-current", sortNew.getAttribute("data-current"));
+      var sortLinks = $$("a", sortNew);
+      $$("a", sortNow).forEach(function (a, i) {
+        a.setAttribute("href", sortLinks[i].getAttribute("href"));
+        if (sortLinks[i].hasAttribute("aria-current")) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+      });
+      ["data-order", "data-page", "data-pages", "data-total"].forEach(function (k) { clubsDir.setAttribute(k, fresh.getAttribute(k)); });
+      var pagerNow = $(".clubs-pager", clubsDir), pagerNew = $(".clubs-pager", fresh);
+      if (pagerNew) {
+        pagerNew = document.importNode(pagerNew, true);
+        if (pagerNow) pagerNow.parentNode.replaceChild(pagerNew, pagerNow); else clubsFrame.parentNode.insertBefore(pagerNew, clubsFrame.nextSibling);
+      } else if (pagerNow) {
+        pagerNow.parentNode.removeChild(pagerNow);
+      }
+
+      if (!clubsMotion) {
+        leaving.forEach(function (g) { if (g.parentNode) g.parentNode.removeChild(g); });
+        return;
+      }
+      var enter = 0, ease = "cubic-bezier(0.22, 1, 0.36, 1)";
+      incoming.forEach(function (c, i) {
+        var box = c.el.getBoundingClientRect();
+        if (c.old > -1) { // on both pages: glide from the old place to the new one
+          var was = oldRects[c.old], dx = was.left - box.left, dy = was.top - box.top;
+          if ((!dx && !dy) || (!clubsNear(was) && !clubsNear(box))) return; // off-screen both ways: no need to watch it travel
+          clubsMoving.push(c.el.animate([{ transform: "translate(" + dx + "px," + dy + "px)" }, { transform: "none" }], { duration: 700, delay: Math.min(i * 18, 180), easing: ease, fill: "backwards" }));
+        } else if (clubsNear(box)) { // new to this page: fade up
+          clubsMoving.push(c.el.animate([{ opacity: 0, transform: "translateY(14px)" }, { opacity: 1, transform: "none" }], { duration: 520, delay: 100 + Math.min(enter++ * 35, 280), easing: ease, fill: "backwards" }));
+        }
+      });
+      leaving.forEach(function (g) { // gone from this page: fade out where it stood
+        var a = g.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, easing: "ease-out", fill: "forwards" });
+        a.onfinish = function () { if (g.parentNode) g.parentNode.removeChild(g); };
+        clubsMoving.push(a);
+      });
+      var newHeight = clubsFrame.getBoundingClientRect().height; // so the page below eases to its new place
+      if (Math.abs(newHeight - oldHeight) > 1) {
+        clubsFrame.style.overflow = "clip";
+        var grow = clubsFrame.animate([{ height: oldHeight + "px" }, { height: newHeight + "px" }], { duration: 700, easing: ease });
+        grow.onfinish = grow.oncancel = function () { clubsFrame.style.overflow = ""; };
+        clubsMoving.push(grow);
+      }
+    };
+
+    var clubsGo = function (url, opts) {
+      var mine = ++clubsSeq, timer = setTimeout(function () { if (mine === clubsSeq) clubsShowSkeleton(); }, 160);
+      var page = clubsLoad(url);
+      clubsTimeout(page, 10000).then(function (text) {
+        clearTimeout(timer);
+        if (mine !== clubsSeq) return; // a newer click has taken over
+        var doc = new DOMParser().parseFromString(text, "text/html");
+        var fresh = $("[data-clubs-dir]", doc);
+        if (!fresh || !$(".clubs", fresh) || !$("[data-clubs-sort]", fresh)) throw new Error("not a directory page");
+        clubsApply(fresh);
+        document.title = doc.title;
+        if (opts.push) { history.pushState({ clubs: 1 }, "", url); clubsPushed = true; }
+        var pages = Number(fresh.getAttribute("data-pages")), now = Number(fresh.getAttribute("data-page"));
+        var order = fresh.getAttribute("data-order") === "za" ? "Z to A" : "A to Z";
+        if (clubsStatus) clubsStatus.textContent = (pages > 1 ? "Page " + now + " of " + pages + ", " : "") + "sorted " + order;
+        if (opts.pager) {
+          clubsHeading.focus({ preventScroll: true });
+          clubsDir.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+        }
+      }).catch(function () {
+        clearTimeout(timer);
+        if (mine === clubsSeq) window.location.href = url; // anything unexpected: an ordinary page load
+      });
+    };
+
+    var clubsLink = function (e) {
+      var a = e.target.closest ? e.target.closest("a") : null;
+      if (!a || !clubsDir.contains(a)) return null;
+      var sorting = !!a.closest("[data-clubs-sort]"), paging = !!a.closest(".clubs-pager");
+      return (sorting || paging) ? { a: a, pager: paging } : null;
+    };
+    clubsDir.addEventListener("click", function (e) {
+      var hit = clubsLink(e);
+      if (!hit || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      if (hit.a.getAttribute("aria-current")) return; // already showing this one
+      clubsGo(hit.a.href, { push: true, pager: hit.pager });
+    });
+    /* warm the next page as soon as a link is pointed at, so it is usually there before the click lands */
+    var clubsWarm = function (e) {
+      var hit = clubsLink(e);
+      if (hit && !hit.a.getAttribute("aria-current")) clubsLoad(hit.a.href).catch(function () {});
+    };
+    clubsDir.addEventListener("pointerover", clubsWarm);
+    clubsDir.addEventListener("focusin", clubsWarm);
+    clubsDir.addEventListener("touchstart", clubsWarm, { passive: true });
+    window.addEventListener("popstate", function () {
+      if (clubsPushed) clubsGo(window.location.href, { push: false, pager: false });
     });
   }
 

@@ -14,6 +14,10 @@ import html
 import json
 import pathlib
 import re
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import clubs_static  # noqa: E402  (the paginated Radio Clubs & Sponsors preview)
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BUILD = ROOT / "_build"
@@ -100,6 +104,12 @@ def build():
         body = raw[m.end():]
         out_name = meta.get("file", p.name)
         CANON[out_name] = meta["canonical"]
+        if meta.get("clubs_sample"):
+            # the paginated directory: one page file per order and page number (see clubs_static.py)
+            for v_name, v_meta, v_body in clubs_static.variants(meta, body):
+                CANON[v_name] = meta["canonical"]
+                parsed.append((v_name, v_meta, v_body))
+            continue
         parsed.append((out_name, meta, body))
 
     for out_name, meta, body in parsed:

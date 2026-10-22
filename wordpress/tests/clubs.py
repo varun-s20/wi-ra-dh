@@ -16,9 +16,14 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 WP = next((x for x in sys.argv[1:] if x.startswith("http")), "http://127.0.0.1:9400/")
 LOGO = pathlib.Path(__file__).resolve().parents[2] / "assets" / "img" / "samples" / "club-anytown.webp"
-SAMPLE = ["Anytown Amateur Radio Club", "Example Amateur Radio Club", "North Woods Sample Amateur Radio Association",
-          "Placeholder Emergency Communications Group", "Sample County Repeater Association", "Test Lakes Repeater Club",
-          "The Demo Valley Radio Society", "Wisconsin Example Radio Club"]
+SAMPLE = ["Anytown Amateur Radio Club", "Badger State Sample Repeater Society", "Cedar Valley Amateur Radio Club",
+          "Dairyland Demo Radio Association", "Example Amateur Radio Club", "Lake Example Emergency Net",
+          "North Woods Sample Amateur Radio Association", "Placeholder Emergency Communications Group",
+          "Rivertown Test Amateur Radio Club", "Sample County Repeater Association", "Sample Equipment Sponsor Co.",
+          "Test Lakes Repeater Club", "The Demo Valley Radio Society", "Wisconsin Example Radio Club"]
+NO_LOGO = ["Cedar Valley Amateur Radio Club", "Dairyland Demo Radio Association", "Example Amateur Radio Club",
+           "Rivertown Test Amateur Radio Club", "Test Lakes Repeater Club", "Wisconsin Example Radio Club"]
+PER_PAGE = 12
 NEW = "Zebra Test Radio Club"
 FAILS = []
 
@@ -29,13 +34,23 @@ def check(label, ok, detail=""):
         FAILS.append(label)
 
 
-def cards(v):
-    """The Clubs page as a visitor sees it: [(name, href or None, logo src)]."""
-    v.goto(WP + "clubs/", wait_until="load")
+def page_cards(v, n=1):
+    """One page of the directory as a visitor sees it: [(name, href or None, logo src)]."""
+    v.goto(WP + "clubs/" + (f"page/{n}/" if n > 1 else ""), wait_until="load")
     return v.evaluate("""() => [...document.querySelectorAll('.club')].map(c => [
         c.querySelector('.club__name').textContent.trim(),
         c.querySelector('.club__link') ? c.querySelector('.club__link').getAttribute('href') : null,
         c.querySelector('.club__logo img').getAttribute('src')])""")
+
+
+def cards(v):
+    """The whole directory, A to Z, read page by page (ends on page 1)."""
+    v.goto(WP + "clubs/", wait_until="load")
+    pages = int(v.get_attribute("[data-clubs-dir]", "data-pages") or 1) if v.query_selector("[data-clubs-dir]") else 1
+    out = []
+    for n in range(pages, 0, -1):
+        out = page_cards(v, n) + out
+    return out
 
 
 def names(v):
@@ -77,11 +92,14 @@ with sync_playwright() as p:
     check("/clubs/ answers 200", resp.status == 200, resp.status)
     check("visitor is logged out", not v.query_selector("#wpadminbar"))
     c = cards(v)
-    check("the 8 published sample clubs, A to Z", [x[0] for x in c] == SAMPLE, [x[0] for x in c])
+    check("the 14 published sample listings, A to Z across both pages", [x[0] for x in c] == SAMPLE, [x[0] for x in c])
+    on_page = v.evaluate("[...document.querySelectorAll('.club__name')].map(x => x.textContent.trim())")
+    check("page 1 shows the first 12", on_page == SAMPLE[:PER_PAGE], on_page)
     check("the draft club is not shown", "Hidden Draft Radio Club" not in [x[0] for x in c])
-    check("count reads '8 listings'", v.inner_text(".clubs-count") == "8 listings", v.inner_text(".clubs-count"))
-    check("clubs without a logo show the WRA placeholder (header logo)", [x[0] for x in c if "wra-logo-nav" in x[2]] == ["Example Amateur Radio Club", "Test Lakes Repeater Club", "Wisconsin Example Radio Club"])
-    check("a club without a website has no link", dict((x[0], x[1]) for x in c)["Placeholder Emergency Communications Group"] is None)
+    check("count reads 'Showing 1–12 of 14'", v.inner_text(".clubs-count") == "Showing 1–12 of 14", v.inner_text(".clubs-count"))
+    check("listings without a logo show the WRA placeholder (header logo)", [x[0] for x in c if "wra-logo-nav" in x[2]] == NO_LOGO, [x[0] for x in c if "wra-logo-nav" in x[2]])
+    links_by_name = dict((x[0], x[1]) for x in c)
+    check("listings without a website have no link", links_by_name["Placeholder Emergency Communications Group"] is None and links_by_name["Dairyland Demo Radio Association"] is None)
     links = v.evaluate("[...document.querySelectorAll('.club__link')].map(l => [l.target, l.rel, l.textContent])")
     check("website links open in a new tab, rel=noopener", all(t == "_blank" and "noopener" in r for t, r, _ in links))
     check("link text names the club for screen readers", all(t.startswith("Visit website: ") and "(opens in a new tab)" in t for _, _, t in links))
@@ -99,20 +117,14 @@ with sync_playwright() as p:
     check("phone menu and footer list it under Resources", v.evaluate("!!document.querySelector('#dr-resources a[href$=\"/clubs/\"]') && [...document.querySelectorAll('.footer__nav > div')].some(d => d.querySelector('h2').textContent.trim() === 'Resources' && d.querySelector('a[href$=\"/clubs/\"]'))"))
     check("footer column is 'News and contact' again", v.evaluate("[...document.querySelectorAll('.footer__nav h2')].map(h => h.textContent.trim())").count("News and contact") == 1)
     check("one h1", v.evaluate("document.querySelectorAll('h1').length") == 1)
+    check("12 cards and a pager on page 1", v.locator(".club").count() == PER_PAGE and v.locator(".clubs-pager").count() == 1)
     check("canonical URL is /clubs/", v.evaluate("(document.querySelector('meta[property=\"og:url\"]')||{}).content||''").endswith("/clubs/"))
     heights = v.evaluate("[...document.querySelectorAll('.club')].map(c => Math.round(c.getBoundingClientRect().height))")
     check("all cards are the same height", len(set(heights)) == 1, heights)
     cols = v.evaluate("new Set([...document.querySelectorAll('.club')].map(c => Math.round(c.getBoundingClientRect().left))).size")
     check("4 across at 1440px", cols == 4, cols)
     check("hero has the page photo", v.evaluate("!!document.querySelector('.phead__media img[src*=\"ham-beam\"]')"))
-    v.click(".clubs-sort button[data-order=desc]")
-    v.wait_for_timeout(1000)
-    zn = v.evaluate("[...document.querySelectorAll('.club__name')].map(x => x.textContent.trim())")
-    check("Z–A switch reverses the list", zn == SAMPLE[::-1], zn)
-    check("switch state and announcement", v.get_attribute(".clubs-sort button[data-order=desc]", "aria-pressed") == "true" and v.inner_text("[data-clubs-status]") == "Sorted Z to A")
-    v.click(".clubs-sort button[data-order=asc]")
-    v.wait_for_timeout(1000)
-    check("A–Z switch puts it back", v.evaluate("[...document.querySelectorAll('.club__name')].map(x => x.textContent.trim())") == SAMPLE)
+    # (paging, the A–Z / Z–A switch and loading states are in clubs_pages.py)
 
     print("wp-admin: Clubs menu and list")
     list_screen(a)
@@ -155,7 +167,7 @@ with sync_playwright() as p:
     edit_url = a.url
     c = dict((x[0], x) for x in cards(v))
     check("new club appears on the Clubs page", NEW in c)
-    check("in A to Z place (last)", names(v)[-1] == NEW)
+    check("in A to Z place (last, on page 2)", names(v)[-1] == NEW)
     check("with its logo, not the placeholder", NEW in c and "wra-logo-nav" not in c[NEW][2], c.get(NEW))
     check("and its website link", NEW in c and c[NEW][1] == "https://zebra.example.org")
 
@@ -198,6 +210,7 @@ with sync_playwright() as p:
     a.wait_for_load_state("load")
     c = dict((x[0], x) for x in cards(v))
     check("club with its address cleared shows no link", NEW in c and c[NEW][1] is None)
+    page_cards(v, 2)
     check("and is still the same card size", len(set(v.evaluate("[...document.querySelectorAll('.club')].map(c => Math.round(c.getBoundingClientRect().height))"))) == 1)
 
     print("wp-admin: a club with no name")
@@ -211,7 +224,7 @@ with sync_playwright() as p:
     a.wait_for_load_state("load")
     check("server keeps it as a draft and says why", "Enter the name" in a.inner_text("#wpbody-content") and "Listing published" not in a.inner_text("#wpbody-content"))
     noname_url = a.url
-    check("not on the Clubs page", len(names(v)) == 9)
+    check("not on the Clubs page", len(names(v)) == 15)
     list_screen(a)
 
     print("wp-admin: Trash")
@@ -232,7 +245,7 @@ with sync_playwright() as p:
         if a.locator("#delete_all").count():
             a.click("#delete_all")
             a.wait_for_load_state("load")
-    check("site back to the 8 sample clubs", names(v) == SAMPLE, names(v))
+    check("site back to the 14 sample listings", names(v) == SAMPLE, names(v))
 
     print("Update path (WRA Site 1.0.x site, plugin replaced by upload)")
     r = v.goto(WP + "wra-tests/upgrade-test.php?step=reset", wait_until="load")

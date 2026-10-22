@@ -80,8 +80,11 @@ restored from the Trash for 30 days.
 Good to know:
 
 - The order is always A to Z by the name as typed, so "The Example Club" is
-  listed under T. Change the name to move it. Visitors can flip the list to Z to A
-  with the switch beside the count; that only changes their own view.
+  listed under T. Change the name to move it. Visitors can flip the whole directory
+  to Z to A with the switch beside the count; that only changes their own view.
+- The directory shows **12 listings to a page**. When you add the 13th, page links
+  ("1 2 Next") appear under the cards by themselves, and more pages are added as the
+  list grows. You never set this up. Hiding or removing listings re-flows the pages.
 - A listing without a name cannot go on the site; WordPress saves it as hidden and
   asks for the name.
 - If a website address does not look right (for example, it has a space in it),

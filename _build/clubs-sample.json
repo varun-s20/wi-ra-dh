@@ -1,0 +1,20 @@
+{
+  "per_page": 12,
+  "note": "Fictional entries for the static design preview of the Radio Clubs & Sponsors page. In WordPress the cards come from wp-admin → Clubs & Sponsors; tests/playground/seed-clubs.php seeds the same fourteen.",
+  "clubs": [
+    {"name": "Anytown Amateur Radio Club", "url": "https://www.example.org/anytown-arc/", "logo": "club-anytown.webp", "w": 600, "h": 600},
+    {"name": "Badger State Sample Repeater Society", "url": "https://example.net/badger-state/", "logo": "club-badger-state.webp", "w": 560, "h": 640},
+    {"name": "Cedar Valley Amateur Radio Club", "url": "https://www.example.com/cedar-valley/"},
+    {"name": "Dairyland Demo Radio Association"},
+    {"name": "Example Amateur Radio Club", "url": "https://www.example.com/"},
+    {"name": "Lake Example Emergency Net", "url": "https://example.org/leen/", "logo": "club-lake-example.webp", "w": 640, "h": 640},
+    {"name": "North Woods Sample Amateur Radio Association", "url": "https://www.example.org/north-woods/", "logo": "club-north-woods.webp", "w": 900, "h": 300},
+    {"name": "Placeholder Emergency Communications Group", "logo": "club-placeholder-ecg.jpg", "w": 700, "h": 700},
+    {"name": "Rivertown Test Amateur Radio Club", "url": "https://example.net/rivertown/"},
+    {"name": "Sample County Repeater Association", "url": "https://example.com/scra/", "logo": "club-sample-county.webp", "w": 640, "h": 360},
+    {"name": "Sample Equipment Sponsor Co.", "url": "https://www.example.com/sponsor/", "logo": "club-sample-sponsor.webp", "w": 960, "h": 300},
+    {"name": "Test Lakes Repeater Club", "url": "https://example.net/"},
+    {"name": "The Demo Valley Radio Society", "url": "https://example.net/dvrs/", "logo": "club-demo-valley.webp", "w": 420, "h": 600},
+    {"name": "Wisconsin Example Radio Club", "url": "https://www.example.com/wisconsin/"}
+  ]
+}

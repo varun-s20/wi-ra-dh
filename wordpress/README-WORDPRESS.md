@@ -69,7 +69,7 @@ version in `style.css`, re-package (below) and upload the theme zip.
 | Content | Storage | Rendered by |
 | --- | --- | --- |
 | News | core posts (category News), excerpt, featured image, `_wra_byline` meta | `single.php`, `template-parts/news-*.php` |
-| Radio Clubs & Sponsors (`/clubs/`) | CPT `wra_club` (not public; wp-admin "Clubs & Sponsors", one "listing" per club or sponsor): title = name, featured image = logo, meta `_wra_club_url`; Published = shown, Draft = hidden | `page-clubs.php` → `template-parts/clubs.php` (A to Z, WRA placeholder without a logo) |
+| Radio Clubs & Sponsors (`/clubs/`, `/clubs/page/N/`, `?order=za`) | CPT `wra_club` (not public; wp-admin "Clubs & Sponsors", one "listing" per club or sponsor): title = name, featured image = logo, meta `_wra_club_url`; Published = shown, Draft = hidden | `page-clubs.php` → `template-parts/clubs.php` (A to Z, WRA placeholder without a logo) |
 | ARCS status | option `wra_site_options` | `template-parts/arcs-status.php` (falls back to the approved wording if the plugin is off) |
 | Messages | CPT `wra_message`, meta `_wra_form`, `_wra_fields`, `_wra_mailed` | wp-admin only |
 | Everything else | the generated templates | — |
@@ -109,9 +109,9 @@ Start the local site with the command below. Its blueprint installs Hello
 Elementor and Elementor, recreates the live site's current state
 (`tests/playground/simulate-live.php`), then rehearses the setup: run, undo,
 check everything is back, run again. Results land in `<logs-dir>/setup-test.txt`.
-Last, it adds the eight sample clubs from the static Clubs preview
-(`tests/playground/seed-clubs.php`, logos from `assets/img/samples`), so
-`compare.py` can check the Clubs page against the design.
+Last, it adds the fourteen sample listings from the static Clubs preview
+(`tests/playground/seed-clubs.php`, logos from `assets/img/samples`, the same list as
+`_build/clubs-sample.json`), so `compare.py` can check every Clubs page against the design.
 Then, with the static preview also running on port 8767:
 
 ```bash
@@ -121,6 +121,7 @@ python wordpress/tests/a11y.py        # axe, console, images, links, overflow, o
 python wordpress/tests/interact.py    # menus, dropdown, hero, FAQ filter, checklist, Zeffy (read-only)
 python wordpress/tests/sweep.py       # every page x every menu + page features, script errors (sends no form)
 python wordpress/tests/clubs.py       # directory page + every wp-admin task + the 1.0 -> 1.1 and 1.1.0 -> 1.1.1 update paths
+python wordpress/tests/clubs_pages.py # paging (12 to a page), A–Z / Z–A across pages, history, skeletons, fallback, 8 pages, static preview (--only=nojs|js|many|static)
 # static preview: sweep.py http://127.0.0.1:8767/ --static
 # script check for features overwriting each other: npx eslint (no-redeclare, block-scoped-var) on js/wra.js
 # against staging (submits nothing): a11y.py <url> --readonly, interact.py <url>
@@ -159,3 +160,4 @@ generator, re-package and upload the theme.
 - Theme 1.0.1 (Oct 13, Corey's launch feedback): removed the hero pause control (keyboard-only); fixed the Resources page menu (the FAQ script reused the menu's variable names, so every dropdown stopped working there and the header stopped turning white on scroll); dropdown panels close after a same-page link; Facebook group link in the top bar, phone menu and footer (opens in a new tab); mailing address now `1148 N. Sunnyslope Dr. #202`; Wisconsin Band Plan replaced with the full 27-page plan.
 - 1.1.0 (Oct 19): **Clubs directory** (Corey's Oct 16 order). Theme 1.1.0: new Clubs page (`/clubs/`, static source `_build/pages/clubs.html`), "Clubs" between News and Contact in the header, phone menu and footer, card styles in `wra.css` section 33, an A–Z / Z–A switch for visitors (`js/wra.js`, cards animate to their new places; instant with reduced motion), and the header logo in greyscale as the no-logo placeholder. WRA Site 1.1.0: wp-admin → Clubs (Add New Club: name, logo, website; Publish shows, Draft hides; one-click and bulk Show/Hide in the list; name required; website addresses checked and completed with https://), and creates the Clubs page on update. Sample logos in `assets/img/samples` are for the static preview only and are not copied into the theme.
 - 1.1.1 (Oct 19, Corey's feedback): the directory is now **Radio Clubs & Sponsors**, moved from the top-level menu into the Resources dropdown (header, phone menu, footer; breadcrumb Home / Resources / Radio clubs & sponsors; the page marks Resources as current). Address unchanged (`/clubs/`). wp-admin menu renamed **Clubs & Sponsors** (Add New Listing; Show in / Hide from directory). WRA Site 1.1.1 renames the live page record on the first admin visit. Theme 1.1.1, WRA Site 1.1.1.
+- 1.1.2 (Oct 21, Corey's question about long lists): the directory is **paginated, 12 to a page** (filter `wra_clubs_per_page`). The whole directory is sorted first, then split, so Z–A is the exact mirror of A–Z across pages. Addresses `/clubs/`, `/clubs/page/2/`, and `?order=za` for Z–A; a page past the last redirects to the last page; page 2+ get their own title and canonical; Z–A views are `noindex`. The switch is now two real links, and with `js/wra.js` both it and the pager swap the cards in place (cards on both pages glide, others fade; skeleton cards after 160 ms on a slow connection; a logo plate shimmers until its image arrives; any failure is an ordinary page load; reduced motion skips movement; history, focus and a status line are handled). The empty directory shows ghost cards under the notice. The static preview gained the same pager and four sample pages (`_build/clubs_static.py`). Theme only; WRA Site is unchanged (1.1.1). News is unchanged: the newest post as the feature plus 20 per page.

@@ -19,12 +19,12 @@ BASE = (args[0] if args else "http://127.0.0.1:9400/").rstrip("/") + "/"
 
 if STATIC:
     PAGES = ["index.html", "about.html", "coordination.html", "coordination-process.html", "arcs.html",
-             "membership.html", "resources.html", "news.html", "clubs.html", "contact.html", "privacy.html", "terms.html",
+             "membership.html", "resources.html", "news.html", "clubs.html", "clubs-2.html", "clubs-za.html", "contact.html", "privacy.html", "terms.html",
              "404.html", "news-501c3-public-charity-status.html", "news-arcs-development-update.html",
              "news-open-letter.html", "news-war-transition.html", "news-welcome.html"]
 else:
     PAGES = ["", "about/", "frequency-coordination/", "repeater-coordination/", "arcs/", "membership/",
-             "resources/", "news/", "clubs/", "contact/", "privacy-policy/", "terms-of-use/", "no-such-page/",
+             "resources/", "news/", "clubs/", "clubs/page/2/", "contact/", "privacy-policy/", "terms-of-use/", "no-such-page/",
              "wisconsin-repeater-alliance-receives-federal-501c3-public-charity-status/",
              "arcs-amateur-radio-coordination-system/",
              "an-open-letter-to-the-wisconsin-amateur-radio-community/",
